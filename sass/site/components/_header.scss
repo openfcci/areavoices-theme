@@ -1,0 +1,45 @@
+#masthead {
+
+}
+
+.site-header {
+    background-color: $color_site-primary;
+    padding-bottom: 1em;
+    padding-top: 0.5em;
+    position: relative;
+    width: 100%;
+}
+
+.site-branding {
+
+}
+
+.site-info {
+    text-align: center;
+    img {
+        padding-top: 1em;
+    }
+}
+
+.site-title {
+
+}
+
+.site-description {
+
+}
+
+.site-title h1,
+.site-description h2,
+.site-logo img {
+    text-align: center;
+}
+
+#header-banner-ad img {
+    margin-top: 7px;
+}
+
+.banner-ad {
+    padding: 1em 0;
+    text-align: center;
+}

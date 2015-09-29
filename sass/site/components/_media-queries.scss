@@ -1,0 +1,15 @@
+@media (max-width: 1000px) {
+    #primary,
+    #secondary {
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%;
+    }
+}
+
+/*--- mobile portrait style ---*/
+@media only screen and (max-width: 419px) {
+    body .container {
+        max-width: 395px;
+    }
+}
