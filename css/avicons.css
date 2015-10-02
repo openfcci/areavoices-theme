@@ -1,0 +1,170 @@
+@font-face {
+	font-family: 'avicons';
+	src:url('fonts/avicons.eot?y7zg6r');
+	src:url('fonts/avicons.eot?y7zg6r#iefix') format('embedded-opentype'),
+		url('fonts/avicons.ttf?y7zg6r') format('truetype'),
+		url('fonts/avicons.woff?y7zg6r') format('woff'),
+		url('fonts/avicons.svg?y7zg6r#avicons') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+[class^="avicon-"], [class*=" avicon-"] {
+	font-family: 'avicons';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.avicon-email:before {
+	content: "\e04c";
+}
+.avicon-folder:before {
+	content: "\e101";
+}
+.avicon-folder_open:before {
+	content: "\e102";
+}
+.avicon-person:before {
+	content: "\e253";
+}
+.avicon-star:before {
+	content: "\e260";
+}
+.avicon-star_outline:before {
+	content: "\e262";
+}
+.avicon-account_circle:before {
+	content: "\e268";
+}
+.avicon-check_circle:before {
+	content: "\e281";
+}
+.avicon-favorite:before {
+	content: "\e291";
+}
+.avicon-favorite_outline:before {
+	content: "\e292";
+}
+.avicon-settings:before {
+	content: "\e2cb";
+}
+.avicon-thumb_down:before {
+	content: "\e2ed";
+}
+.avicon-thumb_up:before {
+	content: "\e2ee";
+}
+.avicon-trending_up:before {
+	content: "\e2f7";
+}
+.avicon-view_agenda:before {
+	content: "\e2fb";
+}
+.avicon-view_carousel:before {
+	content: "\e2fd";
+}
+.avicon-layout:before {
+	content: "\e602";
+}
+.avicon-layout2:before {
+	content: "\e603";
+}
+.avicon-layout3:before {
+	content: "\e604";
+}
+.avicon-layout4:before {
+	content: "\e605";
+}
+.avicon-layout5:before {
+	content: "\e606";
+}
+.avicon-layout6:before {
+	content: "\e607";
+}
+.avicon-layout7:before {
+	content: "\e608";
+}
+.avicon-layout8:before {
+	content: "\e609";
+}
+.avicon-layout9:before {
+	content: "\e60a";
+}
+.avicon-layout10:before {
+	content: "\e60b";
+}
+.avicon-layout11:before {
+	content: "\e60c";
+}
+.avicon-layout12:before {
+	content: "\e60d";
+}
+.avicon-layout13:before {
+	content: "\e60e";
+}
+.avicon-layout14:before {
+	content: "\e60f";
+}
+.avicon-comments:before {
+	content: "\e611";
+}
+.avicon-heart2:before {
+	content: "\e613";
+}
+.avicon-info:before {
+	content: "\f059";
+}
+.avicon-av-calendar:before {
+	content: "\e600";
+}
+.avicon-av-facebook:before {
+	content: "\e615";
+}
+.avicon-av-google-plus:before {
+	content: "\e616";
+}
+.avicon-av-linkedin:before {
+	content: "\e617";
+}
+.avicon-av-twitter:before {
+	content: "\e618";
+}
+.avicon-newspaper:before {
+	content: "\e619";
+}
+.avicon-play:before {
+	content: "\e61a";
+}
+.avicon-bullhorn:before {
+	content: "\e61b";
+}
+.avicon-price-tag:before {
+	content: "\e61c";
+}
+.avicon-price-tags:before {
+	content: "\e61d";
+}
+.avicon-quotes-left:before {
+	content: "\e620";
+}
+.avicon-quotes-right:before {
+	content: "\e621";
+}
+.avicon-cog:before {
+	content: "\e622";
+}
+.avicon-cogs:before {
+	content: "\e623";
+}
+.avicon-share2:before {
+	content: "\e628";
+}
+

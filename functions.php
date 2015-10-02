@@ -116,6 +116,8 @@ add_action( 'widgets_init', 'areavoices_widgets_init' );
 function areavoices_scripts() {
 	wp_enqueue_style( 'areavoices-style', get_stylesheet_uri() );
 
+	wp_enqueue_style(  'areavoices-icons', get_template_directory_uri() . '/css/avicons.css' );
+	
 	wp_enqueue_script( 'areavoices-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
 
 	wp_enqueue_script( 'areavoices-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );

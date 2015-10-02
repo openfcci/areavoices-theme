@@ -29,6 +29,28 @@ if ( ! is_active_sidebar( 'sidebar-1' ) ) {
 				</strong><br>
 					You bio goes here.
 			</p>
+			<div class="socials_wrap"><!--Social-Sharing-Start-->
+			  <span class="social_item">
+			    <a href="#" target="_blank" class="social_icons social_twitter">
+			      <span class="avicon-av-twitter"></span>
+			    </a>
+			  </span>
+			  <span class="social_item">
+			    <a href="#" target="_blank" class="social_icons social_facebook">
+			      <span class="avicon-av-facebook"></span>
+			    </a>
+			  </span>
+			  <span class="social_item">
+			    <a href="#" target="_blank" class="social_icons social_gplus">
+			      <span class="avicon-av-google-plus"></span>
+			    </a>
+			  </span>
+			  <span class="social_item">
+			    <a href="#" target="_blank" class="social_icons social_tumblr">
+			      <span class="avicon-av-linkedin"></span>
+			    </a>
+			  </span>
+			</div><!--Social-Sharing-End-->
 		</div>
 	</aside>
 	<!-- ABOUT ME: End -->
