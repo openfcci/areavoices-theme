@@ -74,7 +74,7 @@ function areavoices_setup() {
 	// Set up the WordPress core custom background feature.
 	add_theme_support( 'custom-background', apply_filters( 'areavoices_custom_background_args', array(
 		'default-color' => 'ebebeb', /*RV*/
-		'default-image' => '',
+		'default-image' => get_template_directory_uri() . '/images/avbackground.jpg', /*RV*/
 	) ) );
 }
 endif; // areavoices_setup
