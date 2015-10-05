@@ -451,11 +451,11 @@ textarea {
 ## Links
 --------------------------------------------------------------*/
 a {
-  color: #0d323a; }
+  color: #2d6cea; }
   a:visited {
-    color: #0d323a; }
+    color: #2d6cea; }
   a:hover, a:focus, a:active {
-    color: #de8027; }
+    color: #2d6cea; }
   a:focus {
     outline: thin dotted; }
   a:hover, a:active {
@@ -668,13 +668,15 @@ body {
 article,
 aside {
   background-color: #ffffff;
-  padding: 2em; }
+  padding: 1.9em; /* RV | was 2em */
+}
 
   #page {
     /* background-color: #ebebeb; */
     /* background-image: url("images/avbackground.jpg"; */
     } /*RV*/
 
+/* GRID? */
 .container {
   max-width: 1140px;
   margin-left: auto;

@@ -55,7 +55,7 @@ if ( ! is_active_sidebar( 'sidebar-1' ) ) {
 	</aside>
 	<!-- ABOUT ME: End -->
 
-	<!-- Sidebar AD: Begin -->
+	<!-- SIDEBAR AD: Begin -->
 	<aside id="sidebar-ad" class="widget widget_text">
 		<div class="textwidget">
 			<!---<img src="<?php /*RV*/ //echo get_template_directory_uri(); ?>/images/avsidebarad.jpg" role="advertising" alt="banner ad">-->
@@ -64,7 +64,21 @@ if ( ! is_active_sidebar( 'sidebar-1' ) ) {
 			</div><!-- RSB AD: End -->
 		</div>
 	</aside>
-	<!-- Sidebar AD: End -->
+	<!-- SIDEBAR AD: End -->
+
+	<!-- SEARCH WIDGET: Begin -->
+	<aside id="av-search-widget" class="widget widget_search">
+	<div class="av-search-form">
+		<form role="search" method="get" class="search-form" id="searchform" action="<?php  echo home_url(); ?>/">
+			<div class="search-text" id="search-text">
+	      <input type="search" class="search-field" placeholder="Search…" value="" name="s" title="Search for:">
+			</div>
+			<input type="submit" id="searchsubmit" value="" />
+			<div class="clear"></div>
+		</form>
+	</div>
+	</aside>
+	<!-- SEARCH WIDGET: End -->
 
 	<?php dynamic_sidebar( 'sidebar-1' ); ?>
 </div><!-- #secondary -->
