@@ -12,11 +12,21 @@
  */
 function areavoices_customize_register( $wp_customize ) {
 
-	// var_dump( $wp_customize->settings() );
-
+	/**
+	* Get Settings
+	*/
 	$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
 	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
 	$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
+
+	/**
+	* Remove Default Customizer Sections
+	*/
+	$wp_customize->remove_section('themes'); //Remove the 'Choose Active Theme' Section
+	$wp_customize->remove_section('colors'); //Remove the 'Colors' Section ( Header Text Color | Background Color )
+	$wp_customize->remove_section('static_front_page'); //Remove the 'Static Front Page' Section
+	$wp_customize->remove_section('background_image'); //Remove the 'Background Image' Section
+
 
 	/**
 	* Start FCC Custom
@@ -71,19 +81,19 @@ function areavoices_customize_register( $wp_customize ) {
 	$wp_customize->add_section(
         'fcc_design_layout_section',
         array(
-            'title' => 'Design & Layout*',
+            'title' => 'Design & Layout',
             'description' => 'Choose a layout for the homepage.',
             'priority' => 11,
         )
     );
 		$wp_customize->add_setting(
-		    'fcc_design_and_layout',
+		    'fcc_design',
 		    array(
 		        'default' => 'Design 1',
 		    )
 		);
 		$wp_customize->add_control(
-		    'fcc_design_and_layout',
+		    'fcc_design',
 		    array(
 		        'type' => 'select',
 		        'label' => 'Design:',
@@ -101,13 +111,13 @@ function areavoices_customize_register( $wp_customize ) {
 		    )
 		);
 		$wp_customize->add_setting(
-		    'fcc_design_homepage_layout',
+		    'fcc_homepage_layout',
 		    array(
 		        'default' => 'fcc-homepage-layout-standard',
 		    )
 		);
 		$wp_customize->add_control(
-		    'fcc_design_homepage_layout',
+		    'fcc_homepage_layout',
 		    array(
 		        'type' => 'select',
 		        'label' => 'Homepage Layout:',
@@ -121,13 +131,13 @@ function areavoices_customize_register( $wp_customize ) {
 		    )
 		);
 		$wp_customize->add_setting(
-		    'fcc_design_post_layout',
+		    'fcc_post_layout',
 		    array(
 		        'default' => 'fcc-post-layout-standard',
 		    )
 		);
 		$wp_customize->add_control(
-		    'fcc_design_post_layout',
+		    'fcc_post_layout',
 		    array(
 		        'type' => 'select',
 		        'label' => 'Post Layout:',
@@ -146,70 +156,103 @@ function areavoices_customize_register( $wp_customize ) {
 	$wp_customize->add_section(
 		'bio_section', // Section ID to use in Option Table
 		array( // Arguments array
-			'title' => __( 'About Me*', 'areavoices' ), // Translatable text, change the text domain to your own
+			'title' => __( 'About Me', 'areavoices' ), // Translatable text, change the text domain to your own
 			'priority' => 12,
 			'description' => __( 'Allows you to edit your themes layout.', 'areavoices' )
 		)
 	);
 	// Author Image \\
 	$default_bio_img = get_template_directory_uri() . '/images/about-me-generic.png';
-	$wp_customize->add_setting('areavoices_options[image_upload_test]', array(
+	$wp_customize->add_setting('av_aboutme_avatar', array(
 		'default'           => $default_bio_img,
 		'capability'        => 'edit_theme_options',
-		'type'           => 'option',
+		//'type'           => 'option',
 	));
 	$wp_customize->add_control( new WP_Customize_Image_Control($wp_customize, 'image_upload_test', array(
 			'label'    => __('Profile Picture', 'areavoices'),
 			'section'  => 'bio_section',
-			'settings' => 'areavoices_options[image_upload_test]',
+			'settings' => 'av_aboutme_avatar',
 	)));
-	// Bio \\
-	$wp_customize->add_setting('areavoices_options[custom_text]', array(
-	    'type' => 'option',
-	    'default' => 'You bio goes here.', // Default custom text
+	// Bio Name \\
+	$wp_customize->add_setting('av_aboutme_username', array(
+	    'default' => 'My Name is _____', // Default custom text
 	));
-	$wp_customize->add_control('areavoices_options[custom_text]', array(
-	    'label' => 'Bio', // Label of text form
+	$wp_customize->add_control('av_aboutme_username', array(
+	    'label' => 'About Me: Name', // Label of text form
 	    'section' => 'bio_section', // Layout Section
 	    'type' => 'text', // Type of control: text input
 	));
-	// Facebook \\
-	$wp_customize->add_setting('areavoices_options[facebook]', array(
-	    'type' => 'option',
-	    'default' => '', // Default custom text
+	// Bio Text \\
+	$wp_customize->add_setting('av_aboutme_description', array(
+	    //'type' => 'option',
+	    'default' => 'Your bio goes here.', // Default custom text
 	));
-	$wp_customize->add_control('areavoices_options[facebook]', array(
-	    'label' => 'Facebook Profile Link', // Label of text form
+	$wp_customize->add_control('av_aboutme_description', array(
+	    'label' => 'About Me: Description', // Label of text form
 	    'section' => 'bio_section', // Layout Section
-	    'type' => 'text', // Type of control: text input
+	    'type' => 'textarea', // Type of control: Text Area
 	));
 	// Twitter \\
-	$wp_customize->add_setting('areavoices_options[twitter]', array(
-	    'type' => 'option',
+	$wp_customize->add_setting('av_aboutme_twitter', array(
+	    //'type' => 'option',
 	    'default' => '', // Default custom text
 	));
-	$wp_customize->add_control('areavoices_options[twitter]', array(
+	$wp_customize->add_control('av_aboutme_twitter', array(
 	    'label' => 'Twitter Profile Link', // Label of text form
 	    'section' => 'bio_section', // Layout Section
 	    'type' => 'text', // Type of control: text input
 	));
-	// Linkedin \\
-	$wp_customize->add_setting('areavoices_options[linkedin]', array(
-	    'type' => 'option',
+	// Facebook \\
+	$wp_customize->add_setting('av_aboutme_facebook', array(
 	    'default' => '', // Default custom text
 	));
-	$wp_customize->add_control('areavoices_options[linkedin]', array(
+	$wp_customize->add_control('av_aboutme_facebook', array(
+	    'label' => 'Facebook Profile Link', // Label of text form
+	    'section' => 'bio_section', // Layout Section
+	    'type' => 'text', // Type of control: text input
+	));
+	// G+ \\
+	$wp_customize->add_setting('av_aboutme_googleplus', array(
+	    'default' => '', // Default custom text
+	));
+	$wp_customize->add_control('av_aboutme_googleplus', array(
+	    'label' => 'Google+ Profile Link', // Label of text form
+	    'section' => 'bio_section', // Layout Section
+	    'type' => 'text', // Type of control: text input
+	));
+	// Pinterest \\
+	$wp_customize->add_setting('av_aboutme_pinterest', array(
+	    'default' => '', // Default custom text
+	));
+	$wp_customize->add_control('av_aboutme_pinterest', array(
+	    'label' => 'Pinterest Profile Link', // Label of text form
+	    'section' => 'bio_section', // Layout Section
+	    'type' => 'text', // Type of control: text input
+	));
+	// Linkedin \\
+	$wp_customize->add_setting('av_aboutme_linkedin', array(
+	    'default' => '', // Default custom text
+	));
+	$wp_customize->add_control('av_aboutme_linkedin', array(
 	    'label' => 'Linkedin Profile Link', // Label of text form
 	    'section' => 'bio_section', // Layout Section
 	    'type' => 'text', // Type of control: text input
 	));
-	// Pintrest \\
-	$wp_customize->add_setting('areavoices_options[pintrest]', array(
-	    'type' => 'option',
+	// Instagram \\
+	$wp_customize->add_setting('av_aboutme_instagram', array(
 	    'default' => '', // Default custom text
 	));
-	$wp_customize->add_control('areavoices_options[pintrest]', array(
-	    'label' => 'Pintrest Profile Link', // Label of text form
+	$wp_customize->add_control('av_aboutme_instagram', array(
+	    'label' => 'Instagram Profile Link', // Label of text form
+	    'section' => 'bio_section', // Layout Section
+	    'type' => 'text', // Type of control: text input
+	));
+	// YouTube \\
+	$wp_customize->add_setting('av_aboutme_youtube', array(
+	    'default' => '', // Default custom text
+	));
+	$wp_customize->add_control('av_aboutme_youtube', array(
+	    'label' => 'YouTube Channel Link', // Label of text form
 	    'section' => 'bio_section', // Layout Section
 	    'type' => 'text', // Type of control: text input
 	));

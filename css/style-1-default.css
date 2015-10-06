@@ -72,21 +72,34 @@ body {
 
 
 
+h1 a:link {
+  color: #3d3d3d !important;
+}
 h1.entry-title {
 font-family: "Merriweather";
-font-size: 32px;
+font-size: 1.6875em; /*RV | Was 32px (2em) | =27px, Temporary? */
 font-weight: normal;
-line-height: 1;
+line-height: 1.3; /*RV | Was 1 | Temporary? */
+margin-bottom: 16px !important;  /*RV*/ /*Temporary*/
 }
 h1.entry-title A {
 color: #333 !important;
 }
+
 .entry-meta
 {
   font-family: "Merriweather";
 }
+.entry-content {
+  margin-top: 0.4em !important; /*RV*/ /*Temporary spacing fix */
+  font-size: 15px; /*RV | Was 32px (2em) | Temporary, fix */
+}
+
+
 span.dashicons.dashicons-admin-users, span.dashicons.dashicons-category, span.dashicons.dashicons-calendar-alt {
   color: #C1C1C1 !important;
+  margin-top: 3px; /*RV*/ /*Temporary*/
+  margin-right: 3px; /*RV*/ /*Temporary*/
 }
 span.separator {
   color: #C1C1C1 !important;
@@ -174,27 +187,72 @@ aside {
     opacity: 0.7;
  }
 
+.post-info {
+  font-size: 13px;
+  vertical-align: text-top !important;
+}
+
 /*-----------ABOUT WIDGET-------------*/
+
+h1.aboutme_title {
+  margin-bottom: 0px !important; /*RV | Temporary? */
+}
+
+p.aboutme_avatar {
+  margin-top: 30px !important; /*RV | Temporary? */
+}
+
+h4.aboutme_username {
+  margin: 0px !important; /*RV | Temporary? */
+  font-size: 15px; /*RV | Temporary? */
+}
+p.aboutme_description {
+  margin-top: 0px !important; /*RV | Temporary? */
+  margin-bottom: 20px !important; /*RV | Temporary? */
+  font-size: 15px; /*RV | Temporary? */
+}
 
 .socials_wrap
 {
   text-align: center;
 }
 
-.avicon-av-twitter, .avicon-av-facebook, .avicon-av-google-plus, .avicon-av-linkedin
+.avicon-av-twitter, .avicon-av-facebook, .avicon-av-google-plus, .avicon-pinterest, .avicon-av-linkedin, .avicon-instagram-with-circle, .avicon-youtube
 {
   font-size: 37px; /*RV | was 30px */
   margin: 0 3px;
   color: #dfdfdf; /* RV | was #999 */
 }
-.avicon-av-twitter:hover, .avicon-av-facebook:hover, .avicon-av-google-plus:hover, .avicon-av-linkedin:hover
+.avicon-av-twitter:hover, .avicon-av-facebook:hover, .avicon-av-google-plus:hover, .avicon-pinterest:hover, .avicon-av-linkedin:hover, .avicon-instagram-with-circle:hover, .avicon-youtube:hover
 {
-  color: #568EFB; /* RV | was #333 */
+  /* color: #568EFB; */ /* RV | was #333 */
 -webkit-transition: color 500ms ease; /* Safari and Chrome */
     -moz-transition: color 500ms ease; /* Firefox */
     -o-transition: color 500ms ease; /* IE 9 */
     -ms-transition: color 500ms ease; /* Opera */
     transition: color 500ms ease;
+}
+
+.avicon-av-twitter:hover {
+  color: #00aced ;
+}
+.avicon-av-facebook:hover {
+  color: #3b5998;
+}
+.avicon-av-google-plus:hover {
+  color: #dd4b39;
+}
+.avicon-pinterest:hover {
+  color: #cb2027;
+}
+.avicon-av-linkedin:hover {
+  color: #007bb6;
+}
+.avicon-instagram-with-circle:hover {
+  color: #517fa4;
+}
+.avicon-youtube:hover {
+  color: #bb0000;
 }
 
 /*-----------SEARCH WIDGET-------------*/
@@ -318,4 +376,24 @@ input[type="text"] {
 .avicon-person
 {
   font-size: 17px;
+}
+
+/*-----------MEDIA QUERIES---------------*/
+
+@media only screen and (max-width: 380px) {
+	.site-title {
+		font-size: 3em;
+	}
+  .site-description {
+    font-size: 1.75em;
+  }
+}
+
+@media only screen and (max-width: 340px) {
+	.site-title {
+		font-size: 2.75em;
+	}
+  .site-description {
+    font-size: 1.5em;
+  }
 }

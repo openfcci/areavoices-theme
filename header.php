@@ -27,8 +27,9 @@
 		<div class="site-branding site-header">
 			<div class="container">
 				<div class="site-info">
-					<?php /*RV*/ /* <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><img src="<?php header_image(); ?>" height="<?php echo get_custom_header()->height; ?>" width="<?php echo get_custom_header()->width; ?>" alt="" /> */ ?>
-					<h1 class="site-title"><?php bloginfo( 'name' ); ?></h1>
+					<?php /*RV*/ /* <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="homeS"><img src="<?php header_image(); ?>" height="<?php echo get_custom_header()->height; ?>" width="<?php echo get_custom_header()->width; ?>" alt="" /> */ ?>
+					<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" style="color: #3d3d3d;"><?php bloginfo( 'name' ); ?></a></h1>
+					<!-- <h1 class="site-title"><?php // bloginfo( 'name' ); ?></h1> -->
 					<p class="site-description"><?php bloginfo( 'description' ); ?></p></a>
 				</div><!-- .site-info -->
 			</div><!-- .container -->

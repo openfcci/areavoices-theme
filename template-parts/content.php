@@ -16,7 +16,20 @@
 
 		<?php if ( 'post' == get_post_type() ) : ?>
 		<div class="entry-meta">
-			<span class="dashicons dashicons-calendar-alt"></span> <?php the_time( 'j F Y' ); ?><span class="separator">/</span><span class="dashicons dashicons-admin-users"></span> <?php the_author_posts_link(); ?><span class="separator">/</span><span class="dashicons dashicons-category"></span> <?php the_category( ', ' ); ?>
+			<span class="post-info">
+				<span class="dashicons dashicons-calendar-alt"></span>
+				<a href="<?php echo get_day_link( get_the_time('Y'), get_the_time('m'), get_the_time('d')); ?>"><?php the_time( 'j F Y' ); ?></a>
+				<span class="separator">/</span>
+			</span>
+			<span class="post-info">
+				<span class="dashicons dashicons-admin-users"></span>
+				<?php the_author_posts_link(); ?>
+				<span class="separator">/</span>
+			</span>
+			<span class="post-info">
+				<span class="dashicons dashicons-category"></span>
+				<?php the_category( ', ' ); ?>
+			</span>
 		</div><!-- .entry-meta -->
 		<?php endif; ?>
 	</header><!-- .entry-header -->
