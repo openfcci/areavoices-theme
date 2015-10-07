@@ -99,14 +99,14 @@ function areavoices_customize_register( $wp_customize ) {
 		        'label' => 'Design:',
 		        'section' => 'fcc_design_layout_section',
 		        'choices' => array(
-		            'design-1' => 'Design 1—Default',
-		            'design-2' => 'Design 2—Super Awesome',
-		            'design-3' => 'Design 3—Magazine',
-		            'design-4' => 'Design 4—Photography',
-								'design-5' => 'Design 5—Sports',
-								'design-6' => 'Design 6—Arts & Entertainment',
-								'design-7' => 'Design 7—Food & Drink',
-								'design-8' => 'Design 8—Music',
+		            'design-1' => 'Design 1&#8211;Default',
+		            'design-2' => 'Design 2&#8211;Super Awesome',
+		            'design-3' => 'Design 3&#8211;Magazine',
+		            'design-4' => 'Design 4&#8211;Photography',
+								'design-5' => 'Design 5&#8211;Sports',
+								'design-6' => 'Design 6&#8211;Arts & Entertainment',
+								'design-7' => 'Design 7&#8211;Food & Drink',
+								'design-8' => 'Design 8&#8211;Music',
 		        ),
 		    )
 		);

@@ -114,6 +114,9 @@ add_action( 'widgets_init', 'areavoices_widgets_init' );
  * Enqueue scripts and styles.
  */
 function areavoices_scripts() {
+
+	wp_enqueue_script('jquery');
+
 	wp_enqueue_style( 'areavoices-style', get_stylesheet_uri() );
 
 	wp_enqueue_style(  'areavoices-icons', get_template_directory_uri() . '/css/avicons.css' ); /*RV*/
