@@ -206,3 +206,54 @@ if (class_exists('WP_Customize_Control')) {
         }
     }
 }
+
+/**
+ * Load Popular Post Wiget
+ */
+//require get_template_directory() . '/inc/widgets/popular-post-widget.php';
+//include_once( 'include/widget/popular-post-widget.php');
+
+/**
+ * Get Image Function
+ * 	Use for printing the image from image id
+ * 	From: goodlayer simple theme
+ */
+if( !function_exists('av_get_image') ){
+  function av_get_image($image, $size = 'full', $link = array(), $attr = ''){
+    if( empty($image) ) return '';
+
+    if( is_numeric($image) ){
+      $alt_text = get_post_meta($image , '_wp_attachment_image_alt', true);
+      $image_src = wp_get_attachment_image_src($image, $size);
+      if( empty($image_src) ) return '';
+
+      if( $link === true ){
+        $image_full = wp_get_attachment_image_src($image, 'full');
+        $link = array('url'=>$image_full[0]);
+      }else if( !empty($link) && empty($link['url']) ){
+        $image_full = wp_get_attachment_image_src($image, 'full');
+        $link['url'] = $image_full[0];
+      }
+      $ret = '<img class="popular-post-thumbnail" src="' . $image_src[0] . '" alt="' . $alt_text . '" width="' . $image_src[1] .'" height="' . $image_src[2] . '" ' . $attr . '/>'; /*RV | Original Code */
+    }else{
+      if( $link === true ){
+        $link = array('url'=>$image);
+      }else if( !empty($link) && empty($link['url']) ){
+        $link['url'] = $image;
+      }
+      $ret = '<img src="' . $image . '" alt="" ' . $attr . ' />';
+    }
+
+    if( !empty($link) ){
+      $fancybox  = '<a href="' . $link['url'] . '" ';
+      $fancybox .= (empty($link['id']))? '': 'data-fancybox-group="av-gal-' . $link['id'] . '" ';
+      $fancybox .= (!empty($link['type']) && $link['type'] == 'link')? '': 'data-rel="fancybox" ';
+      $fancybox .= (!empty($link['type']) && $link['type'] == 'video')? 'data-fancybox-type="iframe" ': '';
+      $fancybox .= (!empty($link['new-tab']) && $link['new-tab'] == 'enable')? 'target="_blank" ': '';
+      $fancybox .= '>' . $ret;
+      $fancybox .= (!empty($link['close-tag']))? '': '</a>';
+      return $fancybox;
+    }
+    return $ret;
+  }
+}
