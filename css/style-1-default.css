@@ -379,6 +379,40 @@ input[type="text"] {
   font-size: 17px;
 }
 
+/* --------- ZILLA LIKES ---------- */
+
+.zilla-likes,
+.zilla-likes.active,
+.zilla-likes:hover{
+  float: right;
+  line-height: 1;
+  text-align: center;
+  font-size: 16px;
+}
+
+.zilla-likes:before{ color: #b4b4b4; }
+.zilla-likes:hover,
+.zilla-likes.active:before{ color: #4c4c4c; }
+
+.zilla-likes,
+.zilla-likes.active,
+.zilla-likes:hover{
+  font-size: 16px;
+  margin-top: 4px !important;
+  margin-bottom: 0px !important;
+	padding: 0px !important;
+  background: none !important;
+}
+.zilla-likes:before {
+  content: "\e291";
+  font-family: avicons;
+	display: block;
+  font-size: 21px;
+  margin-bottom: 8px;
+
+}
+
+
 /*-----------MEDIA QUERIES---------------*/
 
 @media only screen and (max-width: 380px) {

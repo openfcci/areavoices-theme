@@ -41,6 +41,7 @@
 				wp_kses( __( 'Continue reading %s <span class="meta-nav">&rarr;</span>', 'areavoices' ), array( 'span' => array( 'class' => array() ) ) ),
 				the_title( '<span class="screen-reader-text">"', '"</span>', false )
 			) );
+			if( function_exists('zilla_likes') ){ zilla_likes(); }
 		?>
 
 		<?php
