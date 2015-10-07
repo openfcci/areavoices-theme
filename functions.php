@@ -257,3 +257,47 @@ if( !function_exists('av_get_image') ){
     return $ret;
   }
 }
+
+/**
+ * Get Pagination Function
+ * 	From: goodlayer simple theme
+ */
+ if( !function_exists('av_get_pagination') ){
+  function av_get_pagination($max_num_page, $current_page, $format = 'paged'){
+    if( $max_num_page <= 1 ) return '';
+
+    $big = 999999999; // need an unlikely integer
+    return 	'<div class="av-pagination">' . paginate_links(array(
+      'base' => str_replace($big, '%#%', esc_url(get_pagenum_link($big))),
+      'format' => '?' . $format . '=%#%',
+      'current' => max(1, $current_page),
+      'total' => $max_num_page,
+      'prev_text'=> __('&lsaquo; Previous', 'areavoices'),
+      'next_text'=> __('Next &rsaquo;', 'areavoices')
+    )) . '</div>';
+  }
+}
+if( !function_exists('av_get_ajax_pagination') ){
+  function av_get_ajax_pagination($max_num_page, $current_page){
+    if( $max_num_page <= 1 ) return '';
+
+    $ret  = '<div class="av-pagination av-ajax">';
+    if($current_page > 1){
+      $ret .= '<a class="prev page-numbers" data-paged="' . (intval($current_page) - 1) . '" >';
+      $ret .= __('&lsaquo; Previous', 'areavoices') . '</a>';
+    }
+    for($i=1; $i<=$max_num_page; $i++){
+      if( $i == $current_page ){
+        $ret .= '<span class="page-numbers current" data-paged="' . $i . '" >' . $i . '</span>';
+      }else{
+        $ret .= '<a class="page-numbers" data-paged="' . $i . '" >' . $i . '</a>';
+      }
+    }
+    if($current_page < $max_num_page){
+      $ret .= '<a class="next page-numbers" data-paged="' . (intval($current_page) + 1) . '" >';
+      $ret .= __('Next &rsaquo;', 'areavoices') . '</a>';
+    }
+    $ret .= '</div>';
+    return $ret;
+  }
+}

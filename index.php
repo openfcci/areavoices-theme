@@ -33,7 +33,14 @@ get_header(); ?>
 
 			<?php endwhile; ?>
 
-			<?php the_posts_navigation(); ?>
+
+			<?php /* RV | New Pagination */
+			$paged = (get_query_var('paged'))? get_query_var('paged') : 1;
+			echo '<nav class="navigation posts-navigation" role="navigation">';
+			echo av_get_pagination($wp_query->max_num_pages, $paged);
+			echo '</nav>'
+			?>
+			<?php //the_posts_navigation();  /* RV | Remove Me Later */ ?>
 
 		<?php else : ?>
 
