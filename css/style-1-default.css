@@ -379,38 +379,27 @@ input[type="text"] {
   font-size: 17px;
 }
 
-/* --------- ZILLA LIKES ---------- */
+/*-----------PAGE NAVIGATION-------------*/
 
-.zilla-likes,
-.zilla-likes.active,
-.zilla-likes:hover{
-  float: right;
-  line-height: 1;
-  text-align: center;
-  font-size: 16px;
+.posts-navigation {
+    padding: 1.5em 2em;
+    background-color: #fff;
+    border-bottom: 3px solid #e3e3e3;
 }
 
-.zilla-likes:before{ color: #b4b4b4; }
-.zilla-likes:hover,
-.zilla-likes.active:before{ color: #4c4c4c; }
-
-.zilla-likes,
-.zilla-likes.active,
-.zilla-likes:hover{
-  font-size: 16px;
-  margin-top: 4px !important;
-  margin-bottom: 0px !important;
-	padding: 0px !important;
-  background: none !important;
+.comment-navigation .nav-previous, .posts-navigation .nav-previous, 
+.post-navigation .nav-previous, .comment-navigation .nav-next, 
+.posts-navigation .nav-next, .post-navigation .nav-next
+{
+    padding: 1em 2em;
+    background-color: #ebebeb;
+    overflow: hidden;
 }
-.zilla-likes:before {
-  content: "\e291";
-  font-family: avicons;
-	display: block;
-  font-size: 21px;
-  margin-bottom: 8px;
 
-}
+
+
+
+
 
 
 /*-----------MEDIA QUERIES---------------*/
