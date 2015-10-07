@@ -10,7 +10,7 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
 		<div class="post-thumb-container">
-		<?php the_post_thumbnail( 'featured-image' ); ?>
+		<a href="<?php echo get_permalink();?>"><?php the_post_thumbnail( 'featured-image' ); ?></a>
 	</div>
 		<?php the_title( sprintf( '<h1 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h1>' ); ?>
 
@@ -41,7 +41,6 @@
 				wp_kses( __( 'Continue reading %s <span class="meta-nav">&rarr;</span>', 'areavoices' ), array( 'span' => array( 'class' => array() ) ) ),
 				the_title( '<span class="screen-reader-text">"', '"</span>', false )
 			) );
-			if( function_exists('zilla_likes') ){ zilla_likes(); }
 		?>
 
 		<?php
