@@ -765,12 +765,14 @@ input.search-field {
 .site-logo img {
   text-align: center; }
 
-#header-banner-ad img {
-  margin-top: 7px; }
+#header-banner img {
+  margin-top: 7px; /*RV*/
+}
 
-.banner-ad {
+.banner { /*RV*/
   padding: 1em 0;
-  text-align: center; }
+  text-align: center;
+}
 
 /*--------------------------------------------------------------
 ## Footer
