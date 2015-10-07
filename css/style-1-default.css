@@ -155,9 +155,10 @@ img{
 
 
 }
+
 article,
 aside {
-  padding-top: 30px; /* RV | was 28px */4
+  padding-top: 30px; /* RV | was 28px */
   border-bottom: 3px solid #e3e3e3;
 }
 
