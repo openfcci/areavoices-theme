@@ -304,7 +304,7 @@ if( !function_exists('av_get_ajax_pagination') ){
 
 /**
  * Jetpack: Remove default Share filtering
- * 	Allows manual sharing placement
+ * 	Allows manual sharing placement.
  * 	Source: https://jetpack.me/2013/06/10/moving-sharing-icons/
  */
 function jptweak_remove_share() {

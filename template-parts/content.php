@@ -41,6 +41,7 @@
 				wp_kses( __( 'Continue reading %s <span class="meta-nav">&rarr;</span>', 'areavoices' ), array( 'span' => array( 'class' => array() ) ) ),
 				the_title( '<span class="screen-reader-text">"', '"</span>', false )
 			) );
+			if( function_exists('zilla_likes') ){ zilla_likes(); }
 		?>
 
 		<?php
@@ -48,9 +49,20 @@
 				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'areavoices' ),
 				'after'  => '</div>',
 			) );
-			if( function_exists('zilla_likes') ){ zilla_likes(); }
 		?>
 	</div><!-- .entry-content -->
+	<div class="av-home av-jp-social">
+		<?php
+			if ( function_exists( 'sharing_display' ) ) {
+			    sharing_display( '', true );
+			}
+
+			if ( class_exists( 'Jetpack_Likes' ) ) {
+			    $custom_likes = new Jetpack_Likes;
+			    echo $custom_likes->post_likes( '' );
+			}
+		?>
+	</div><!-- .av-jp-social -->
 
 	<footer class="entry-footer">
 		<?php areavoices_entry_footer(); ?>
