@@ -425,6 +425,28 @@ input[type="text"] {
   margin-right: 0px;
 }
 
+/* --------- JETPACK SOCIAL SHARING ---------- */
+.av-home.av-jp-social .sd-title {
+  display: none;
+}
+.av-home.av-jp-social .sd-content {
+  margin-top: 30px;
+}
+.av-home.av-jp-social .sharing-anchor.sd-button.share-more {
+  display: none !important;
+}
+
+.av-home.av-jp-social .share-facebook a.sd-button,
+.av-home.av-jp-social .share-twitter a.sd-button,
+.av-home.av-jp-social .share-google-plus-1 a.sd-button,
+.av-home.av-jp-social .share-pinterest a.sd-button,
+.av-home.av-jp-social .share-reddit a.sd-button {
+  background: #e9e9e9 !important;
+}
+.av-home.av-jp-social .share-reddit a.sd-button { /*RV | Fix This */
+  color: #fff !important;
+}
+
 /* --------- ZILLA LIKES ---------- */
 
 /* Homepage Zilla Style */
