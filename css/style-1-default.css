@@ -443,7 +443,7 @@ input[type="text"] {
 .av-home.av-jp-social .share-reddit a.sd-button {
   background: #e9e9e9 !important;
 }
-.av-home.av-jp-social .share-reddit a.sd-button { /*RV | Fix This */
+.av-home.av-jp-social .share-reddit a.sd-button:before { /*RV | Fix This */
   color: #fff !important;
 }
 
