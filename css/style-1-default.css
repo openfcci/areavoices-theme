@@ -402,6 +402,29 @@ input[type="text"] {
     overflow: hidden;
 }
 
+.av-pagination
+{
+  text-align: center;
+}
+
+.page-numbers{
+  background-color: #ebebeb;
+  padding: 0.7em 0.9em;
+    margin-right: 0.3em;
+}
+
+.page-numbers.current
+{
+  background-color: #424242;
+    color: #fff;
+    padding: 0.7em 0.9em;
+    margin-right: 0.3em;
+}
+
+.page-numbers.next{
+  margin-right: 0px;
+}
+
 /* --------- ZILLA LIKES ---------- */
 
 .zilla-likes,
