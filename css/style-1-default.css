@@ -427,36 +427,55 @@ input[type="text"] {
 
 /* --------- ZILLA LIKES ---------- */
 
-.zilla-likes,
-.zilla-likes.active,
-.zilla-likes:hover{
+/* Homepage Zilla Style */
+.entry-content .zilla-likes,
+.entry-content .zilla-likes.active,
+.entry-content .zilla-likes:hover{
   float: right;
   line-height: 1;
   text-align: center;
   font-size: 16px;
 }
 
-.zilla-likes:before{ color: #b4b4b4; }
-.zilla-likes:hover,
-.zilla-likes.active:before{ color: #4c4c4c; }
+.entry-content .zilla-likes:before{ color: #b4b4b4; }
+.entry-content .zilla-likes:hover,
+.entry-content .zilla-likes.active:before{ color: #4c4c4c; }
 
-.zilla-likes,
-.zilla-likes.active,
-.zilla-likes:hover{
+.entry-content .zilla-likes,
+.entry-content .zilla-likes.active,
+.entry-content .zilla-likes:hover{
   font-size: 16px;
   margin-top: 12px !important;
   margin-bottom: 0px !important;
 	padding: 0px !important;
   background: none !important;
 }
-.zilla-likes:before {
+.entry-content .zilla-likes.visit:before {
   content: "\e291";
   font-family: avicons;
 	display: block;
   font-size: 21px;
   margin-bottom: 8px;
-
+  color: #red !important;
 }
+
+/* Post Page Zilla Style */
+.entry-meta .zilla-likes, .entry-meta .zilla-likes:hover {
+  background: none !important;
+  padding-left: 0 !important;
+}
+.entry-meta .zilla-likes:before {
+  content: "\e291";
+  font-family: avicons;
+  display: inline-block;
+  font-size: 15px;
+  margin-right: 4px;
+}
+.entry-meta .zilla-likes-count {
+  font-size: 14px !important;
+  vertical-align: 10% !important;
+}
+
 
 /*----------- POPULAR POSTS WIDGET --------------*/
 
