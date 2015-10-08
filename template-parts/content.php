@@ -48,6 +48,7 @@
 				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'areavoices' ),
 				'after'  => '</div>',
 			) );
+			if( function_exists('zilla_likes') ){ zilla_likes(); }
 		?>
 	</div><!-- .entry-content -->
 

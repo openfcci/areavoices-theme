@@ -450,7 +450,7 @@ input[type="text"] {
 	padding: 0px !important;
   background: none !important;
 }
-.entry-content .zilla-likes.visit:before {
+.entry-content .zilla-likes:before {
   content: "\e291";
   font-family: avicons;
 	display: block;
