@@ -93,7 +93,7 @@ color: #333 !important;
   font-size: 15px; /*RV | Was 32px (2em) | Temporary, fix */
 }
 
-.avicon-av-calendar, .avicon-person, .avicon-folder { /*RV*/
+.avicon-av-calendar, .avicon-person, .avicon-folder_open { /*RV*/
   font-size: 20px !important;
   margin-top: 3px !important;
   margin-right: 3px;

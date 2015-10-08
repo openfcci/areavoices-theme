@@ -27,7 +27,7 @@
 				<span class="separator">/</span>
 			</span>
 			<span class="post-info">
-				<span class="avicon-folder"></span>
+				<span class="avicon-folder_open"></span>
 				<?php the_category( ', ' ); ?>
 			</span>
 		</div><!-- .entry-meta -->
