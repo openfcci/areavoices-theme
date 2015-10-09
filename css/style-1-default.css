@@ -199,6 +199,16 @@ aside {
   vertical-align: text-top !important;
 }
 
+/*-----------SINGLE ARTICLE-----------*/
+
+
+article.av-single-post
+{
+  margin-bottom: 0px;
+  border-bottom: none;
+}
+
+
 /*-----------ABOUT WIDGET-------------*/
 
 h1.aboutme_title {
@@ -293,7 +303,7 @@ p.aboutme_description {
 }
 input[type="submit"] {
   outline-offset: -7px;
-	background-color: transparent !important;
+  background-color: transparent !important;
 }
 .av-nav-search-form {
     background-color: #272727;
@@ -394,19 +404,11 @@ input[type="text"] {
 }
 
 .comment-navigation .nav-previous, .posts-navigation .nav-previous,
-.post-navigation .nav-previous, .comment-navigation .nav-next,
-.posts-navigation .nav-next, .post-navigation .nav-next
+ .comment-navigation .nav-next, .posts-navigation .nav-next
 {
     padding: 1em 2em;
     background-color: #ebebeb;
     overflow: hidden;
-}
-
-.nav-next, .nav-previous {
-  background-color:transparent !important;
-  width: 100% !important;
-  padding: 0px !important;
-  font-size: 15px !important;
 }
 
 .av-pagination
@@ -430,6 +432,68 @@ input[type="text"] {
 
 .page-numbers.next{
   margin-right: 0px;
+}
+
+/*---------SINGLE PAGE NAV---------*/
+
+.site-main .post-navigation{
+  margin:0px;
+  background-color: #fff;
+  padding: 0em 2em;
+  padding-bottom: 1.5em;
+}
+
+.post-navigation .nav-links
+{
+  border-top: 3px solid #454545;
+  padding-top: 60px;
+}
+
+.post-navigation .nav-previous, .post-navigation .nav-next
+{
+  background-color:transparent !important;
+  width: 100% !important;
+  padding: 0px !important;
+  font-size: 15px !important;
+  overflow: hidden;
+}
+.post-navigation .nav-previous
+{
+  float: left;
+}
+.post-navigation .nav-next
+{
+  float: right;
+  text-align: right;
+}
+
+
+/*------------COMMENTS--------------*/
+
+.comment-reply-title{
+  margin-top: 0px;
+  padding-top: 30px;
+}
+
+.comments-area{
+  background-color: #fff;
+  border-bottom: 3px solid #e3e3e3;
+  padding: 1em 2em;
+  margin-bottom: 30px;
+}
+
+.comment-respond .comment-reply-title, .comments-title
+{
+  font-size: 15px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 32px;
+    padding-bottom: 5px;
+    display: inline-block;
+    border-bottom-width: 2px;
+    border-bottom-style: solid;
+    letter-spacing: 2px;
+        font-family: "Merriweather";
 }
 
 /* --------- JETPACK SOCIAL SHARING ---------- */
@@ -476,13 +540,13 @@ input[type="text"] {
   font-size: 16px;
   margin-top: 12px !important;
   margin-bottom: 0px !important;
-	padding: 0px !important;
+  padding: 0px !important;
   background: none !important;
 }
 .entry-content .zilla-likes:before {
   content: "\e291";
   font-family: avicons;
-	display: block;
+  display: block;
   font-size: 21px;
   margin-bottom: 8px;
   color: #red !important;
@@ -532,18 +596,18 @@ input[type="text"] {
 /*-----------MEDIA QUERIES---------------*/
 
 @media only screen and (max-width: 380px) {
-	.site-title {
-		font-size: 3em;
-	}
+  .site-title {
+    font-size: 3em;
+  }
   .site-description {
     font-size: 1.75em;
   }
 }
 
 @media only screen and (max-width: 340px) {
-	.site-title {
-		font-size: 2.75em;
-	}
+  .site-title {
+    font-size: 2.75em;
+  }
   .site-description {
     font-size: 1.5em;
   }
