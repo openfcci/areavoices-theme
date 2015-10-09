@@ -1,10 +1,10 @@
 /*!
-Theme Name: areavoices
-Theme URI: http://underscores.me/
-Author: Julie Kuehl
-Author URI: http://juliekuehl.com
-Description: A kick-ass custom WordPress theme built for Area Voices.
-Version: 1.0.0
+Theme Name: AreaVoices
+Theme URI: http://areavoices.com/
+Author: Forum Communications Company
+Author URI: http://forumcomm.com/
+Description: The kick-ass custom WordPress theme built for AreaVoices contributors.
+Version: 1.0.1
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: areavoices
@@ -451,11 +451,11 @@ textarea {
 ## Links
 --------------------------------------------------------------*/
 a {
-  color: #0d323a; }
+  color: #2d6cea; }
   a:visited {
-    color: #0d323a; }
+    color: #2d6cea; }
   a:hover, a:focus, a:active {
-    color: #de8027; }
+    color: #2d6cea; }
   a:focus {
     outline: thin dotted; }
   a:hover, a:active {
@@ -668,13 +668,15 @@ body {
 article,
 aside {
   background-color: #ffffff;
-  padding: 2em; }
+  padding: 1.9em; /* RV | was 2em */
+}
 
   #page {
     /* background-color: #ebebeb; */
     /* background-image: url("images/avbackground.jpg"; */
     } /*RV*/
 
+/* GRID? */
 .container {
   max-width: 1140px;
   margin-left: auto;
@@ -763,12 +765,14 @@ input.search-field {
 .site-logo img {
   text-align: center; }
 
-#header-banner-ad img {
-  margin-top: 7px; }
+#header-banner img {
+  margin-top: 7px; /*RV*/
+}
 
-.banner-ad {
+.banner { /*RV*/
   padding: 1em 0;
-  text-align: center; }
+  text-align: center;
+}
 
 /*--------------------------------------------------------------
 ## Footer

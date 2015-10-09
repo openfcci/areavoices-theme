@@ -27,24 +27,18 @@
 		<div class="site-branding site-header">
 			<div class="container">
 				<div class="site-info">
-					<?php /* <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><img src="<?php header_image(); ?>" height="<?php echo get_custom_header()->height; ?>" width="<?php echo get_custom_header()->width; ?>" alt="" /> */ ?>
-					<h1 class="site-title"><?php bloginfo( 'name' ); ?></h1>
+					<?php /*RV*/ /* <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="homeS"><img src="<?php header_image(); ?>" height="<?php echo get_custom_header()->height; ?>" width="<?php echo get_custom_header()->width; ?>" alt="" /> */ ?>
+					<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" style="color: #3d3d3d;"><?php bloginfo( 'name' ); ?></a></h1>
+					<!-- <h1 class="site-title"><?php // bloginfo( 'name' ); ?></h1> -->
 					<p class="site-description"><?php bloginfo( 'description' ); ?></p></a>
 				</div><!-- .site-info -->
 			</div><!-- .container -->
 		</div><!-- .site-branding .site-header-->
 
+		<?php get_template_part( 'template-parts/google_ads', 'script' ); /*RV*/ ?>
+
 	</header><!-- #masthead -->
 
-	<div id="header-banner-ad" class="banner-ad">
-		 <img src="<?php echo get_template_directory_uri(); ?>/images/avbannerad.png" role="advertising" alt="banner ad" />  <!-- MAKE THIS AN AD SPACE -->
-		<!-- <div id="fcc-areavoices-header-ad">
-			<div id="div-gpt-ad-1430258018861-0">
-				<script type="text/javascript">
-				googletag.display('div-gpt-ad-1430258018861-0');
-				</script>
-			</div>
-		</div> -->
-	</div>
+		<?php get_template_part( 'template-parts/google_ads', 'header' ); /*RV*/ ?>
 
 	<div id="content" class="site-content container">

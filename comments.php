@@ -47,11 +47,12 @@ if ( post_password_required() ) {
 
 		<ol class="comment-list">
 			<?php
-				wp_list_comments( array(
-					'style'      => 'ol',
-					'short_ping' => true,
-				) );
+				//wp_list_comments( array(
+					//'style'      => 'ol',
+					//'short_ping' => true,
+				//) );
 			?>
+			<?php wp_list_comments(array('callback' => 'av_comment_list', 'style' => 'ol')); ?>
 		</ol><!-- .comment-list -->
 
 		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // Are there comments to navigate through? ?>
