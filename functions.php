@@ -316,3 +316,53 @@ function jptweak_remove_share() {
 }
 
 add_action( 'loop_start', 'jptweak_remove_share' );
+
+/**
+ * Comment List Callback Function
+ *  A comment callback function to create comment list
+ * 	From: goodlayer simple theme
+ */
+if ( !function_exists('av_comment_list') ){
+  function av_comment_list( $comment, $args, $depth ){
+    $GLOBALS['comment'] = $comment;
+    switch ( $comment->comment_type ){
+      case 'pingback' :
+      case 'trackback' :
+?>
+<li <?php comment_class(); ?> id="comment-<?php comment_ID(); ?>">
+<p><?php _e( 'Pingback :', 'areavoices' ); ?> <?php comment_author_link(); ?> <?php edit_comment_link( __( '(Edit)', 'areavoices' ), '<span class="edit-link">', '</span>' ); ?></p>
+<?php break; ?>
+
+<?php default : global $post; ?>
+<li <?php comment_class(); ?> id="li-comment-<?php comment_ID(); ?>">
+<article id="comment-<?php comment_ID(); ?>" class="comment-article">
+  <div class="comment-avatar"><?php echo get_avatar( $comment, 60 ); ?></div>
+  <div class="comment-body">
+    <header class="comment-meta">
+      <div class="comment-author av-title"><?php echo get_comment_author_link(); ?></div>
+      <div class="comment-reply"><?php comment_reply_link( array_merge($args, array('reply_text' => __('Reply', 'areavoices'), 'depth' => $depth, 'max_depth' => $args['max_depth'])) ); ?></div>
+    </header>
+
+    <?php if( '0' == $comment->comment_approved ){ ?>
+      <p class="comment-awaiting-moderation"><?php echo __( 'Your comment is awaiting moderation.', 'areavoices' ); ?></p>
+    <?php } ?>
+
+    <section class="comment-content">
+      <?php comment_text(); ?>
+    </section><!-- comment-content -->
+
+    <div class="comment-time">
+      <a href="<?php echo esc_url(get_comment_link($comment->comment_ID)); ?>">
+        <time datetime="<?php echo get_comment_time('c'); ?>">
+        <?php echo get_comment_date() . ' ' . __('at', 'areavoices') . ' ' . get_comment_time(); ?>
+        </time>
+      </a>
+    </div>
+    <?php edit_comment_link( __( 'Edit', 'areavoices' ), '<p class="edit-link">', '</p>' ); ?>
+  </div><!-- comment-body -->
+</article><!-- comment-article -->
+<?php
+      break;
+    }
+  }
+}
