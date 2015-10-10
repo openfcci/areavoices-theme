@@ -7,7 +7,7 @@
 
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class('av-single-post'); ?>>
 	<header class="entry-header">
 		<div class="post-thumb-container">
 			<?php the_post_thumbnail( 'featured-image' ); ?>
