@@ -625,25 +625,25 @@ margin-top: 5px;
 
 #popular-posts-header { margin-top: 0px; margin-bottom: 30px; }
 
-.recent-post-widget{ margin-bottom: 25px; text-align: left; }
-.recent-post-widget:last-child{ margin-bottom: 0px; }
+.popular-post-widget{ margin-bottom: 25px; text-align: left; }
+.popular-post-widget:last-child{ margin-bottom: 0px; }
 
-.recent-post-widget .recent-post-widget-thumbnail img{ display: block; margin: 0px auto; }
-.recent-post-widget .recent-post-widget-thumbnail { max-width: 70px; float: left; margin-right: 20px; margin-bottom: 20px; }
+.popular-post-widget .popular-post-widget-thumbnail img{ display: block; margin: 0px auto; }
+.popular-post-widget .popular-post-widget-thumbnail { max-width: 70px; float: left; margin-right: 20px; margin-bottom: 20px; }
 
-.recent-post-widget .recent-post-widget-title{ font-family: Merriweather; font-size: 14px; font-weight: bold; margin-top: 2px; margin-bottom: 6px; }
+.popular-post-widget .popular-post-widget-title{ font-family: Merriweather; font-size: 14px; font-weight: bold; margin-top: 2px; margin-bottom: 6px; }
 
-.recent-post-widget .recent-post-widget-info{ line-height: 22px; }
-.recent-post-widget .recent-post-widget-info i{ font-size: 15px; margin-right: 9px; }
-.recent-post-widget .recent-post-widget-info .gdlr-seperator{ display: none; }
+.popular-post-widget .popular-post-widget-info{ line-height: 22px; }
+.popular-post-widget .popular-post-widget-info i{ font-size: 15px; margin-right: 9px; }
+.popular-post-widget .popular-post-widget-info .gdlr-seperator{ display: none; }
 
-.recent-post-widget .recent-post-widget-content{ overflow: hidden; line-height: 18.2px; margin-top: 5px; }
+.popular-post-widget .popular-post-widget-content{ overflow: hidden; line-height: 18.2px; margin-top: 5px; }
 /*
-.recent-post-widget .recent-post-widget-content{ border-bottom: 1px solid #d9d9d9; }
+.popular-post-widget .popular-post-widget-content{ border-bottom: 1px solid #d9d9d9; }
 .blog-info.blog-comment{ margin-bottom: 4px; }
 */
 
-.recent-post-widget .excerpt-read-more{ display: none; }
+.popular-post-widget .excerpt-read-more{ display: none; }
 
 /*-----------MEDIA QUERIES---------------*/
 
