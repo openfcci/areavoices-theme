@@ -430,6 +430,17 @@ input[type="text"] {
     margin-right: 0.3em;
 }
 
+.page-numbers:hover{
+  background-color: #424242;
+  color: #fff;
+  -webkit-transition: background-color 300ms ease, color 300ms ease; /* Safari and Chrome */
+    -moz-transition: background-color 300ms ease, color 300ms ease; /* Firefox */
+    -o-transition: background-color 300ms ease, color 300ms ease; /* IE 9 */
+    -ms-transition: background-color 300ms ease, color 300ms ease; /* Opera */
+    transition: background-color 300ms ease, color 300ms ease;
+
+}
+
 .page-numbers.next{
   margin-right: 0px;
 }
