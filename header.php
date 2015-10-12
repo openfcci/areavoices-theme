@@ -34,7 +34,7 @@
 				</div><!-- .site-info -->
 			</div><!-- .container -->
 		</div><!-- .site-branding .site-header-->
-
+		<?php if ( is_archive() ) { get_template_part( 'template-parts/header-title', 'header' ); } /*RV*/ ?>
 		<nav id="site-navigation" class="main-navigation" role="navigation">
 			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'areavoices' ); ?></button>
 			<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu', 'fallback_cb' => false ) ); ?>
@@ -42,6 +42,7 @@
 		<?php get_template_part( 'template-parts/google_ads', 'script' ); /*RV*/ ?>
 	</header><!-- #masthead -->
 
+		<?php //if ( is_archive() ) { get_template_part( 'template-parts/header-title', 'header' ); } /*RV*/ ?>
 		<?php get_template_part( 'template-parts/google_ads', 'header' ); /*RV*/ ?>
 
 	<div id="content" class="site-content container">
