@@ -7,16 +7,18 @@
 
 get_header(); ?>
 
-	<div id="primary" class="content-area">
+	<div id="fourohfour" class="content-area">
 		<main id="main" class="site-main" role="main">
 
 			<section class="error-404 not-found">
 				<header class="page-header">
-					<h1 class="page-title"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'areavoices' ); ?></h1>
+					<h1 id="fourohfour-title" class="page-title"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'areavoices' ); ?></h1>
 				</header><!-- .page-header -->
 
 				<div class="page-content">
-					<p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'areavoices' ); ?></p>
+					<p id="fourohfour-pic" align="middle"><img width="" height="" src="<?php /*RV*/ echo get_template_directory_uri(); ?>/images/404.gif"></p><!-- RSB AD: Start -->
+
+					<p align="middle"><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'areavoices' ); ?></p>
 
 					<?php get_search_form(); ?>
 

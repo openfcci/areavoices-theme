@@ -912,3 +912,18 @@ object {
     font-size: 1em !important;
     text-transform: uppercase;
 }
+
+#fourohfour {
+  background-color: #fff !important;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+#fourohfour-pic {
+  margin-bottom: 80px;
+}
+
+#fourohfour-title {
+  font-size: 2em !important;
+  padding-top: 20px;
+}
