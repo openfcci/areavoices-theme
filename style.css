@@ -729,17 +729,26 @@ i {
   overflow: scroll;
   width: 45%; }
 
-.comment-navigation .nav-previous::before,
-.posts-navigation .nav-previous::before,
-.post-navigation .nav-previous::before {
-  content: "\2190";
-  padding-right: .7em; }
+  .comment-navigation .nav-previous::before,
+  .posts-navigation .nav-previous::before,
+  .post-navigation .nav-previous::before {
+    content: "\e807";
+    font-family: avicons;
+    display: inline-block;
+    vertical-align: -3%;
+    padding-right: .7em;
+    color: #2d6cea; /*RV*/
+  }
 
-.comment-navigation .nav-next::after,
-.posts-navigation .nav-next::after,
-.post-navigation .nav-next::after {
-  content: "\2192";
-  padding-left: .7em; }
+  .comment-navigation .nav-next::after,
+  .posts-navigation .nav-next::after,
+  .post-navigation .nav-next::after {
+    content: "\e809";
+    font-family: avicons;
+    vertical-align: -3%;
+    padding-left: .7em;
+    color: #2d6cea; /*RV*/
+  }
 
 input.search-field {
   width: 100%; }
