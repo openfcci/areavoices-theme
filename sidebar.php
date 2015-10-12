@@ -25,14 +25,14 @@ if ( ! is_active_sidebar( 'sidebar-1' ) ) {
 
 	<!-- POPULAR POSTS WIDGET -->
 	<?php
-		if ( is_front_page() ) {
+		if ( is_front_page() ) { //show only one front page
 			get_template_part( 'inc/widgets/popular-posts-widget', 'popular-posts-widget' );
 	  }
 	?>
 
 	<!-- RECENT POSTS WIDGET -->
 	<?php
-		if ( is_single() ) {
+		if ( !is_front_page() ) { //Show on all pages except front
 			get_template_part( 'inc/widgets/recent-posts-widget', 'recent-posts-widget' );
 		}
 	?>
