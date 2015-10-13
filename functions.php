@@ -130,14 +130,22 @@ add_action( 'wp_enqueue_scripts', 'areavoices_scripts' );
 
 /**
  * Implement the Custom Header feature.
+ * Source: https://codex.wordpress.org/Custom_Headers
  */
 require get_template_directory() . '/inc/custom-header.php';
 $args = array(
+	//'default-image' => get_template_directory_uri() . '/images/header.jpg', /*RV*/
 	'flex-width'    => true,
 	'width'         => 1000,
-	'flex-height'    => true,
+	'flex-height'  	=> true,
 	'height'        => 250,
-	'default-image' => get_template_directory_uri() . '/images/header.jpg',
+	'uploads'				=> true,
+	//'header-text'		=> true, /*RV*/
+	//'default-text-color'     => '',
+	//'random-default'         => false,
+	//'wp-head-callback'       => '',
+	//'admin-head-callback'    => '',
+	//'admin-preview-callback' => '',
 );
 add_theme_support( 'custom-header', $args );
 

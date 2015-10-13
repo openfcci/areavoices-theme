@@ -24,7 +24,7 @@
 function areavoices_custom_header_setup() {
 	add_theme_support( 'custom-header', apply_filters( 'areavoices_custom_header_args', array(
 		'default-image'          => '',
-		'default-text-color'     => '000000',
+		'default-text-color'     => '3d3d3d',
 		'width'                  => 1000,
 		'height'                 => 250,
 		'flex-height'            => true,
