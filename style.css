@@ -928,3 +928,11 @@ object {
   font-size: 2em !important;
   padding-top: 20px;
 }
+
+#aboutme_pic {
+  border-style: solid;
+  border-width: 6px;
+  border-color: #E4E4E4;
+  width: 161px;
+  height: 161px;
+}
