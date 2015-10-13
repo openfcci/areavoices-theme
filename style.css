@@ -893,3 +893,46 @@ object {
 @media only screen and (max-width: 419px) {
   body .container {
     max-width: 395px; } }
+
+
+/*--------------------------------------------------------------
+# CUSTOM (RV)
+--------------------------------------------------------------*/
+
+/* 404.php */
+.page-header-row {
+    width: 50%;
+    margin: 0 auto;
+}
+
+.page-title {
+    margin: 0px;
+    text-align: center;
+    font-family: Arvo;
+    font-weight: 300;
+    font-size: 1em !important;
+    text-transform: uppercase;
+}
+
+#fourohfour {
+  background-color: #fff !important;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+#fourohfour-pic {
+  margin-bottom: 80px;
+}
+
+#fourohfour-title {
+  font-size: 2em !important;
+  padding-top: 20px;
+}
+
+#aboutme_pic {
+  border-style: solid;
+  border-width: 6px;
+  border-color: #E4E4E4;
+  width: 161px;
+  height: 161px;
+}

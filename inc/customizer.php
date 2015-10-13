@@ -207,6 +207,15 @@ function areavoices_customize_register( $wp_customize ) {
 			'section'  => 'bio_section',
 			'settings' => 'av_aboutme_avatar',
 	)));
+  // Bio Pic Border \\
+        $wp_customize->add_setting( 'av_aboutme_imgborder', array(
+            'default'        => '1', // Returns '1' if checked, nothing (because false) if unchecked
+        ) );
+        $wp_customize->add_control( 'av_aboutme_imgborder', array(
+            'label'   => 'Display border on profile picture',
+            'section' => 'bio_section',
+            'type'    => 'checkbox',
+        ) );
 	// Bio Name \\
 	$wp_customize->add_setting('av_aboutme_username', array(
 	    'default' => 'My Name is _____', // Default custom text
