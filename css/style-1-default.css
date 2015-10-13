@@ -137,6 +137,11 @@ Template:       areavoices-theme
 a {
   color: #2d6cea;
   text-decoration: none; }
+
+ul, ol {
+  margin-left: 0;
+  margin-right: 0;
+}
 body {
   /* background-image: url("../areavoices-theme/images/avbackground.jpg") !important; */
   font-family: Arvo;
