@@ -55,15 +55,26 @@
 				while($query->have_posts()){ $query->the_post(); $count--;
 					if( $count == 0 ){ $last = 'av-last'; }
 					echo '<div class="recent-post-widget av-style-1 ' . $last . '">';
-					$thumbnail = av_get_image(get_post_thumbnail_id(), 'medium');
+					$thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), array( 5600,1000 ), false, '' );
+                    $category = get_the_category();
 					if( !empty($thumbnail) ){
-						echo '<div class="recent-post-widget-thumbnail"><a href="' . get_permalink() . '" >' . $thumbnail . '</a></div>';
+						echo '
+                        <div class="recent-post-widget-thumbnail" style="background: url('. $thumbnail[0] .') no-repeat center center; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;"">
+                        <a class ="recent-post-widget-link" href="' . get_permalink() . '" ></a>
+                            <div class="recent-post-widget-content">
+                                <div class="recent-post-widget-text">
+                                    <div class="img-cat-contain left"><span class="img-cat left">' . esc_html( $category[0]->cat_name ) . '</span></div>
+                                    <h4 class="recent-post-widget-title">
+                                        ' . get_the_title() . '
+                                        
+                                    </h4>
+                                    <div class="recent-post-widget-info">' . get_post_time('d M Y', true)  . '
+                                    </div>
+                                </div>
+                            </div>
+                        </div>';
 					}
-					echo '<div class="recent-post-widget-content">';
-					echo '<h4 class="recent-post-widget-title"><a href="' . get_permalink() . '" >' . get_the_title() . '</a></h4>';
-					echo '<div class="recent-post-widget-info">' . '<a href="' . get_day_link( get_post_time('Y'), get_post_time('m'), get_post_time('d') ) . '">' . get_post_time('d M Y', true) . '</a>' . '</div>';
-          echo '<div class="recent-post-widget-excerpt">' . get_the_excerpt() . '</div>';
-          echo '</div>';
+					
 					echo '<div class="clear"></div>';
 					echo '</div>';
 				}
