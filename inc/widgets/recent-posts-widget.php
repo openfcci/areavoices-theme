@@ -60,7 +60,7 @@
 					if( !empty($thumbnail) ){
 						echo '
                         <div class="recent-post-widget-thumbnail" style="background: url('. $thumbnail[0] .') no-repeat center center; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;"">
-                        <a class ="recent-post-widget-link" href="' . get_permalink() . '" ></a>
+                        <a class ="recent-post-widget-link" href="' . get_permalink() . '" ><div class="recent-post-widget-more">READ MORE</div></a>
                             <div class="recent-post-widget-content">
                                 <div class="recent-post-widget-text">
                                     <div class="img-cat-contain left"><span class="img-cat left">' . esc_html( $category[0]->cat_name ) . '</span></div>
