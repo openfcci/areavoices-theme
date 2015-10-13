@@ -182,11 +182,11 @@ add_filter('excerpt_more', 'areavoices_excerpt_more');
 /**************SHORTCODES***************/
 
 /**
-* Blockquote shortcode
+* block quote shortcode
 */
 
-// function quote( $atts, $content = null ) {
-//     return '<div class="blockquote"><span class="avicon-quotes-right article-quote"></span>'.$content.'</div>';
-// }
-// add_shortcode("quote", "quote");
+function quote( $atts, $content = null ) {
+    return '<div class="blockquote"><span class="avicon-quotes-right article-quote"></span>'.$content.'</div>';
+}
+add_shortcode("quote", "quote");
 
