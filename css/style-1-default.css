@@ -231,6 +231,22 @@ img{
 }
 
 
+.article-quote{
+  font-size: 30px;
+  margin-right: 8px;
+  color: #383838;
+  vertical-align: 10px;
+}
+
+.blockquote{
+  font-size: 30px;
+  color: #666;
+  margin-top: 15px;
+  margin-bottom: 22.5px;
+  line-height: 1.5em;
+}
+
+
 /* --------- CONTENT ARTICLE---------- */
 .post-thumb-container {
     overflow: hidden;
