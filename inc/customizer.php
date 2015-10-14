@@ -59,7 +59,7 @@ function areavoices_customize_register( $wp_customize ) {
 	$wp_customize->remove_section('themes'); //Remove the 'Choose Active Theme' Section
 	$wp_customize->remove_section('colors'); //Remove the 'Colors' Section ( Header Text Color | Background Color )
 	$wp_customize->remove_section('static_front_page'); //Remove the 'Static Front Page' Section
-	$wp_customize->remove_section('background_image'); //Remove the 'Background Image' Section
+	//$wp_customize->remove_section('background_image'); //Remove the 'Background Image' Section
 
 
 	/**
@@ -202,10 +202,16 @@ function areavoices_customize_register( $wp_customize ) {
 		'capability'        => 'edit_theme_options',
 		//'type'           => 'option',
 	));
-	$wp_customize->add_control( new WP_Customize_Image_Control($wp_customize, 'image_upload_test', array(
+	$wp_customize->add_control( new WP_Customize_Image_Control($wp_customize, 'av_aboutme_avatar', array(
 			'label'    => __('Profile Picture', 'areavoices'),
 			'section'  => 'bio_section',
 			'settings' => 'av_aboutme_avatar',
+      //'context'    => 'your_setting_context'
+      'priority'    => 0,
+  		'flex_width'  => true,
+  		'flex_height' => true,
+  		'width'       => 160,
+  		'height'      => 160,
 	)));
   // Bio Pic Border \\
         $wp_customize->add_setting( 'av_aboutme_imgborder', array(
@@ -300,12 +306,59 @@ function areavoices_customize_register( $wp_customize ) {
 	    'type' => 'text', // Type of control: text input
 	));
 
-
-
-
-//End FCC Custom
 }
 add_action( 'customize_register', 'areavoices_customize_register' );
+
+
+/************************
+ * Avatar Image Cropper
+ ************************
+ */
+
+add_action( 'customize_register', 'avatar_image_cropper_register', 11 ); // after core
+
+/**
+ * Replace the core avatar image control with one that supports cropping.
+ */
+function avatar_image_cropper_register( $wp_customize ) {
+	class WP_Customize_Cropped_Avatar_Image_Control extends WP_Customize_Cropped_Image_Control {
+		public $type = 'avatar';
+
+		function enqueue() {
+			wp_enqueue_script( 'avatar-image-cropper', get_template_directory_uri()  . '/js/avatar-image-cropper.js', array( 'jquery', 'customize-controls' ) );
+		}
+
+		/**
+		 * Refresh the parameters passed to the JavaScript via JSON.
+		 */
+		public function to_json() {
+			parent::to_json();
+
+			$value = $this->value();
+			if ( $value ) {
+				// Get the attachment model for the existing file.
+				$attachment_id = attachment_url_to_postid( $value );
+				if ( $attachment_id ) {
+					$this->json['attachment'] = wp_prepare_attachment_for_js( $attachment_id );
+				}
+			}
+		}
+	}
+
+	$wp_customize->register_control_type( 'WP_Customize_Cropped_Avatar_Image_Control' );
+
+	$wp_customize->remove_control( 'av_aboutme_avatar' );
+	$wp_customize->add_control( new WP_Customize_Cropped_Avatar_Image_Control( $wp_customize, 'av_aboutme_avatar', array(
+		//'section'     => 'avatar_image',
+		'section'     => 'bio_section',
+		'label'       => __( 'Profile Picture' ),
+		'priority'    => 0,
+		'flex_width'  => true,
+		'flex_height' => true,
+		'width'       => 160,
+		'height'      => 160,
+	) ) );
+}
 
 /**
  * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.
