@@ -142,6 +142,56 @@ ul, ol {
   margin-left: 0;
   margin-right: 0;
 }
+
+li ul, li ol {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+blockquote{
+  font-size: 25px;
+  color: #777;
+  margin-top: 15px;
+  margin-bottom: 22.5px;
+  line-height: 1.25em;
+}
+
+blockquote:before{
+  font-family: 'avicons';
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  content: "\e621";
+  display: inline;
+  float: left;
+  font-size: 28px;
+  margin-right: 10px;
+  color: #383838;
+  margin-top: -8px;
+}
+table th{
+  font-size: 18px;
+  color: #fff;
+  background-color: #ccc;
+  text-align: left;
+  padding: 10px 15px;
+}
+
+table td{
+  padding: 10px 15px;
+  border-bottom: 1px solid #ccc;
+}
+
+pre{
+  background-color: #ebebeb;
+}
+
 body {
   /* background-image: url("../areavoices-theme/images/avbackground.jpg") !important; */
   font-family: Arvo;
@@ -232,18 +282,19 @@ img{
 
 
 .article-quote{
-  font-size: 30px;
-  margin-right: 8px;
+  vertical-align: 8px;
+  font-size: 28px;
+  margin-right: 10px;
   color: #383838;
-  vertical-align: 10px;
+  
 }
 
 .blockquote{
-  font-size: 30px;
+  font-size: 25px;
   color: #666;
   margin-top: 15px;
   margin-bottom: 22.5px;
-  line-height: 1.5em;
+  line-height: 1.25em;
 }
 
 
