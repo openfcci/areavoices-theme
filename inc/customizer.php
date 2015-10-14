@@ -52,6 +52,7 @@ function areavoices_customize_register( $wp_customize ) {
 	$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
 	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
 	$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
+  //$wp_customize->get_setting( 'av_aboutme_username' )->transport = 'postMessage';
 
 	/**
 	* Remove Default Customizer Sections
@@ -59,60 +60,16 @@ function areavoices_customize_register( $wp_customize ) {
 	$wp_customize->remove_section('themes'); //Remove the 'Choose Active Theme' Section
 	$wp_customize->remove_section('colors'); //Remove the 'Colors' Section ( Header Text Color | Background Color )
 	$wp_customize->remove_section('static_front_page'); //Remove the 'Static Front Page' Section
-	//$wp_customize->remove_section('background_image'); //Remove the 'Background Image' Section
+	$wp_customize->remove_section('background_image'); //Remove the 'Background Image' Section
+  
 
 
 	/**
 	* Start FCC Custom
 	*/
 
-	/* Color Picker Example */
-	/* $wp_customize->add_section( 'areavoices_new_section_name' , array(
-    'title'      => __( 'Visible Section Name', 'areavoices' ),
-    'priority'   => 30,
-	));
-	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'link_color', array(
-		'label'        => __( 'Header Color', 'areavoices' ),
-		'section'    => 'areavoices_new_section_name',
-		'settings'   => 'header_textcolor',
-	)));
-	$wp_customize->add_setting( 'header_textcolor' , array(
-    'default'     => '#000000',
-    'transport'   => 'refresh',
-	)); */
-
-	/* Design Layout */
-	/* $wp_customize->add_section(
-				'fcc_design_section',
-				array(
-						'title' => 'Design',
-						'description' => 'Choose a design for the theme.',
-						'priority' => 12,
-				)
-		);
-	$wp_customize->add_setting(
-			'fcc_design_layout',
-			array(
-					'default' => 'Design 1',
-			)
-	);
-	$wp_customize->add_control(
-			'fcc_design_layout',
-			array(
-					'type' => 'select',
-					'label' => 'Design:',
-					'section' => 'fcc_design_section',
-					'choices' => array(
-							'design-1' => 'Design 1',
-							'design-2' => 'Design 2',
-							'design-3' => 'Design 3',
-							'design-4' => 'Design 4',
-					),
-			)
-	); */
-
 	/* Design & Layout */
-	$wp_customize->add_section(
+	/* $wp_customize->add_section(
         'fcc_design_layout_section',
         array(
             'title' => 'Design & Layout',
@@ -183,7 +140,7 @@ function areavoices_customize_register( $wp_customize ) {
 		            'fcc-post-layout-tiled-featured' => 'Tiled w. Featured Content',
 		        ),
 		    )
-		);
+		); */
 
 
 	/* Author Bio */
