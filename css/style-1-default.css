@@ -154,6 +154,8 @@ blockquote{
   margin-top: 15px;
   margin-bottom: 22.5px;
   line-height: 1.25em;
+  margin-left: 20px;
+  margin-right: 20px;
 }
 
 blockquote:before{
