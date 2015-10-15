@@ -1012,10 +1012,14 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', e
     width: 100%;
   }
 
+  .site-header{
+    padding-bottom: 0px;
+  }
+
   .main-navigation .nav-menu{
     max-height: 0px;
     overflow:hidden;
-    margin-top: 20px;
+    margin-top: 10px;
     -webkit-transition: 800ms ease; /* Safari and Chrome */
     -moz-transition: 800ms ease; /* Firefox */
     -o-transition: 800ms ease; /* IE 9 */
@@ -1024,24 +1028,45 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', e
   }
 
   .main-navigation.toggled .nav-menu{
-    max-height: 800px;
-    margin-top: 20px;
-    -webkit-transition: 800ms ease; /* Safari and Chrome */
-    -moz-transition: 800ms ease; /* Firefox */
-    -o-transition: 800ms ease; /* IE 9 */
-    -ms-transition: 800ms ease; /* Opera */
-    transition: 800ms ease;
+    max-height: 1000px;
+    margin-top: 10px;
+    -webkit-transition: 1s ease; /* Safari and Chrome */
+    -moz-transition: 1s ease; /* Firefox */
+    -o-transition: 1s ease; /* IE 9 */
+    -ms-transition: 1s ease; /* Opera */
+    transition: 1s ease;
   }
 
   .main-navigation ul li{
     width: 100%;
     margin: 0;
-    padding: 0;
+    padding: 5px 0;
+    border-bottom: solid 1px #ebebeb;
+  }
+
+  .main-navigation ul li:last-child{
+    border-bottom: none;
   }
   .main-navigation ul li a:after{
     content: "";
     margin: 0;
     padding: 0;
+  }
+
+  .menu-toggle{
+    border: none;
+    margin: auto;
+  }
+
+  .menu-toggle:active, .menu-toggle:focus{
+    border: none;
+    color: #000;
+    background-color: transparent;
+    outline: 0;
+  }
+
+  .menu-toggle .avicon-menu:before{
+    font-size: 35px;
   }
 }
 
