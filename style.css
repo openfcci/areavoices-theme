@@ -883,6 +883,10 @@ object {
 /*--------------------------------------------------------------
 # Media Queries
 --------------------------------------------------------------*/
+/*--- mobile portrait style ---*/
+@media only screen and (max-width: 1000px) {
+}
+
 @media (max-width: 1000px) {
   #primary,
   #secondary {
@@ -890,9 +894,56 @@ object {
     margin-right: auto;
     width: 100%; } }
 /*--- mobile portrait style ---*/
-@media only screen and (max-width: 419px) {
+@media (max-width: 419px) {
+
   body .container {
-    max-width: 395px; } }
+    max-width: 395px;
+  }
+  .container {
+    padding-left: 0.625em;
+    padding-right: 0.625em;
+  }
+  .entry-content, .entry-meta, .entry-title {
+    padding-left: 0em;
+    padding-right: 0em;
+  }
+  article {
+    /* padding: 0.9375em !important; */ /*RV*/
+    padding: 1.75em !important;
+  }
+  p, ul, a {
+    font-size: 0.866667em;
+  }
+  h1.entry-title {
+    font-size: 1.25em !important;
+  }
+  .site-description a {
+    font-size: 1em !important;
+  }
+  #post-author, #post-category, #post-date span.separator {
+    display: none;
+  }
+
+  /* Alternate Flush-White Mobile Layout */
+  /*
+  body {
+    background-color: #ffffff !important;
+    background: #ffffff !important;
+    background-image: none;
+  }
+  article {
+    padding: 0em !important;
+  }
+  aside, .comments-area {
+    border-bottom: 0px !important;
+  }
+  .entry-content, .entry-meta, .entry-title {
+    padding-left: 0em;
+    padding-right: 0em;
+  }
+  */
+
+}
 
 
 /*--------------------------------------------------------------

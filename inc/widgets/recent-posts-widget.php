@@ -6,7 +6,7 @@
  ?>
 
  <!-- RECENT POSTS WIDGET: Begin -->
- <aside>
+ <aside id="av-recent-posts-widget" class="widget widget_search">
    <div>
      <?php
      global $theme_option;
@@ -66,7 +66,7 @@
                                     <div class="img-cat-contain left"><span class="img-cat left">' . esc_html( $category[0]->cat_name ) . '</span></div>
                                     <h4 class="recent-post-widget-title">
                                         ' . get_the_title() . '
-                                        
+
                                     </h4>
                                     <div class="recent-post-widget-info">' . get_post_time('d M Y', true)  . '
                                     </div>
@@ -74,7 +74,7 @@
                             </div>
                         </div>';
 					}
-					
+
 					echo '<div class="clear"></div>';
 					echo '</div>';
 				}

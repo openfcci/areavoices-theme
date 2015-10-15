@@ -22,16 +22,16 @@
 		<?php if ( 'post' == get_post_type() ) : ?>
 		<div class="entry-meta">
 			<span class="post-info">
-				<span class="avicon-av-calendar"></span>
+				<span id="post-date" class="avicon-av-calendar"></span>
 				<a href="<?php echo get_day_link( get_the_time('Y'), get_the_time('m'), get_the_time('d')); ?>"><?php the_time( 'j F Y' ); ?></a>
 				<span class="separator">/</span>
 			</span>
-			<span class="post-info">
+			<span id="post-author" class="post-info">
 				<span class="avicon-person"></span>
 				<?php the_author_posts_link(); ?>
 				<span class="separator">/</span>
 			</span>
-			<span class="post-info">
+			<span id="post-category" class="post-info">
 				<span class="avicon-folder_open"></span>
 				<?php the_category( ', ' ); ?>
 				<span class="separator">/</span>
