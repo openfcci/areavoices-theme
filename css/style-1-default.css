@@ -130,6 +130,43 @@ Template:       areavoices-theme
   line-height: 1;
   margin: 0px;
 }
+
+.main-navigation{
+    
+    margin: auto;
+    text-align: center;
+    float: none;
+    font-family: "Merriweather";
+}
+
+.main-navigation ul {
+  display: inline-block;
+
+}
+.main-navigation ul li {
+  margin-right: 30px;
+  text-transform: uppercase;
+  font-size: 16px;
+  letter-spacing: 2px;
+
+}
+
+.main-navigation ul li a:after{
+content: "/";
+display: inline;
+font-weight: 900;
+color: #ebebeb;
+margin-left: 30px;
+font-size: 20px;
+}
+
+.main-navigation ul li:last-child{
+  margin-right: 0px;
+}
+.main-navigation ul li:last-child > a:after{
+  content: "";
+  margin-left: 0px;
+}
 .site-content
 {
   /* padding-top: 1em; */ /*RV*/
@@ -950,6 +987,38 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', e
   }
   .comment-body{
     width: 100%;
+  }
+
+  .main-navigation .nav-menu{
+    max-height: 0px;
+    overflow:hidden;
+    margin-top: 20px;
+    -webkit-transition: 800ms ease; /* Safari and Chrome */
+    -moz-transition: 800ms ease; /* Firefox */
+    -o-transition: 800ms ease; /* IE 9 */
+    -ms-transition: 800ms ease; /* Opera */
+    transition: 800ms ease;
+  }
+
+  .main-navigation.toggled .nav-menu{
+    max-height: 800px;
+    margin-top: 20px;
+    -webkit-transition: 800ms ease; /* Safari and Chrome */
+    -moz-transition: 800ms ease; /* Firefox */
+    -o-transition: 800ms ease; /* IE 9 */
+    -ms-transition: 800ms ease; /* Opera */
+    transition: 800ms ease;
+  }
+
+  .main-navigation ul li{
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  .main-navigation ul li a:after{
+    content: "";
+    margin: 0;
+    padding: 0;
   }
 }
 

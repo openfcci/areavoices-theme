@@ -50,8 +50,8 @@
 			</div><!-- .container -->
 		</div><!-- .site-branding .site-header-->
 		<?php if ( is_archive() ) { get_template_part( 'template-parts/header-title', 'header' ); } /*RV*/ ?>
-		<nav id="site-navigation" class="main-navigation" role="navigation">
-			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'areavoices' ); ?></button>
+		<nav id="site-navigation" class="main-navigation container" role="navigation">
+			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><span class=""></span></button>
 			<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu', 'fallback_cb' => false ) ); ?>
 		</nav><!-- #site-navigation -->
 		<?php get_template_part( 'template-parts/google_ads', 'script' ); /*RV*/ ?>
