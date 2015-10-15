@@ -911,8 +911,11 @@ object {
     /* padding: 0.9375em !important; */ /*RV*/
     padding: 1.75em !important;
   }
-  p, ul, a {
+  p, ol, ul, a {
     font-size: 0.866667em;
+  }
+  .blockquote, .article-quote {
+    font-size: 1.1em !important;
   }
   h1.entry-title {
     font-size: 1.25em !important;
@@ -922,6 +925,16 @@ object {
   }
   #post-author, #post-category, #post-date span.separator {
     display: none;
+  }
+  .aboutme_username, .aboutme_description {
+    font-size: 0.866667em !important;
+  }
+  .av-home.av-jp-social a.sd-button:before {
+      font: 400 21px/1 Genericons !important;
+  }
+  a.av-contrib-button {
+    padding: 12px 15px !important;
+    font-size: 11px !important;
   }
 
   /* Alternate Flush-White Mobile Layout */

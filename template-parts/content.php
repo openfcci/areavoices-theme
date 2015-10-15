@@ -42,6 +42,7 @@
 				the_title( '<span class="screen-reader-text">"', '"</span>', false )
 			) );
 			if( function_exists('zilla_likes') ){ zilla_likes(); }
+			echo '<div class="clear"></div>';
 		?>
 
 		<?php

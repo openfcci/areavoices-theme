@@ -55,13 +55,14 @@ function areavoices_customize_register( $wp_customize ) {
   //$wp_customize->get_setting( 'av_aboutme_username' )->transport = 'postMessage';
 
 	/**
-	* Remove Default Customizer Sections
+	* Remove Default Customizer Sections site_icon
 	*/
 	$wp_customize->remove_section('themes'); //Remove the 'Choose Active Theme' Section
 	$wp_customize->remove_section('colors'); //Remove the 'Colors' Section ( Header Text Color | Background Color )
 	$wp_customize->remove_section('static_front_page'); //Remove the 'Static Front Page' Section
 	$wp_customize->remove_section('background_image'); //Remove the 'Background Image' Section
-  
+  $wp_customize->remove_setting('site_icon'); // Remove the 'Site Icon' setting option
+
 
 
 	/**
@@ -147,7 +148,7 @@ function areavoices_customize_register( $wp_customize ) {
 	$wp_customize->add_section(
 		'bio_section', // Section ID to use in Option Table
 		array( // Arguments array
-			'title' => __( 'About Me', 'areavoices' ), // Translatable text, change the text domain to your own
+			'title' => __( 'Profile', 'areavoices' ), // Translatable text, change the text domain to your own
 			'priority' => 12,
 			'description' => __( 'Allows you to edit your themes layout.', 'areavoices' )
 		)
