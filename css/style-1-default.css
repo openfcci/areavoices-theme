@@ -132,7 +132,7 @@ Template:       areavoices-theme
 }
 
 .main-navigation{
-    
+
     margin: auto;
     text-align: center;
     float: none;
@@ -201,7 +201,7 @@ li ul, li ol {
 
 blockquote{
   font-size: 25px;
-  color: #777;
+  color: #383838;
   margin-top: 15px;
   margin-bottom: 22.5px;
   line-height: 1.25em;
@@ -225,7 +225,7 @@ blockquote:before{
   float: left;
   font-size: 28px;
   margin-right: 10px;
-  color: #383838;
+  color: #777;
   margin-top: -8px;
 }
 table th{

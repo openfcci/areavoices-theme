@@ -907,6 +907,24 @@ object {
     padding-left: 0em;
     padding-right: 0em;
   }
+  h1 {
+  font-size: 1.3333em;
+  }
+  h2 {
+  font-size: 1.2em;
+  }
+  h3 {
+  font-size: 1.066666em;
+  }
+  h4 {
+  font-size: 0.93333em;
+  }
+  h5 {
+  font-size: 0.8em;
+  }
+  h6 {
+  font-size: 0.66666666em;
+  }
   article {
     /* padding: 0.9375em !important; */ /*RV*/
     padding: 1.75em !important;
@@ -916,6 +934,12 @@ object {
   }
   .blockquote, .article-quote {
     font-size: 1.1em !important;
+  }
+  blockquote p {
+    font-size: 16px !important;
+  }
+  blockquote:before {
+    font-size: 18px !important;
   }
   h1.entry-title {
     font-size: 1.25em !important;
