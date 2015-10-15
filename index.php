@@ -17,9 +17,11 @@ get_header(); ?>
 		<main id="main" class="site-main" role="main">
 
 		<?php if ( have_posts() ) : ?>
+		<?php //$my_query = new WP_Query( 'posts_per_page=5' ); ?>
 
 			<?php /* Start the Loop */ ?>
 			<?php while ( have_posts() ) : the_post(); ?>
+			<?php //while ( $my_query->have_posts() ) : $my_query->the_post(); ?>
 
 				<?php
 

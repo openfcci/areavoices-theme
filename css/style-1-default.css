@@ -841,10 +841,20 @@ margin-top: 5px;
 
 /*----------- POPULAR POSTS WIDGET --------------*/
 
-#popular-posts-header { margin-top: 0px; margin-bottom: 30px; }
+#av-popular-posts-widget {
+  padding-top: 0px !important;
+  padding-bottom: 0px !important;
+  border-bottom: 0px !important;
+}
+#popular-posts-header {
+  padding-top: 30px;
+  margin-bottom: 30px; }
+.popular-post-widget.av-last {
+  padding-bottom: 30px !important;
+}
 
-.popular-post-widget{ margin-bottom: 25px; text-align: left; }
-.popular-post-widget:last-child{ margin-bottom: 0px; }
+.popular-post-widget{ margin-bottom: 25px; min-height: 70px; text-align: left; }
+.popular-post-widget:last-child{ margin-bottom: 30px; }
 
 .popular-post-widget .popular-post-widget-thumbnail img{ display: block; margin: 0px auto; }
 .popular-post-widget .popular-post-widget-thumbnail { max-width: 70px; float: left; margin-right: 20px; margin-bottom: 20px; }
@@ -864,6 +874,19 @@ margin-top: 5px;
 .popular-post-widget .excerpt-read-more{ display: none; }
 
 /*--------- RECENT POSTS WIDGET ----------------*/
+
+#av-recent-posts-widget {
+  padding-top: 0px !important;
+  padding-bottom: 0px !important;
+  border-bottom: 0px !important;
+}
+#recent-posts-header {
+  padding-top: 30px;
+  margin-bottom: 30px; }
+.popular-post-widget.av-last {
+  padding-bottom: 30px !important;
+}
+
 
 .recent-post-widget-thumbnail
 {

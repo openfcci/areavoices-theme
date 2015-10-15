@@ -59,7 +59,7 @@
          echo '<div class="clear" style="height:0px;"></div>';
          echo '</div>'; // popular-post-widget
        }
-       echo '<div class="clear"></div>';
+       //echo '<div class="clear"></div>';
        echo '</div>';
      }
      wp_reset_postdata();
