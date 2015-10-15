@@ -139,6 +139,10 @@ Template:       areavoices-theme
     font-family: "Merriweather";
 }
 
+.main-navigation.toggled ul{
+  display: inline-block;
+}
+
 .main-navigation ul {
   display: inline-block;
 
@@ -1040,6 +1044,11 @@ margin-left: 15px;
     -o-transition: 1s ease; /* IE 9 */
     -ms-transition: 1s ease; /* Opera */
     transition: 1s ease;
+  }
+
+  .menu-toggle, .main-navigation.toggled ul
+  {
+    display: block;
   }
 
   .main-navigation ul li{
