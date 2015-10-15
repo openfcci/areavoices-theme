@@ -1012,6 +1012,34 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', e
     width: 100%;
   }
 
+  
+}
+
+@media only screen and (max-width: 340px) {
+  .site-title {
+    font-size: 2.75em;
+  }
+  .site-description {
+    font-size: 1.5em;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+
+.main-navigation ul li
+{
+  font-size: 14px;
+  margin-right: 15px;
+
+}
+
+.main-navigation ul li a:after{
+margin-left: 15px;
+}
+
+}
+
+@media only screen and (max-width: 599px) {
   .site-header{
     padding-bottom: 0px;
   }
@@ -1051,6 +1079,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', e
     content: "";
     margin: 0;
     padding: 0;
+    margin-right: 0px;
+    margin-left: 0px;
   }
 
   .menu-toggle{
@@ -1070,11 +1100,3 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', e
   }
 }
 
-@media only screen and (max-width: 340px) {
-  .site-title {
-    font-size: 2.75em;
-  }
-  .site-description {
-    font-size: 1.5em;
-  }
-}
