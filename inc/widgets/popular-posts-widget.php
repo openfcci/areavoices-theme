@@ -6,7 +6,7 @@
  ?>
 
  <!-- POPULAR POSTS WIDGET: Begin -->
- <aside>
+ <aside id="av-popular-posts-widget" class="widget widget_search">
    <div>
      <?php
      global $theme_option;

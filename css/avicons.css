@@ -1,10 +1,10 @@
 @font-face {
 	font-family: 'avicons';
-	src:url('fonts/avicons.eot?ajmpsr');
-	src:url('fonts/avicons.eot?ajmpsr#iefix') format('embedded-opentype'),
-		url('fonts/avicons.ttf?ajmpsr') format('truetype'),
-		url('fonts/avicons.woff?ajmpsr') format('woff'),
-		url('fonts/avicons.svg?ajmpsr#avicons') format('svg');
+	src:url('fonts/avicons.eot?cnz1ue');
+	src:url('fonts/avicons.eot?cnz1ue#iefix') format('embedded-opentype'),
+		url('fonts/avicons.ttf?cnz1ue') format('truetype'),
+		url('fonts/avicons.woff?cnz1ue') format('woff'),
+		url('fonts/avicons.svg?cnz1ue#avicons') format('svg');
 	font-weight: normal;
 	font-style: normal;
 }
@@ -71,6 +71,12 @@
 .avicon-cogs:before {
 	content: "\e623";
 }
+.avicon-menu2:before {
+	content: "\e627";
+}
+.avicon-menu3:before {
+	content: "\e80b";
+}
 .avicon-share2:before {
 	content: "\e628";
 }
@@ -98,11 +104,11 @@
 .avicon-arrow-long-right:before {
 	content: "\e809";
 }
+.avicon-arrow-long-left2:before {
+	content: "\e80a";
+}
 .avicon-instagram-with-circle:before {
 	content: "\e805";
-}
-.avicon-email:before {
-	content: "\e04c";
 }
 .avicon-email:before {
 	content: "\e04c";
@@ -112,6 +118,9 @@
 }
 .avicon-folder_open:before {
 	content: "\e102";
+}
+.avicon-menu:before {
+	content: "\e20e";
 }
 .avicon-person:before {
 	content: "\e253";
@@ -200,4 +209,3 @@
 .avicon-heart2:before {
 	content: "\e613";
 }
-

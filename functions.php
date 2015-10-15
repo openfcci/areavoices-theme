@@ -189,4 +189,3 @@ function quote( $atts, $content = null ) {
     return '<div class="blockquote"><span class="avicon-quotes-right article-quote"></span>'.$content.'</div>';
 }
 add_shortcode("quote", "quote");
-
