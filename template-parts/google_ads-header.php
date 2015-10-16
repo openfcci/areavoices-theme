@@ -11,7 +11,7 @@
 <!-- GOOGLE HEADER AD: Begin -->
 <div id="header-banner" class="banner">
 	 <div id="fcc-areavoices-header-ad" align="center">
-		<div id="leaderboard-top-ad">
+		<div id="leaderboard-top-ad" class="leaderboard-top-ad" >
 			<script type="text/javascript">
 				googletag.display('leaderboard-top-ad');
 			</script>

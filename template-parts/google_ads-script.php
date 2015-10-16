@@ -46,18 +46,18 @@
 <script type='text/javascript'>
 // Define ad spots
 googletag.cmd.push(function() {
-var leaderboard-top-ad_mapping = googletag.sizeMapping().
+var leaderboard_top_ad_mapping = googletag.sizeMapping().
 addSize([960, 0], [[960, 200],[728, 90]]).
 addSize([728, 0], [728, 90]).
 addSize([0, 0], [[320, 100], [320, 50], [300, 50]]).
 build();
 
-var sidebar-ad_mapping = googletag.sizeMapping().
+var sidebar_ad_mapping = googletag.sizeMapping().
 addSize([0, 0], [300, 250]).
 build();
 
-gptAdSlots0=googletag.defineSlot('/7021/fcc.forum/fccnn', [300, 50], 'leaderboard-top-ad').defineSizeMapping(leaderboard-top-ad_mapping).setTargeting('loc', 'atf').setTargeting('kw', ['homepage']).addService(googletag.pubads());
-gptAdSlots1=googletag.defineSlot('/7021/fcc.forum/fccnn', [300, 250], 'first-sidebar-ad').defineSizeMapping(sidebar-ad_mapping).setTargeting('loc', 'atf').setTargeting('kw', ['homepage']).addService(googletag.pubads());
+gptAdSlots0=googletag.defineSlot('/7021/fcc.areavoices', [300, 50], 'leaderboard-top-ad').defineSizeMapping(leaderboard_top_ad_mapping).setTargeting('loc', 'atf').setTargeting('kw', ['homepage']).addService(googletag.pubads());
+gptAdSlots1=googletag.defineSlot('/7021/fcc.areavoices', [300, 250], 'first-sidebar-ad').defineSizeMapping(sidebar_ad_mapping).setTargeting('loc', 'atf').setTargeting('kw', ['homepage']).addService(googletag.pubads());
 
 googletag.pubads().enableSyncRendering();
 googletag.pubads().enableSingleRequest();
