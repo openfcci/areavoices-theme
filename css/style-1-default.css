@@ -1024,6 +1024,13 @@ margin-left: 15px;
   .site-header{
     padding-bottom: 0px;
   }
+  .site-header .container{
+    padding-bottom: 28px;
+  }
+
+  .site-header .main-navigation.container{
+    padding-bottom: 0px;
+  }
 
   .main-navigation .nav-menu{
     max-height: 0px;
