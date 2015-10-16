@@ -6,7 +6,7 @@
  ?>
 
  <!-- POPULAR POSTS WIDGET: Begin -->
- <aside>
+ <aside id="av-popular-posts-widget" class="widget widget_search">
    <div>
      <?php
      global $theme_option;
@@ -59,7 +59,7 @@
          echo '<div class="clear" style="height:0px;"></div>';
          echo '</div>'; // popular-post-widget
        }
-       echo '<div class="clear"></div>';
+       //echo '<div class="clear"></div>';
        echo '</div>';
      }
      wp_reset_postdata();

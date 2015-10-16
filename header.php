@@ -40,9 +40,8 @@
 							<!-- </div> -->
 						<!-- </div>--> <!-- Custom Header -->
 					<?php elseif ( !get_header_image() ) : ?>
-						<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="homeS"><img src="<?php header_image(); ?>" height="<?php echo get_custom_header()->height; ?>" width="<?php echo get_custom_header()->width; ?>" alt="" />
 						<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" style="color: #3d3d3d;"><?php bloginfo( 'name' ); ?></a></h1>
-						<p class="site-description"><?php bloginfo( 'description' ); ?></p></a>
+						<p class="site-description"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" style="color: #3d3d3d;"><?php bloginfo( 'description' ); ?></a></p>
 					<?php endif; // End header image check. ?>
 
 
@@ -50,8 +49,8 @@
 			</div><!-- .container -->
 		</div><!-- .site-branding .site-header-->
 		<?php if ( is_archive() ) { get_template_part( 'template-parts/header-title', 'header' ); } /*RV*/ ?>
-		<nav id="site-navigation" class="main-navigation" role="navigation">
-			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'areavoices' ); ?></button>
+		<nav id="site-navigation" class="main-navigation container" role="navigation">
+			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><span class="avicon-menu"></span></button>
 			<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu', 'fallback_cb' => false ) ); ?>
 		</nav><!-- #site-navigation -->
 		<?php get_template_part( 'template-parts/google_ads', 'script' ); /*RV*/ ?>

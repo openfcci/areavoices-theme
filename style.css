@@ -4,7 +4,7 @@ Theme URI: http://areavoices.com/
 Author: Forum Communications Company
 Author URI: http://forumcomm.com/
 Description: The kick-ass custom WordPress theme built for AreaVoices contributors.
-Version: 1.0.1
+Version: 1.0.2
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: areavoices
@@ -883,6 +883,10 @@ object {
 /*--------------------------------------------------------------
 # Media Queries
 --------------------------------------------------------------*/
+/*--- mobile portrait style ---*/
+@media only screen and (max-width: 1000px) {
+}
+
 @media (max-width: 1000px) {
   #primary,
   #secondary {
@@ -890,9 +894,93 @@ object {
     margin-right: auto;
     width: 100%; } }
 /*--- mobile portrait style ---*/
-@media only screen and (max-width: 419px) {
+@media (max-width: 419px) {
+
   body .container {
-    max-width: 395px; } }
+    max-width: 395px;
+  }
+  .container {
+    padding-left: 0.625em;
+    padding-right: 0.625em;
+  }
+  .entry-content, .entry-meta, .entry-title {
+    padding-left: 0em;
+    padding-right: 0em;
+  }
+  h1 {
+  font-size: 1.3333em;
+  }
+  h2 {
+  font-size: 1.2em;
+  }
+  h3 {
+  font-size: 1.066666em;
+  }
+  h4 {
+  font-size: 0.93333em;
+  }
+  h5 {
+  font-size: 0.8em;
+  }
+  h6 {
+  font-size: 0.66666666em;
+  }
+  article {
+    /* padding: 0.9375em !important; */ /*RV*/
+    padding: 1.75em !important;
+  }
+  p, ol, ul, a {
+    font-size: 0.866667em;
+  }
+  .blockquote, .article-quote {
+    font-size: 1.1em !important;
+  }
+  blockquote p {
+    font-size: 16px !important;
+  }
+  blockquote:before {
+    font-size: 18px !important;
+  }
+  h1.entry-title {
+    font-size: 1.25em !important;
+  }
+  .site-description a {
+    font-size: 1em !important;
+  }
+  #post-author, #post-category, #post-date span.separator {
+    display: none;
+  }
+  .aboutme_username, .aboutme_description {
+    font-size: 0.866667em !important;
+  }
+  .av-home.av-jp-social a.sd-button:before {
+      font: 400 21px/1 Genericons !important;
+  }
+  a.av-contrib-button {
+    padding: 12px 15px !important;
+    font-size: 11px !important;
+  }
+
+  /* Alternate Flush-White Mobile Layout */
+  /*
+  body {
+    background-color: #ffffff !important;
+    background: #ffffff !important;
+    background-image: none;
+  }
+  article {
+    padding: 0em !important;
+  }
+  aside, .comments-area {
+    border-bottom: 0px !important;
+  }
+  .entry-content, .entry-meta, .entry-title {
+    padding-left: 0em;
+    padding-right: 0em;
+  }
+  */
+
+}
 
 
 /*--------------------------------------------------------------

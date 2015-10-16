@@ -52,67 +52,25 @@ function areavoices_customize_register( $wp_customize ) {
 	$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
 	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
 	$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
+  //$wp_customize->get_setting( 'av_aboutme_username' )->transport = 'postMessage';
 
 	/**
-	* Remove Default Customizer Sections
+	* Remove Default Customizer Sections site_icon
 	*/
 	$wp_customize->remove_section('themes'); //Remove the 'Choose Active Theme' Section
 	$wp_customize->remove_section('colors'); //Remove the 'Colors' Section ( Header Text Color | Background Color )
 	$wp_customize->remove_section('static_front_page'); //Remove the 'Static Front Page' Section
 	$wp_customize->remove_section('background_image'); //Remove the 'Background Image' Section
+  $wp_customize->remove_setting('site_icon'); // Remove the 'Site Icon' setting option
+
 
 
 	/**
 	* Start FCC Custom
 	*/
 
-	/* Color Picker Example */
-	/* $wp_customize->add_section( 'areavoices_new_section_name' , array(
-    'title'      => __( 'Visible Section Name', 'areavoices' ),
-    'priority'   => 30,
-	));
-	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'link_color', array(
-		'label'        => __( 'Header Color', 'areavoices' ),
-		'section'    => 'areavoices_new_section_name',
-		'settings'   => 'header_textcolor',
-	)));
-	$wp_customize->add_setting( 'header_textcolor' , array(
-    'default'     => '#000000',
-    'transport'   => 'refresh',
-	)); */
-
-	/* Design Layout */
-	/* $wp_customize->add_section(
-				'fcc_design_section',
-				array(
-						'title' => 'Design',
-						'description' => 'Choose a design for the theme.',
-						'priority' => 12,
-				)
-		);
-	$wp_customize->add_setting(
-			'fcc_design_layout',
-			array(
-					'default' => 'Design 1',
-			)
-	);
-	$wp_customize->add_control(
-			'fcc_design_layout',
-			array(
-					'type' => 'select',
-					'label' => 'Design:',
-					'section' => 'fcc_design_section',
-					'choices' => array(
-							'design-1' => 'Design 1',
-							'design-2' => 'Design 2',
-							'design-3' => 'Design 3',
-							'design-4' => 'Design 4',
-					),
-			)
-	); */
-
 	/* Design & Layout */
-	$wp_customize->add_section(
+	/* $wp_customize->add_section(
         'fcc_design_layout_section',
         array(
             'title' => 'Design & Layout',
@@ -183,14 +141,14 @@ function areavoices_customize_register( $wp_customize ) {
 		            'fcc-post-layout-tiled-featured' => 'Tiled w. Featured Content',
 		        ),
 		    )
-		);
+		); */
 
 
 	/* Author Bio */
 	$wp_customize->add_section(
 		'bio_section', // Section ID to use in Option Table
 		array( // Arguments array
-			'title' => __( 'About Me', 'areavoices' ), // Translatable text, change the text domain to your own
+			'title' => __( 'Profile', 'areavoices' ), // Translatable text, change the text domain to your own
 			'priority' => 12,
 			'description' => __( 'Allows you to edit your themes layout.', 'areavoices' )
 		)
@@ -202,10 +160,16 @@ function areavoices_customize_register( $wp_customize ) {
 		'capability'        => 'edit_theme_options',
 		//'type'           => 'option',
 	));
-	$wp_customize->add_control( new WP_Customize_Image_Control($wp_customize, 'image_upload_test', array(
+	$wp_customize->add_control( new WP_Customize_Image_Control($wp_customize, 'av_aboutme_avatar', array(
 			'label'    => __('Profile Picture', 'areavoices'),
 			'section'  => 'bio_section',
 			'settings' => 'av_aboutme_avatar',
+      //'context'    => 'your_setting_context'
+      'priority'    => 0,
+  		'flex_width'  => true,
+  		'flex_height' => true,
+  		'width'       => 160,
+  		'height'      => 160,
 	)));
   // Bio Pic Border \\
         $wp_customize->add_setting( 'av_aboutme_imgborder', array(
@@ -300,12 +264,59 @@ function areavoices_customize_register( $wp_customize ) {
 	    'type' => 'text', // Type of control: text input
 	));
 
-
-
-
-//End FCC Custom
 }
 add_action( 'customize_register', 'areavoices_customize_register' );
+
+
+/************************
+ * Avatar Image Cropper
+ ************************
+ */
+
+add_action( 'customize_register', 'avatar_image_cropper_register', 11 ); // after core
+
+/**
+ * Replace the core avatar image control with one that supports cropping.
+ */
+function avatar_image_cropper_register( $wp_customize ) {
+	class WP_Customize_Cropped_Avatar_Image_Control extends WP_Customize_Cropped_Image_Control {
+		public $type = 'avatar';
+
+		function enqueue() {
+			wp_enqueue_script( 'avatar-image-cropper', get_template_directory_uri()  . '/js/avatar-image-cropper.js', array( 'jquery', 'customize-controls' ) );
+		}
+
+		/**
+		 * Refresh the parameters passed to the JavaScript via JSON.
+		 */
+		public function to_json() {
+			parent::to_json();
+
+			$value = $this->value();
+			if ( $value ) {
+				// Get the attachment model for the existing file.
+				$attachment_id = attachment_url_to_postid( $value );
+				if ( $attachment_id ) {
+					$this->json['attachment'] = wp_prepare_attachment_for_js( $attachment_id );
+				}
+			}
+		}
+	}
+
+	$wp_customize->register_control_type( 'WP_Customize_Cropped_Avatar_Image_Control' );
+
+	$wp_customize->remove_control( 'av_aboutme_avatar' );
+	$wp_customize->add_control( new WP_Customize_Cropped_Avatar_Image_Control( $wp_customize, 'av_aboutme_avatar', array(
+		//'section'     => 'avatar_image',
+		'section'     => 'bio_section',
+		'label'       => __( 'Profile Picture' ),
+		'priority'    => 0,
+		'flex_width'  => true,
+		'flex_height' => true,
+		'width'       => 160,
+		'height'      => 160,
+	) ) );
+}
 
 /**
  * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.

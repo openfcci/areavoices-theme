@@ -44,16 +44,25 @@
 		}
 	?>
 <script type='text/javascript'>
-	if (jQuery(window).width() >= 728) {
-		googletag.defineSlot('/7021/fcc.areavoices', [[728, 90], [960, 200]], 'div-gpt-ad-1430258018861-0').addService(googletag.pubads()).setTargeting('loc', 'atf').setTargeting('kw', ['blog_<?php echo $curBlogId . "'" ;?>,'<?php echo $category[0]->cat_name . "'" ;?><?php if($posttags != ""){echo ",".$posttags;}?>]);
-	}
-	else {
-		googletag.defineSlot('/7021/fcc.areavoices', [[320, 50]], 'div-gpt-ad-1430258018861-0').addService(googletag.pubads()).setTargeting('loc', 'atf').setTargeting('kw', ['blog_<?php echo $curBlogId . "'" ;?>,<?php echo "'" . $category[0]->cat_name . "'" ;?><?php if($posttags != ""){echo ",".$posttags;}?>]);
-	}
-	googletag.defineSlot('/7021/fcc.areavoices', [300, 250], 'sidebar-ad').addService(googletag.pubads()).setTargeting('loc', 'atf').setTargeting('kw', ['blog_<?php echo $curBlogId . "'" ;?>,<?php echo "'" . $category[0]->cat_name . "'" ;?><?php if($posttags != ""){echo ",".$posttags;}?>]);
-	googletag.pubads().enableSyncRendering();
-	googletag.pubads().enableSingleRequest();
-	googletag.pubads().enableVideoAds();
-	googletag.enableServices();
+// Define ad spots
+googletag.cmd.push(function() {
+var leaderboard_top_ad_mapping = googletag.sizeMapping().
+addSize([960, 0], [[960, 200],[728, 90]]).
+addSize([728, 0], [728, 90]).
+addSize([0, 0], [[320, 100], [320, 50], [300, 50]]).
+build();
+
+var sidebar_ad_mapping = googletag.sizeMapping().
+addSize([0, 0], [300, 250]).
+build();
+
+gptAdSlots0=googletag.defineSlot('/7021/fcc.areavoices', [300, 50], 'leaderboard-top-ad').defineSizeMapping(leaderboard_top_ad_mapping).setTargeting('loc', 'atf').setTargeting('kw', ['homepage']).addService(googletag.pubads());
+gptAdSlots1=googletag.defineSlot('/7021/fcc.areavoices', [300, 250], 'first-sidebar-ad').defineSizeMapping(sidebar_ad_mapping).setTargeting('loc', 'atf').setTargeting('kw', ['homepage']).addService(googletag.pubads());
+
+googletag.pubads().enableSyncRendering();
+googletag.pubads().enableSingleRequest();
+googletag.pubads().enableVideoAds();
+googletag.enableServices();
+});
 </script>
 <!-- GOOGLE ADs: End -->

@@ -178,3 +178,14 @@ function areavoices_excerpt_more($more) {
 	return '<br /><a class="av-contrib-button moretag button" href="'. get_permalink($post->ID) . '"> Read More</a>';
 }
 add_filter('excerpt_more', 'areavoices_excerpt_more');
+
+/**************SHORTCODES***************/
+
+/**
+* block quote shortcode
+*/
+
+function quote( $atts, $content = null ) {
+    return '<div class="blockquote"><span class="avicon-quotes-right article-quote"></span>'.$content.'</div>';
+}
+add_shortcode("quote", "quote");
