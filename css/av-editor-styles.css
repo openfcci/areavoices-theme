@@ -1,0 +1,17 @@
+/**
+*Theme Name: AreaVoices
+*Theme Part: Admin Editor Styles
+*/
+
+/* Enter Your Custom CSS Here */
+
+
+body#tinymce.wp-editor {
+  font-family: Arvo;
+  line-height: 1.8;
+  -webkit-font-smoothing: antialiased;
+}
+
+body#tinymce.wp-editor a {
+
+}
