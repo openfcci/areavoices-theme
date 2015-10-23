@@ -41,7 +41,7 @@ class NotSafeForWork {
       }
 
       function addToAdminHead () {
-      	       echo '<script type="text/JavaScript" src="' . WP_PLUGIN_URL .'/'. plugin_basename(dirname(__FILE__)) . '/nsfwquicktag.js"></script>' . "\n";
+      	       echo '<script type="text/JavaScript" src="nsfwquicktag.js"></script>' . "\n";
       }
 }
 
