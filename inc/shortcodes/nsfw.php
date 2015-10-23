@@ -40,7 +40,9 @@ class NotSafeForWork {
 	       return "NSFW (Not Safe For Work): &nbsp; ";
       }
 
-      
+      function addToAdminHead () {
+      	       echo '<script type="text/JavaScript" src="' . WP_PLUGIN_URL .'/'. plugin_basename(dirname(__FILE__)) . '/nsfwquicktag.js"></script>' . "\n";
+      }
 }
 
 $notsafeforwork = new NotSafeForWork();
