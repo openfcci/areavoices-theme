@@ -1016,7 +1016,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', e
     width: 100%;
   }
 
-  
+
 }
 
 @media only screen and (max-width: 340px) {
@@ -1116,3 +1116,7 @@ margin-left: 15px;
   }
 }
 
+/**** TEMP BUG FIXES ***/
+.post-thumb-container {
+	max-height: 325px !important;
+}
