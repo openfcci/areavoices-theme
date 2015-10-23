@@ -6,6 +6,7 @@
  ?>
 
  <!-- POPULAR POSTS WIDGET: Begin -->
+ <?php if( function_exists('zilla_likes') ) { ?>
  <aside id="av-popular-posts-widget" class="widget widget_search">
    <div>
      <?php
@@ -26,7 +27,7 @@
      // Widget Content
      $current_post = array(get_the_ID());
      $query_args = array('post_type' => 'post', 'suppress_filters' => false);
-     $query_args['posts_per_page'] = $num_fetch;
+     $query_args['posts_per_page'] = 4;
      $query_args['orderby'] = 'meta_value_num';
      $query_args['order'] = 'desc';
      $query_args['paged'] = 1;
@@ -69,6 +70,7 @@
      ?>
    </div>
  </aside>
+ <?php } ?>
  <!-- POPULAR POSTS WIDGET: END -->
 
   <?php

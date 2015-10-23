@@ -139,7 +139,7 @@ function av_add_google_fonts() {
 	//Font 2
 	//wp_enqueue_style( 'av-google-fonts-font2', 'http://', false );
 }
-add_action( 'wp_enqueue_scripts', 'av_add_google_fonts' );
+//add_action( 'wp_enqueue_scripts', 'av_add_google_fonts' );
 
 /**
  * Add Editor Styles to TinyMCE Post Editor
