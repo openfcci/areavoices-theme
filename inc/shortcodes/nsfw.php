@@ -1,12 +1,4 @@
 <?php
-/**
-Plugin Name: NSFW (Not Safe For Work)
-Plugin URI: http://wordpress.org/extend/plugins/nsfw/
-Description: Wrap the NSFW content in [nsfw][/nsfw] to hide it. Readers can click on the "Show" link to read the hidden content.
-Author: Zing-Ming
-Version: 1.0
-Author URI: http://wordpress.org/extend/plugins/profile/zingming
-*/
 
 class NotSafeForWork {
       const shortcodeName = "nsfw";
