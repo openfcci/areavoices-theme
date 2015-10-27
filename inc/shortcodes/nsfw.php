@@ -21,7 +21,7 @@ class NotSafeForWork {
       }
 
       function runShortcode ($atts = null, $content = null) {
-	       return $this->getOpeningHtmlTags() . $content . $this->getClosingHtmlTags();
+	       return $this->getImage(). $this->getOpeningHtmlTags() . do_shortcode($content) . $this->getClosingHtmlTags();
       }
 
       function getOpeningHtmlTags () {
@@ -39,6 +39,27 @@ class NotSafeForWork {
       function getDescription () {
 	       return "NSFW (Not Safe For Work): &nbsp; ";
       }
+
+      function getImage() {
+global $more;
+$more = 1;
+$link = get_permalink();
+$content = get_the_content();
+$count = substr_count($content, '<img');
+$start = 0;
+for($i=1;$i<=$count;$i++) {
+$imgBeg = strpos($content, '<img', $start);
+$post = substr($content, $imgBeg);
+$imgEnd = strpos($post, '>');
+$postOutput = substr($post, 0, $imgEnd+1);
+$postOutput = preg_replace('/width="([0-9]*)" height="([0-9]*)"/', '',$postOutput);;
+$image[$i] = $postOutput;
+$start=$imgEnd+1;
+echo '<a class="blur" href="">'.$image[$i]."</a>";
+}
+
+$more = 0;
+}
 
       function addToAdminHead () {
       	       echo '<script type="text/JavaScript" src="nsfwquicktag.js"></script>' . "\n";
