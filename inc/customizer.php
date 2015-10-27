@@ -52,11 +52,25 @@ function areavoices_customize_register( $wp_customize ) {
 	$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
 	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
 	$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
-  //$wp_customize->get_setting( 'av_aboutme_username' )->transport = 'postMessage';
+
+  $wp_customize->get_setting( 'av_aboutme_avatar' )->transport = 'postMessage';
+  $wp_customize->get_setting( 'av_aboutme_imgborder' )->transport = 'postMessage';
+  $wp_customize->get_setting( 'av_aboutme_username' )->transport = 'postMessage';
+  $wp_customize->get_setting( 'av_aboutme_description' )->transport = 'postMessage';
+
+  $wp_customize->get_setting( 'av_aboutme_twitter' )->transport = 'postMessage';
+  $wp_customize->get_setting( 'av_aboutme_facebook' )->transport = 'postMessage';
+  $wp_customize->get_setting( 'av_aboutme_googleplus' )->transport = 'postMessage';
+  $wp_customize->get_setting( 'av_aboutme_pinterest' )->transport = 'postMessage';
+  $wp_customize->get_setting( 'av_aboutme_linkedin' )->transport = 'postMessage';
+  $wp_customize->get_setting( 'av_aboutme_instagram' )->transport = 'postMessage';
+  $wp_customize->get_setting( 'av_aboutme_youtube' )->transport = 'postMessage';
+
 
 	/**
 	* Remove Default Customizer Sections site_icon
 	*/
+  $wp_customize->remove_setting('fcc_design_layout_section'); //
 	$wp_customize->remove_section('themes'); //Remove the 'Choose Active Theme' Section
 	$wp_customize->remove_section('colors'); //Remove the 'Colors' Section ( Header Text Color | Background Color )
 	$wp_customize->remove_section('static_front_page'); //Remove the 'Static Front Page' Section
@@ -70,12 +84,12 @@ function areavoices_customize_register( $wp_customize ) {
 	*/
 
 	/* Design & Layout */
-	/* $wp_customize->add_section(
+	$wp_customize->add_section(
         'fcc_design_layout_section',
         array(
             'title' => 'Design & Layout',
             'description' => 'Choose a layout for the homepage.',
-            'priority' => 11,
+            'priority' => 23,
         )
     );
 		$wp_customize->add_setting(
@@ -141,7 +155,7 @@ function areavoices_customize_register( $wp_customize ) {
 		            'fcc-post-layout-tiled-featured' => 'Tiled w. Featured Content',
 		        ),
 		    )
-		); */
+		);
 
 
 	/* Author Bio */
@@ -149,7 +163,7 @@ function areavoices_customize_register( $wp_customize ) {
 		'bio_section', // Section ID to use in Option Table
 		array( // Arguments array
 			'title' => __( 'Profile', 'areavoices' ), // Translatable text, change the text domain to your own
-			'priority' => 12,
+			'priority' => 22,
 			'description' => __( 'Allows you to edit your themes layout.', 'areavoices' )
 		)
 	);
@@ -158,6 +172,7 @@ function areavoices_customize_register( $wp_customize ) {
 	$wp_customize->add_setting('av_aboutme_avatar', array(
 		'default'           => $default_bio_img,
 		'capability'        => 'edit_theme_options',
+    'transport'   => 'postMessage',
 		//'type'           => 'option',
 	));
 	$wp_customize->add_control( new WP_Customize_Image_Control($wp_customize, 'av_aboutme_avatar', array(
@@ -174,6 +189,7 @@ function areavoices_customize_register( $wp_customize ) {
   // Bio Pic Border \\
         $wp_customize->add_setting( 'av_aboutme_imgborder', array(
             'default'        => '1', // Returns '1' if checked, nothing (because false) if unchecked
+            'transport'   => 'postMessage',
         ) );
         $wp_customize->add_control( 'av_aboutme_imgborder', array(
             'label'   => 'Display border on profile picture',
@@ -183,6 +199,7 @@ function areavoices_customize_register( $wp_customize ) {
 	// Bio Name \\
 	$wp_customize->add_setting('av_aboutme_username', array(
 	    'default' => 'My Name is _____', // Default custom text
+      'transport'   => 'postMessage',
 	));
 	$wp_customize->add_control('av_aboutme_username', array(
 	    'label' => 'About Me: Name', // Label of text form
@@ -193,6 +210,7 @@ function areavoices_customize_register( $wp_customize ) {
 	$wp_customize->add_setting('av_aboutme_description', array(
 	    //'type' => 'option',
 	    'default' => 'Your bio goes here.', // Default custom text
+      'transport'   => 'postMessage',
 	));
 	$wp_customize->add_control('av_aboutme_description', array(
 	    'label' => 'About Me: Description', // Label of text form
@@ -203,6 +221,7 @@ function areavoices_customize_register( $wp_customize ) {
 	$wp_customize->add_setting('av_aboutme_twitter', array(
 	    //'type' => 'option',
 	    'default' => '', // Default custom text
+      'transport'   => 'postMessage',
 	));
 	$wp_customize->add_control('av_aboutme_twitter', array(
 	    'label' => 'Twitter Profile Link', // Label of text form
@@ -212,6 +231,7 @@ function areavoices_customize_register( $wp_customize ) {
 	// Facebook \\
 	$wp_customize->add_setting('av_aboutme_facebook', array(
 	    'default' => '', // Default custom text
+      'transport'   => 'postMessage',
 	));
 	$wp_customize->add_control('av_aboutme_facebook', array(
 	    'label' => 'Facebook Profile Link', // Label of text form
@@ -221,6 +241,7 @@ function areavoices_customize_register( $wp_customize ) {
 	// G+ \\
 	$wp_customize->add_setting('av_aboutme_googleplus', array(
 	    'default' => '', // Default custom text
+      'transport'   => 'postMessage',
 	));
 	$wp_customize->add_control('av_aboutme_googleplus', array(
 	    'label' => 'Google+ Profile Link', // Label of text form
@@ -230,6 +251,7 @@ function areavoices_customize_register( $wp_customize ) {
 	// Pinterest \\
 	$wp_customize->add_setting('av_aboutme_pinterest', array(
 	    'default' => '', // Default custom text
+      'transport'   => 'postMessage',
 	));
 	$wp_customize->add_control('av_aboutme_pinterest', array(
 	    'label' => 'Pinterest Profile Link', // Label of text form
@@ -239,6 +261,7 @@ function areavoices_customize_register( $wp_customize ) {
 	// Linkedin \\
 	$wp_customize->add_setting('av_aboutme_linkedin', array(
 	    'default' => '', // Default custom text
+      'transport'   => 'postMessage',
 	));
 	$wp_customize->add_control('av_aboutme_linkedin', array(
 	    'label' => 'Linkedin Profile Link', // Label of text form
@@ -257,6 +280,7 @@ function areavoices_customize_register( $wp_customize ) {
 	// YouTube \\
 	$wp_customize->add_setting('av_aboutme_youtube', array(
 	    'default' => '', // Default custom text
+      'transport'   => 'postMessage',
 	));
 	$wp_customize->add_control('av_aboutme_youtube', array(
 	    'label' => 'YouTube Channel Link', // Label of text form
