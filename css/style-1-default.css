@@ -1120,3 +1120,10 @@ margin-left: 15px;
 .post-thumb-container {
 	max-height: 325px !important;
 }
+
+@media (max-width: 419px) {
+
+  .post-thumb-container {
+  	max-height: 157px !important;
+  }
+}

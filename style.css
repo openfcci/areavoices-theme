@@ -907,6 +907,9 @@ object {
     padding-left: 0em;
     padding-right: 0em;
   }
+  div.entry-content {
+    margin-top: 0em !important;
+  }
   h1 {
   font-size: 1.3333em;
   }
@@ -927,7 +930,11 @@ object {
   }
   article {
     /* padding: 0.9375em !important; */ /*RV*/
-    padding: 1.75em !important;
+    /* padding: 1.75em !important; */
+    padding: 15px !important;
+  }
+  .post-thumb-container {
+    margin-bottom: 22px !important;
   }
   p, ol, ul, a {
     font-size: 0.866667em;

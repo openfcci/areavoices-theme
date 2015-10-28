@@ -194,6 +194,18 @@ require get_template_directory() . '/inc/customizer.php';
 require get_template_directory() . '/inc/jetpack.php';
 
 /**
+ * Admin Settings Page
+ */
+require get_template_directory() . '/inc/admin/admin-settings-page.php';
+
+/**
+ * Recent Comments Widget
+ */
+//require get_template_directory() . '/inc/widgets/recent-comments-widget.php';
+// widget
+	//include_once( get_template_directory() . '/inc/widgets/recent-comments-widget.php');
+
+/**
  * Customize the "Read More" link.
  */
 add_filter( 'the_content_more_link', 'areavoices_read_more_link' );
@@ -212,3 +224,58 @@ add_filter('excerpt_more', 'areavoices_excerpt_more');
  * Implement the NSFW shortcode
  */
 require( get_template_directory() . '/inc/shortcodes/nsfw.php' );
+
+
+/**************NSFW***************/
+
+/* For adding custom field to gallery popup */
+// SOURCE: https://make.wordpress.org/core/2012/12/12/attachment-editing-now-with-full-post-edit-ui/
+function add_image_attachment_fields_to_edit($form_fields, $post) {
+  // $form_fields is a an array of fields to include in the attachment form
+  // $post is nothing but attachment record in the database
+  //     $post->post_type == 'attachment'
+  // attachments are considered as posts in WordPress. So value of post_type in wp_posts table will be attachment
+  // now add our custom field to the $form_fields array
+  // input type="text" name/id="attachments[$attachment->ID][custom1]"
+  $form_fields["nsfw"] = array(
+    "label" => __("NSFW"),
+    "input" => "text", // this is default if "input" is omitted
+    "value" => get_post_meta($post->ID, "_nsfw", true),
+                //"helps" => __("Help string."),
+  );
+   return $form_fields;
+}
+// now attach our function to the hook
+add_filter("attachment_fields_to_edit", "add_image_attachment_fields_to_edit", null, 2);
+
+function add_image_attachment_fields_to_save($post, $attachment) {
+  // $attachment part of the form $_POST ($_POST[attachments][postID])
+        // $post['post_type'] == 'attachment'
+  if( isset($attachment['nsfw']) ){
+    // update_post_meta(postID, meta_key, meta_value);
+    update_post_meta($post['ID'], '_nsfw', $attachment['nsfw']);
+  }
+  return $post;
+}
+// now attach our function to the hook.
+add_filter("attachment_fields_to_save", "add_image_attachment_fields_to_save", null , 2);
+
+/**************ADDITIONAL SCRIPT***************/
+if( !function_exists('av_additional_script') ){
+  function av_additional_script() {
+		$av_custom_js = get_option('av_custom_js');
+		if ( $av_custom_js ) {
+			echo '<script type="text/javascript">' . $av_custom_js . '</script>';
+		}
+  }
+}
+add_action( 'wp_footer', 'av_additional_script' ); // add the additional script to footer area
+
+/**************ADDITIONAL CSS***************/
+function av_custom_css() {
+	$av_custom_css = get_option('av_custom_css');
+	if ( $av_custom_css ) {
+		wp_add_inline_style( 'areavoices-style', $av_custom_css );
+	}
+}
+add_action( 'wp_enqueue_scripts', 'av_custom_css' );
