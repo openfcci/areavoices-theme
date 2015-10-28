@@ -211,7 +211,7 @@ require get_template_directory() . '/inc/admin/admin-settings-page.php';
 add_filter( 'the_content_more_link', 'areavoices_read_more_link' );
 function areavoices_excerpt_more($more) {
 	global $post;
-	return '<br /><a class="av-contrib-button moretag button" href="'. get_permalink($post->ID) . '"> Read More</a>';
+	return '&hellip; <br /><a class="av-contrib-button moretag button" href="'. get_permalink($post->ID) . '"> Read More</a>';
 }
 add_filter('excerpt_more', 'areavoices_excerpt_more');
 
