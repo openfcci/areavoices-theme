@@ -15,20 +15,22 @@
     */
      add_action('admin_menu', 'areavoices_admin_settings_page');
      function areavoices_admin_settings_page() {
-       if ( function_exists('current_user_can') && current_user_can('manage_options') ) { //Show Push Notification Tester ONLY to main SuperAdmin
-        add_options_page(
-          'AV Theme Settings',
-          'AV Theme Settings',
-          'manage_options',
-          'av_admin_settings',
-          'av_admin_settings'
-        );
-        add_action('admin_init', 'wp_parse_pn_admin_init');
-      }
+			 if ( is_super_admin() ) { //Add the page for Super Admins only
+	       if ( function_exists('current_user_can') && current_user_can('manage_options') ) {
+	        add_options_page(
+	          'AV Theme Settings',
+	          'AV Theme Settings',
+	          'manage_options',
+	          'av_admin_settings',
+	          'av_admin_settings'
+	        );
+	        add_action('admin_init', 'wp_parse_pn_admin_init');
+	      }
+			}
      }
 
    /**
-    * Register API Keys
+    * Register Settings
     */
      function wp_parse_pn_admin_init() {
 			 register_setting('av-theme-settings-group', 'av_custom_css');
