@@ -37,7 +37,13 @@ if ( ! is_active_sidebar( 'sidebar-1' ) ) {
 		}
 	?>
 
-	<?php get_template_part( 'inc/widgets/recent-comments-widget', 'recent-comments-widget' ); ?>
+	<!-- RECENT Comments WIDGET -->
+	<?php
+	if ( get_option('av_recent_comments_widget') ) { //Show only if activated
+		get_template_part( 'inc/widgets/recent-comments-widget', 'recent-comments-widget' );
+	}
+
+	?>
 
 	<!-- DYNAMIC SIDEBAR: BEGIN -->
 	<?php dynamic_sidebar( 'sidebar-1' ); ?>
