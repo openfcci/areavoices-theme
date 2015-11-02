@@ -12,13 +12,6 @@
      <?php
      global $theme_option;
 
-     $title = apply_filters( 'widget_title', $instance['title'] );
-     $category = $instance['category'];
-     $num_fetch = $instance['num_fetch'];
-
-     // Opening of widget
-     echo $args['before_widget'];
-
      // Open of title tag
      if( !empty($title) ){
        echo $args['before_title'] . $title . $args['after_title'];
@@ -31,7 +24,7 @@
      $query_args['orderby'] = 'meta_value_num';
      $query_args['order'] = 'desc';
      $query_args['paged'] = 1;
-     $query_args['category_name'] = $category;
+     //$query_args['category_name'] = $category;
      $query_args['meta_key'] = '_zilla_likes';
      $query_args['ignore_sticky_posts'] = 1;
      $query_args['post__not_in'] = array(get_the_ID());
@@ -65,8 +58,6 @@
      }
      wp_reset_postdata();
 
-     // Closing of widget
-     echo $args['after_widget'];
      ?>
    </div>
  </aside>
