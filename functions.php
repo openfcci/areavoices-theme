@@ -199,6 +199,12 @@ require get_template_directory() . '/inc/jetpack.php';
 require get_template_directory() . '/inc/admin/admin-settings-page.php';
 
 /**
+ * Admin Theme Appearance Page
+ */
+//require get_template_directory() . '/inc/admin/admin-appearance-page.php';
+
+
+/**
  * Customize the "Read More" link.
  */
 add_filter( 'the_content_more_link', 'areavoices_read_more_link' );
@@ -297,3 +303,6 @@ if( ! function_exists('fcc_insert_php') )
 	add_filter( 'the_content', 'fcc_insert_php', 9 );
 
 } # if( ! function_exists('fcc_insert_php') )
+
+
+/**************Recent Comments Options***************/
