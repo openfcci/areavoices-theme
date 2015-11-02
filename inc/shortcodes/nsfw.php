@@ -1,4 +1,12 @@
 <?php
+/**
+Plugin Name: NSFW (Not Safe For Work)
+Plugin URI: http://wordpress.org/extend/plugins/nsfw/
+Description: Wrap the NSFW content in [nsfw][/nsfw] to hide it. Readers can click on the "Show" link to read the hidden content.
+Author: Zing-Ming
+Version: 1.0
+Author URI: http://wordpress.org/extend/plugins/profile/zingming
+*/
 
 class NotSafeForWork {
       const shortcodeName = "nsfw";
@@ -13,45 +21,31 @@ class NotSafeForWork {
       }
 
       function runShortcode ($atts = null, $content = null) {
-	       return $this->getImage(). $this->getOpeningHtmlTags() . do_shortcode($content) . $this->getClosingHtmlTags();
+	       return $this->getOpeningHtmlTags() . do_shortcode($content) . $this->getClosingHtmlTags();
       }
 
       function getOpeningHtmlTags () {
-      	       return "<div>\n<p>" . $this->getDescription() . '<a href="javascript:;" onclick="' . $this->getOnClickJS() . '">Show</a></p>' . "\n" . '<div style="display:none;">';
+      	       return "<div>\n<p>" . $this->getDescription() . '<a href="javascript:;" onclick="' . $this->getOnClickJS() . '">Show</a></p>' . "\n" . '<svg class="blur" style="filter:url(#blur-effect-1);"><text x="0" y="50">';
       }
 
       function getClosingHtmlTags () {
-      	      return "</div>\n</div>\n";
+      	      return "</text>\n</svg>\n</div>\n<svg id='svg-effects'>
+    <filter id='blur-effect-1'>
+        <feGaussianBlur stdDeviation='3' />
+    </filter>
+    <filter id='blur-effect-2'>
+        <feGaussianBlur stdDeviation='0' />
+    </filter>
+</svg> ";
       }
 
       function getOnClickJS () {
-      	      return "var noise = this.parentNode.parentNode.getElementsByTagName('div')[0]; if (noise.style.display == 'none') { noise.style.display = ''; this.innerHTML = 'Hide'; noise.style.paddingBottom = '1em'; this.parentNode.style.marginBottom = '0.5em'; } else { noise.style.display = 'none'; this.innerHTML = 'Show'; }";
+      	      return "var noise = this.parentNode.parentNode.getElementsByTagName('svg')[0]; if (noise.classList.contains('blur')) { noise.style.filter = 'url(#blur-effect-2)'; this.innerHTML = 'Hide'; noise.style.paddingBottom = '1em'; this.parentNode.style.marginBottom = '0.5em'; } else { noise.style.filter = 'url(#blur-effect-1)'; this.innerHTML = 'Show'; }";
       }
 
       function getDescription () {
 	       return "NSFW (Not Safe For Work): &nbsp; ";
       }
-
-      function getImage() {
-global $more;
-$more = 1;
-$link = get_permalink();
-$content = get_the_content();
-$count = substr_count($content, '<img');
-$start = 0;
-for($i=1;$i<=$count;$i++) {
-$imgBeg = strpos($content, '<img', $start);
-$post = substr($content, $imgBeg);
-$imgEnd = strpos($post, '>');
-$postOutput = substr($post, 0, $imgEnd+1);
-$postOutput = preg_replace('/width="([0-9]*)" height="([0-9]*)"/', '',$postOutput);;
-$image[$i] = $postOutput;
-$start=$imgEnd+1;
-echo '<a class="blur" href="">'.$image[$i]."</a>";
-}
-
-$more = 0;
-}
 
       function addToAdminHead () {
       	       echo '<script type="text/JavaScript" src="nsfwquicktag.js"></script>' . "\n";
