@@ -850,9 +850,12 @@ margin-top: 5px;
   padding-bottom: 0px !important;
   border-bottom: 0px !important;
 }
+
 #popular-posts-header {
   padding-top: 30px;
-  margin-bottom: 30px; }
+  margin-bottom: 30px;
+}
+
 .popular-post-widget.av-last {
   padding-bottom: 30px !important;
 }
@@ -995,6 +998,17 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', e
   text-transform: uppercase;
   font-family: 'Roboto', sans-serif;
 }
+
+/*----------- POPULAR POSTS WIDGET --------------*/
+
+#av-recent-comments-widget {
+  padding-top: 0px !important;
+  padding-bottom: 30px !important;
+  border-bottom: 0px !important;
+}
+#recent-comments-header {
+  padding-top: 30px;
+  margin-bottom: 30px; }
 
 /*-----------MEDIA QUERIES---------------*/
 

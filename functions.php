@@ -199,13 +199,6 @@ require get_template_directory() . '/inc/jetpack.php';
 require get_template_directory() . '/inc/admin/admin-settings-page.php';
 
 /**
- * Recent Comments Widget
- */
-//require get_template_directory() . '/inc/widgets/recent-comments-widget.php';
-// widget
-	//include_once( get_template_directory() . '/inc/widgets/recent-comments-widget.php');
-
-/**
  * Customize the "Read More" link.
  */
 add_filter( 'the_content_more_link', 'areavoices_read_more_link' );
@@ -279,3 +272,28 @@ function av_custom_css() {
 	}
 }
 add_action( 'wp_enqueue_scripts', 'av_custom_css' );
+
+/**************Custom PHP***************/
+if( ! function_exists('fcc_insert_php') )
+{
+
+	function fcc_insert_php($content)
+	{
+		$fcc_php_content = $content;
+		preg_match_all('!\[fcc_php[^\]]*\](.*?)\[/fcc_php[^\]]*\]!is',$fcc_php_content,$fcc_php_matches);
+		$fcc_php_nummatches = count($fcc_php_matches[0]);
+		for( $fcc_php_i=0; $fcc_php_i<$fcc_php_nummatches; $fcc_php_i++ )
+		{
+			ob_start();
+			eval($fcc_php_matches[1][$fcc_php_i]);
+			$fcc_php_replacement = ob_get_contents();
+			ob_clean();
+			ob_end_flush();
+			$fcc_php_content = preg_replace('/'.preg_quote($fcc_php_matches[0][$fcc_php_i],'/').'/',$fcc_php_replacement,$fcc_php_content,1);
+		}
+		return $fcc_php_content;
+	} # function fcc_insert_php()
+
+	add_filter( 'the_content', 'fcc_insert_php', 9 );
+
+} # if( ! function_exists('fcc_insert_php') )

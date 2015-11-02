@@ -37,6 +37,8 @@ if ( ! is_active_sidebar( 'sidebar-1' ) ) {
 		}
 	?>
 
+	<?php get_template_part( 'inc/widgets/recent-comments-widget', 'recent-comments-widget' ); ?>
+
 	<!-- DYNAMIC SIDEBAR: BEGIN -->
 	<?php dynamic_sidebar( 'sidebar-1' ); ?>
 
