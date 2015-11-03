@@ -13,15 +13,32 @@ echo '<aside id="av-recent-comments-widget" class="widget widget_search">';
  				'number' => '4', //Number of Posts
  				'status' => 'approve')
  			);
-
-			$date_format = get_option('date_format');
+ 			global $post;
+			$date_format = "M j, Y";
 
 			echo '<div class="av-recent-post-widget">';
 			echo '<div id="recent-comments-header" class="av-widget-title-wrapper" align="center"><h1 class="widget-title aboutme_title">Recent Comments</h1></div>';
  			echo '<div class="av-recent-comment-widget">';
  			foreach( $recent_comments as $recent_comment ) {
+ 				/* Get the Post Author */
+				  $post_id = $recent_comment->comment_post_ID; // Returns ID for the Post the Comment was made on
+				  $post_author_id = get_post_field( 'post_author', $post_id ); //Returns Post Author ID
+				  /* Get the Commenter */
+				  $commenter_email = $recent_comment->comment_author_email;
+				  $comment_user = get_user_by( 'email', $commenter_email );
+				  $comment_author_id = $comment_user->ID;
+
  					$comment_permalink = get_permalink($recent_comment->comment_post_ID) . '#comment-' . $recent_comment->comment_ID;
- 					echo '<div class="recent-comment-widget">';
+ 					echo '<div class="recent-comment-widget ';
+ 					
+				  	/* Compare the IDs */
+  					if ( $comment_author_id == $post_author_id ) {
+    				echo 'av-post-author">';
+    				}
+					else{
+						echo '">';
+					}	
+ 					
 
  					echo '<div class="recent-comment-widget-thumbnail"><a href="' . $comment_permalink . '" >';
  					echo get_avatar( $recent_comment->user_id, 55 );
