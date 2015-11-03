@@ -1025,7 +1025,13 @@ font-size: 0.9em;
 }
 
 .recent-comment-widget.av-post-author {
-background-color: #f7f7f7;
+
+}
+
+.recent-comment-widget.av-post-author .recent-comment-widget-thumbnail img {
+-webkit-box-shadow: rgba(228,228,228,1) 0px 0 1px 5px;
+ -moz-box-shadow: rgba(228,228,228,1) 0 0 1px 5px;
+ box-shadow: rgba(228,228,228,1) 0 0 1px 5px;
 }
 
 .recent-comment-widget-thumbnail{
