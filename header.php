@@ -57,6 +57,7 @@
 	</header><!-- #masthead -->
 
 		<?php //if ( is_archive() ) { get_template_part( 'template-parts/header-title', 'header' ); } /*RV*/ ?>
+		<?php get_template_part( 'template-parts/featured_slider'); /*RV*/ ?>
 		<?php get_template_part( 'template-parts/google_ads', 'header' ); /*RV*/ ?>
 
 	<div id="content" class="site-content container">
