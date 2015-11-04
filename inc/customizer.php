@@ -181,7 +181,7 @@ function areavoices_customize_register( $wp_customize ) {
       /* Featured Content Slider */
       $wp_customize->add_setting( 'av_featured_content_slider', array(
           'default'        => '', // Returns '1' if checked, nothing (because false) if unchecked
-          'transport'   => 'postMessage',
+          //'transport'   => 'postMessage',
       ) );
       $wp_customize->add_control( 'av_featured_content_slider', array(
           'label'   => 'Enable the Featured Content Slider',
