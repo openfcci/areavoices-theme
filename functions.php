@@ -77,6 +77,7 @@ function areavoices_setup() {
 endif; // areavoices_setup
 add_action( 'after_setup_theme', 'areavoices_setup' );
 
+
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
  *
@@ -96,7 +97,27 @@ add_action( 'after_setup_theme', 'areavoices_content_width', 0 );
  */
 function areavoices_widgets_init() {
 	register_sidebar( array(
-		'name'          => esc_html__( 'Sidebar', 'areavoices' ),
+		'name'          => esc_html__( 'Sidebar: Top', 'areavoices' ),
+		'id'            => 'sidebar-top',
+		'description'   => '',
+		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</aside>',
+		'before_title'  => '<div id="bioheader" class="av-widget-title-wrapper" align="center"><h1 class="widget-title">',
+		'after_title'   => '</h1></div>',
+	) );
+
+	register_sidebar( array(
+		'name'          => esc_html__( 'Sidebar: Middle', 'areavoices' ),
+		'id'            => 'sidebar-middle',
+		'description'   => '',
+		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</aside>',
+		'before_title'  => '<div id="bioheader" class="av-widget-title-wrapper" align="center"><h1 class="widget-title">',
+		'after_title'   => '</h1></div>',
+	) );
+
+	register_sidebar( array(
+		'name'          => esc_html__( 'Sidebar: Bottom', 'areavoices' ),
 		'id'            => 'sidebar-1',
 		'description'   => '',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
@@ -104,6 +125,7 @@ function areavoices_widgets_init() {
 		'before_title'  => '<div id="bioheader" class="av-widget-title-wrapper" align="center"><h1 class="widget-title">',
 		'after_title'   => '</h1></div>',
 	) );
+
 }
 add_action( 'widgets_init', 'areavoices_widgets_init' );
 
@@ -214,10 +236,30 @@ function areavoices_excerpt_more($more) {
 }
 add_filter('excerpt_more', 'areavoices_excerpt_more');
 
+/**
+ * Remove 'Appearance'submenu pages
+ */
+ function av_remove_appearance_submenus() {
+	 if ( is_admin() ) {
+		 if ( !is_super_admin() ) { // if user is not a Super Admin:
+		   $page = remove_submenu_page( 'themes.php', 'widgets.php' ); // remove 'Widgets'
+			 $page = remove_submenu_page( 'themes.php', 'editcss' ); // remove 'Edit CSS'
+		 }
+		 $page = remove_submenu_page( 'themes.php', 'theme-editor.php' ); // remove 'Editor'
+	 }
+ }
+ add_action( 'admin_menu', 'av_remove_appearance_submenus', 999 );
 
+ function av_unset_appearance_submenus(){
+	 if ( is_admin() ) {
+		 global $submenu;
+		 unset($submenu['themes.php'][15]); // remove 'Headers' link
+		 unset($submenu['themes.php'][20]); // remove 'Background' link
+	 }
+}
+add_action( 'admin_menu', 'av_unset_appearance_submenus');
 
 /**************SHORTCODES***************/
-
 
 /**
  * Implement the NSFW shortcode
@@ -282,7 +324,6 @@ add_action( 'wp_enqueue_scripts', 'av_custom_css' );
 /**************Custom PHP***************/
 if( ! function_exists('fcc_insert_php') )
 {
-
 	function fcc_insert_php($content)
 	{
 		$fcc_php_content = $content;
@@ -298,11 +339,23 @@ if( ! function_exists('fcc_insert_php') )
 			$fcc_php_content = preg_replace('/'.preg_quote($fcc_php_matches[0][$fcc_php_i],'/').'/',$fcc_php_replacement,$fcc_php_content,1);
 		}
 		return $fcc_php_content;
-	} # function fcc_insert_php()
-
+	} // function fcc_insert_php()
 	add_filter( 'the_content', 'fcc_insert_php', 9 );
+} // end if( ! function_exists('fcc_insert_php') )
 
-} # if( ! function_exists('fcc_insert_php') )
 
+/**************DEBUGGING***************/
+/**
+ * Admin Dashboard menu debugging function:
+ * Use with: 'Debug Bar Custom Info' plugin
+ * (leave commented out when not in use)
+ */
+function wpse_136058_debug_admin_menu() {
+    //echo '<pre>' . print_r( $GLOBALS[ 'submenu' ], TRUE) . '</pre>';
+		$var = $GLOBALS[ 'submenu' ];
+		$label = 'Appearance Submenu Items';
+		do_action( 'add_debug_info', $var, $label );
+}
+//add_action( 'admin_init', 'wpse_136058_debug_admin_menu' );
 
-/**************Recent Comments Options***************/
+/**************Custom Thing***************/

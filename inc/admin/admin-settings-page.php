@@ -35,6 +35,8 @@
      function wp_parse_pn_admin_init() {
 			 register_setting('av-theme-settings-group', 'av_custom_css');
 			 register_setting('av-theme-settings-group', 'av_custom_js');
+       register_setting('av-theme-settings-group', 'av_popular_posts_widget');
+       register_setting('av-theme-settings-group', 'av_recent_posts_widget');
        register_setting('av-theme-settings-group', 'av_recent_comments_widget');
      }
 
@@ -62,6 +64,24 @@ function av_admin_settings() {
 				<tr>
 					<td>
 						<textarea id="av_custom_js" name="av_custom_js" rows="15" cols="70"><?php echo get_option('av_custom_js'); ?></textarea>
+					</td>
+				<tr>
+			</table>
+      <h3>Popular Posts Widget</h3>
+			<table>
+				<tr>
+					<td>
+						<input type="checkbox" id="av_popular_posts_widget" name="av_popular_posts_widget" value="1" <?php checked( 1, get_option('av_popular_posts_widget'), true ); ?>  />
+            <label for="av_popular_posts_widget"> Deactivate the Popular Posts Widget.</label>
+					</td>
+				<tr>
+			</table>
+      <h3>Recent Posts Widget</h3>
+			<table>
+				<tr>
+					<td>
+						<input type="checkbox" id="av_recent_posts_widget" name="av_recent_posts_widget" value="1" <?php checked( 1, get_option('av_recent_posts_widget'), true ); ?>  />
+            <label for="av_recent_posts_widget"> Deactivate the Recent Posts Widget.</label>
 					</td>
 				<tr>
 			</table>

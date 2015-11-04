@@ -77,6 +77,24 @@ function areavoices_customize_register( $wp_customize ) {
 	$wp_customize->remove_section('background_image'); //Remove the 'Background Image' Section
   $wp_customize->remove_setting('site_icon'); // Remove the 'Site Icon' setting option
 
+  /**
+	* Widget Sections
+	*/
+  if ( !is_super_admin() ) { // Remove sections if user is not a Super Admin
+    $wp_customize->remove_section('sidebar-widgets-sidebar-top'); //Remove the 'Sidebar: Top' widget section if user is not Super Admin
+    $wp_customize->remove_section('sidebar-widgets-sidebar-middle'); //Remove the 'Sidebar: Top' widget section if user is not Super Admin
+  }
+
+
+  $wp_customize->add_setting( 'av_aboutme_imgborder2', array(
+      'default'        => '1', // Returns '1' if checked, nothing (because false) if unchecked
+      'transport'   => 'postMessage',
+  ) );
+  $wp_customize->add_control( 'av_aboutme_imgborder2', array(
+      'label'   => 'Display border on profile picture',
+      'section' => 'widgets',
+      'type'    => 'checkbox',
+  ) );
 
 
 	/**
@@ -172,8 +190,8 @@ function areavoices_customize_register( $wp_customize ) {
 	$wp_customize->add_setting('av_aboutme_avatar', array(
 		'default'           => $default_bio_img,
 		'capability'        => 'edit_theme_options',
-    'transport'   => 'postMessage',
-		//'type'           => 'option',
+    'transport'         => 'postMessage',
+		//'type'            => 'option',
 	));
 	$wp_customize->add_control( new WP_Customize_Image_Control($wp_customize, 'av_aboutme_avatar', array(
 			'label'    => __('Profile Picture', 'areavoices'),

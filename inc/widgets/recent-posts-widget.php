@@ -11,19 +11,6 @@
      <?php
      global $theme_option;
 
-     //$title = apply_filters( 'widget_title', $instance['title'] );
-     //$thumbnail_size = empty($instance['thumbnail_size'])? 'thumbnail': $instance['thumbnail_size'];
-     $category = $instance['category'];
-     $num_fetch = $instance['num_fetch'];
-
-     // Opening of widget
-     echo $args['before_widget'];
-
-     // Open of title tag
-     //if( !empty($title) ){
-    //   echo $args['before_title'] . $title . $args['after_title'];
-    // }
-
      // Widget Content
 			$current_post = array(get_the_ID());
 			$query_args = array('post_type' => 'post', 'suppress_filters' => false);
@@ -31,7 +18,7 @@
 			$query_args['orderby'] = 'post_date';
 			$query_args['order'] = 'desc';
 			$query_args['paged'] = 1;
-			$query_args['category_name'] = $category;
+			//$query_args['category_name'] = $category;
 			$query_args['ignore_sticky_posts'] = 1;
 			$query_args['post__not_in'] = array(get_the_ID());
 			$query = new WP_Query( $query_args );
@@ -86,9 +73,6 @@
 			}
 			wp_reset_postdata();
 
-
-     // Closing of widget
-     echo $args['after_widget'];
      ?>
    </div>
  </aside>
