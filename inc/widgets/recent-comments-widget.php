@@ -26,19 +26,20 @@ echo '<aside id="av-recent-comments-widget" class="widget widget_search">';
 				  /* Get the Commenter */
 				  $commenter_email = $recent_comment->comment_author_email;
 				  $comment_user = get_user_by( 'email', $commenter_email );
-				  $comment_author_id = $comment_user->ID;
+          if ( $comment_user ) {
+            $comment_author_id = $comment_user->ID;
+          }
 
  					$comment_permalink = get_permalink($recent_comment->comment_post_ID) . '#comment-' . $recent_comment->comment_ID;
  					echo '<div class="recent-comment-widget ';
- 					
+
 				  	/* Compare the IDs */
   					if ( $comment_author_id == $post_author_id ) {
     				echo 'av-post-author">';
     				}
 					else{
 						echo '">';
-					}	
- 					
+					}
 
  					echo '<div class="recent-comment-widget-thumbnail"><a href="' . $comment_permalink . '" >';
  					echo get_avatar( $recent_comment->user_id, 55 );

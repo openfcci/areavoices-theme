@@ -101,79 +101,94 @@ function areavoices_customize_register( $wp_customize ) {
 	* Start FCC Custom
 	*/
 
-	/* Design & Layout */
-	$wp_customize->add_section(
-        'fcc_design_layout_section',
-        array(
-            'title' => 'Design & Layout',
-            'description' => 'Choose a layout for the homepage.',
-            'priority' => 23,
-        )
-    );
-		$wp_customize->add_setting(
-		    'fcc_design',
-		    array(
-		        'default' => 'Design 1',
-		    )
-		);
-		$wp_customize->add_control(
-		    'fcc_design',
-		    array(
-		        'type' => 'select',
-		        'label' => 'Design:',
-		        'section' => 'fcc_design_layout_section',
-		        'choices' => array(
-		            'design-1' => 'Design 1&#8211;Default',
-		            'design-2' => 'Design 2&#8211;Super Awesome',
-		            'design-3' => 'Design 3&#8211;Magazine',
-		            'design-4' => 'Design 4&#8211;Photography',
-								'design-5' => 'Design 5&#8211;Sports',
-								'design-6' => 'Design 6&#8211;Arts & Entertainment',
-								'design-7' => 'Design 7&#8211;Food & Drink',
-								'design-8' => 'Design 8&#8211;Music',
-		        ),
-		    )
-		);
-		$wp_customize->add_setting(
-		    'fcc_homepage_layout',
-		    array(
-		        'default' => 'fcc-homepage-layout-standard',
-		    )
-		);
-		$wp_customize->add_control(
-		    'fcc_homepage_layout',
-		    array(
-		        'type' => 'select',
-		        'label' => 'Homepage Layout:',
-		        'section' => 'fcc_design_layout_section',
-		        'choices' => array(
-		            'fcc-homepage-layout-standard' => 'Standard (Default)',
-		            'fcc-homepage-layout-standard-featured' => 'Standard w. Featured Content',
-		            'fcc-homepage-layout-tiled' => 'Tiled',
-		            'fcc-homepage-layout-tiled-featured' => 'Tiled w. Featured Content',
-		        ),
-		    )
-		);
-		$wp_customize->add_setting(
-		    'fcc_post_layout',
-		    array(
-		        'default' => 'fcc-post-layout-standard',
-		    )
-		);
-		$wp_customize->add_control(
-		    'fcc_post_layout',
-		    array(
-		        'type' => 'select',
-		        'label' => 'Post Layout:',
-		        'section' => 'fcc_design_layout_section',
-		        'choices' => array(
-		            'fcc-post-layout-standard' => 'Standard (Default)',
-		            'fcc-post-layout-standard-featured' => 'Standard w. Featured Content',
-		            'fcc-post-layout-tiled' => 'Tiled',
-		            'fcc-post-layout-tiled-featured' => 'Tiled w. Featured Content',
-		        ),
-		    )
-		);
+  if ( is_super_admin() ) { // Remove sections if user is not a Super Admin
+    /* Design & Layout */
+  	$wp_customize->add_section(
+          'fcc_design_layout_section',
+          array(
+              'title' => 'Design & Layout',
+              'description' => 'Choose a layout for the homepage.',
+              'priority' => 23,
+          )
+      );
+      /* Design */
+  		$wp_customize->add_setting(
+  		    'fcc_design',
+  		    array(
+  		        'default' => 'Design 1',
+  		    )
+  		);
+  		$wp_customize->add_control(
+  		    'fcc_design',
+  		    array(
+  		        'type' => 'select',
+  		        'label' => 'Design:',
+  		        'section' => 'fcc_design_layout_section',
+  		        'choices' => array(
+  		            'design-1' => 'Standard (Default)',
+  		            //'design-2' => 'Design 2&#8211;Super Awesome',
+  		            //'design-3' => 'Design 3&#8211;Magazine',
+  		            //'design-4' => 'Design 4&#8211;Photography',
+  								//'design-5' => 'Design 5&#8211;Sports',
+  								//'design-6' => 'Design 6&#8211;Arts & Entertainment',
+  								//'design-7' => 'Design 7&#8211;Food & Drink',
+  								//'design-8' => 'Design 8&#8211;Music',
+  		        ),
+  		    )
+  		);
+      /* Homepage Layout */
+  		$wp_customize->add_setting(
+  		    'fcc_homepage_layout',
+  		    array(
+  		        'default' => 'fcc-homepage-layout-standard',
+  		    )
+  		);
+  		$wp_customize->add_control(
+  		    'fcc_homepage_layout',
+  		    array(
+  		        'type' => 'select',
+  		        'label' => 'Homepage Layout:',
+  		        'section' => 'fcc_design_layout_section',
+  		        'choices' => array(
+  		            'fcc-homepage-layout-standard' => 'Standard (Default)',
+  		            //'fcc-homepage-layout-standard-featured' => 'Standard w. Featured Content',
+  		            //'fcc-homepage-layout-tiled' => 'Tiled',
+  		            //'fcc-homepage-layout-tiled-featured' => 'Tiled w. Featured Content',
+  		        ),
+  		    )
+  		);
+      /* Post Layout */
+  		$wp_customize->add_setting(
+  		    'fcc_post_layout',
+  		    array(
+  		        'default' => 'fcc-post-layout-standard',
+  		    )
+  		);
+  		$wp_customize->add_control(
+  		    'fcc_post_layout',
+  		    array(
+  		        'type' => 'select',
+  		        'label' => 'Post Layout:',
+  		        'section' => 'fcc_design_layout_section',
+  		        'choices' => array(
+  		            'fcc-post-layout-standard' => 'Standard (Default)',
+  		            //'fcc-post-layout-standard-featured' => 'Standard w. Featured Content',
+  		            //'fcc-post-layout-tiled' => 'Tiled',
+  		            //'fcc-post-layout-tiled-featured' => 'Tiled w. Featured Content',
+  		        ),
+  		    )
+  		);
+      /* Featured Content Slider */
+      $wp_customize->add_setting( 'av_featured_content_slider', array(
+          'default'        => '', // Returns '1' if checked, nothing (because false) if unchecked
+          'transport'   => 'postMessage',
+      ) );
+      $wp_customize->add_control( 'av_featured_content_slider', array(
+          'label'   => 'Enable the Featured Content Slider',
+          'section' => 'fcc_design_layout_section',
+          'type'    => 'checkbox',
+      ) );
+  } //End Super-Admin Only
 
 
 	/* Author Bio */
