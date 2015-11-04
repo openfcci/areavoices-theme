@@ -998,13 +998,13 @@ object {
 
 .recent-comment-widget{
   padding: 15px 10px;
-  
+
   box-sizing: border-box;
   margin-top: 10px;
   margin-bottom: 10px;
   border-bottom: 1px solid #eee;
-  
-  
+
+
 }
 
 .recent-comment-widget-title{
@@ -1041,12 +1041,12 @@ font-size: 0.9em;
   float: left;
   display: inline-block;
   max-width: 19%;
-  
+
 }
 
 .recent-comment-widget-thumbnail img {
   border-radius: 50%;
-  
+
 
 }
 
@@ -1062,7 +1062,7 @@ font-size: 0.9em;
 # FEATURED SLIDER
 --------------------------------------------------------------*/
 
-@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300,600);  
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300,600);
 
 
 
@@ -1081,7 +1081,7 @@ font-size: 0.9em;
   height: 300px;
   overflow: hidden;
   list-style: none;
-  
+
 }
 
 #slider ul li {
@@ -1102,7 +1102,7 @@ font-size: 0.9em;
   top: 40%;
   z-index: 999;
   display: block;
-  padding: 4% 3%;
+  padding: 1% 1%; /* RV */
   width: auto;
   height: auto;
   background: #2a2a2a;
