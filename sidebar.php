@@ -11,6 +11,14 @@ if ( ! is_active_sidebar( 'sidebar-1' ) ) {
 ?>
 
 <div id="secondary" class="widget-area" role="complementary">
+	<div id"widgets-1">
+
+	<!-- DYNAMIC SIDEBAR-TOP: BEGIN -->
+	<?php
+		if ( is_active_sidebar( 'sidebar-top' ) ) {
+			dynamic_sidebar( 'sidebar-top' );
+		}
+	?>
 
 	<!-- ABOUT ME WIDGET -->
 	<?php get_template_part( 'inc/widgets/about-me-widget', 'about-me-widget' ); ?>
@@ -23,17 +31,28 @@ if ( ! is_active_sidebar( 'sidebar-1' ) ) {
 	<!-- SEARCH WIDGET -->
 	<?php get_template_part( 'inc/widgets/search-widget', 'search-widget' ); ?>
 
+	<!-- DYNAMIC SIDEBAR-MIDDLE: BEGIN -->
+	<?php
+		if ( is_active_sidebar( 'sidebar-middle' ) ) {
+			dynamic_sidebar( 'sidebar-middle' );
+		}
+	?>
+
 	<!-- POPULAR POSTS WIDGET -->
 	<?php
 		if ( is_front_page() ) { //show only one front page
+			if ( !get_option('av_popular_posts_widget') ) { //Show if not set to 'deactivated'
 			get_template_part( 'inc/widgets/popular-posts-widget', 'popular-posts-widget' );
+			}
 	  }
 	?>
 
 	<!-- RECENT POSTS WIDGET -->
 	<?php
 		if ( !is_front_page() ) { //Show on all pages except front
-			get_template_part( 'inc/widgets/recent-posts-widget', 'recent-posts-widget' );
+			if ( !get_option('av_recent_posts_widget') ) { //Show if not set to 'deactivated'
+				get_template_part( 'inc/widgets/recent-posts-widget', 'recent-posts-widget' );
+			}
 		}
 	?>
 
@@ -42,10 +61,17 @@ if ( ! is_active_sidebar( 'sidebar-1' ) ) {
 	if ( get_option('av_recent_comments_widget') ) { //Show only if activated
 		get_template_part( 'inc/widgets/recent-comments-widget', 'recent-comments-widget' );
 	}
-
 	?>
 
-	<!-- DYNAMIC SIDEBAR: BEGIN -->
-	<?php dynamic_sidebar( 'sidebar-1' ); ?>
 
+
+	<!-- DYNAMIC SIDEBAR-1: BEGIN -->
+	<?php
+		if ( is_active_sidebar( 'sidebar-1' ) ) {
+			dynamic_sidebar( 'sidebar-1' );
+		}
+	?>
+	<?php //dynamic_sidebar( 'sidebar-2' ); ?>
+
+	</div><!-- #widgets-1 -->
 </div><!-- #secondary -->

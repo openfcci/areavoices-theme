@@ -790,7 +790,26 @@ margin-top: 5px;
     font: 400 26px/1 Genericons;
 }
 
+/* --------- Tag Cloud / Popular Searches ---------- */
 
+.tagcloud a{ background-color: #666666; color: #ffffff}
+.tagcloud a, .tagcloud a:hover{background-color: #424242; color: #ffffff; }
+
+.tagcloud a {
+  font-size: 11px !important;
+  display: block;
+	float: left;
+  padding: 11px 18px;
+  margin-right: 7px;
+  margin-top: 7px;
+	border: 0px solid;
+  border-color: inherit;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.tagcloud a:hover { opacity: 0.8; filter: alpha(opacity=80); }
+.tagcloud { display: inline-block; margin-bottom: 10px; }
 
 /* --------- ZILLA LIKES ---------- */
 
@@ -806,7 +825,10 @@ margin-top: 5px;
 
 /*.entry-content .zilla-likes:before{ color: #b4b4b4; }*/
 .entry-content .zilla-likes:hover,
-.entry-content .zilla-likes.active:before{ color: #4c4c4c; }
+.entry-content .zilla-likes.active:before{
+  color: #4c4c4c;
+  content: "\e948"; /* Regular Heart */
+}
 
 .entry-content .zilla-likes,
 .entry-content .zilla-likes.active,
@@ -818,12 +840,12 @@ margin-top: 5px;
   background: none !important;
 }
 .entry-content .zilla-likes:before {
-  content: "\e291";
+  content: "\e291"; /* Regular Heart */
+  /* content: "\e613"; */ /* +Heart */
   font-family: avicons;
   display: block;
   font-size: 21px;
   margin-bottom: 8px;
-  color: #red !important;
 }
 
 /* Post Page Zilla Style */
@@ -832,7 +854,8 @@ margin-top: 5px;
   padding-left: 0 !important;
 }
 .entry-meta .zilla-likes:before {
-  content: "\e291";
+  content: "\e291"; /* Regular Heart */
+  /* content: "\e613"; */ /* +Heart */
   font-family: avicons;
   display: inline-block;
   font-size: 15px;

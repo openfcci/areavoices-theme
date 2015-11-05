@@ -13,8 +13,8 @@
      </h1>
    </div>
    <div class="textwidget">
-     <p class="aboutme_avatar" align="center">
-       <img <?php $border = get_theme_mod( 'av_aboutme_imgborder', '' ); if ( $border ) { echo 'id="aboutme_pic"'; } ?> src="<?php $default_avatar = get_template_directory_uri() . '/images/about-me-generic.png';
+     <p class="" align="center">
+       <img <?php $border = get_theme_mod( 'av_aboutme_imgborder', '' ); if ( $border ) { echo 'id="aboutme_pic"'; } ?> class="av_aboutme_avatar" src="<?php $default_avatar = get_template_directory_uri() . '/images/about-me-generic.png';
        echo get_theme_mod( 'av_aboutme_avatar', $default_avatar ); ?>"/>
      </p>
      <h4 class="aboutme_username" align="center"><?php echo get_theme_mod( 'av_aboutme_username', '' ); ?></h4>
