@@ -1062,10 +1062,6 @@ font-size: 0.9em;
 # FEATURED SLIDER
 --------------------------------------------------------------*/
 
-@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300,600);
-
-
-
 #slider {
   position: relative;
   overflow: hidden;

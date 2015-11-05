@@ -54,11 +54,9 @@ echo '<aside id="av-recent-comments-widget" class="widget widget_search">';
  					echo '</div>';
 
  					echo '<div class="recent-comment-widget-excerpt">';
- 					echo substr($recent_comment->comment_content, 0, 90);
- 					if( strlen($recent_comment->comment_content) > 90 ){
- 						echo '...';
- 					}
+          echo mb_strimwidth($recent_comment->comment_content, 0, 90, '...');
  					echo '</div>';
+
  					echo '</div>';
 
  					echo '<div class="clear"></div>';

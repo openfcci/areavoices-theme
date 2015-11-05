@@ -70,8 +70,8 @@ function areavoices_setup() {
 
 	// Set up the WordPress core custom background feature.
 	add_theme_support( 'custom-background', apply_filters( 'areavoices_custom_background_args', array(
-		'default-color' => 'ebebeb', /*RV*/
-		'default-image' => get_template_directory_uri() . '/images/avbackground.jpg', /*RV*/
+		'default-color' => 'ebebeb',
+		'default-image' => get_template_directory_uri() . '/images/avbackground.jpg',
 	) ) );
 }
 endif; // areavoices_setup
@@ -159,21 +159,24 @@ add_action( 'wp_enqueue_scripts', 'areavoices_scripts' );
 function av_add_google_fonts() {
 	//Arvo
 	wp_enqueue_style( 'av-google-fonts-arvo', 'http://fonts.googleapis.com/css?family=Arvo:400,400italic,700,700italic', false );
+	// Open Sans
+	wp_enqueue_style( 'av-google-fonts-opensans', 'http://fonts.googleapis.com/css?family=Open+Sans:400,300,600', false );
 	//Font 2
 	//wp_enqueue_style( 'av-google-fonts-font2', 'http://', false );
 }
-//add_action( 'wp_enqueue_scripts', 'av_add_google_fonts' );
+add_action( 'wp_enqueue_scripts', 'av_add_google_fonts' );
+
 
 /**
  * Add Editor Styles to TinyMCE Post Editor
  */
-function av_theme_add_editor_styles() {
-		//$font_url = str_replace( ',', '%2C', '//fonts.googleapis.com/css?family=Arvo:400,400italic,700,700italic' );
-		//add_editor_style( $font_url );
-		$av_editor_styles = get_template_directory_uri() . '/css/av-editor-styles.css';
-		add_editor_style( array( $av_editor_styles ) );
-}
-add_action( 'admin_init', 'av_theme_add_editor_styles' );
+	/* function av_theme_add_editor_styles() {
+			//$font_url = str_replace( ',', '%2C', '//fonts.googleapis.com/css?family=Arvo:400,400italic,700,700italic' );
+			//add_editor_style( $font_url );
+			$av_editor_styles = get_template_directory_uri() . '/css/av-editor-styles.css';
+			add_editor_style( array( $av_editor_styles ) );
+	} */
+	//add_action( 'admin_init', 'av_theme_add_editor_styles' ); /* RV | Editor Styles Not Currently Needed */
 
 /**
  * Implement the Custom Header feature.
@@ -221,11 +224,6 @@ require get_template_directory() . '/inc/jetpack.php';
  */
 require get_template_directory() . '/inc/admin/admin-settings-page.php';
 
-/**
- * Admin Theme Appearance Page
- */
-//require get_template_directory() . '/inc/admin/admin-appearance-page.php';
-
 
 /**
  * Customize the "Read More" link.
@@ -237,6 +235,8 @@ function areavoices_excerpt_more($more) {
 }
 add_filter('excerpt_more', 'areavoices_excerpt_more');
 
+
+/************** Menus ***************/
 /**
  * Remove 'Appearance'submenu pages
  */
