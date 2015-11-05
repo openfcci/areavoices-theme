@@ -9,9 +9,10 @@
 ?>
 
 <!-- FEATURED SLIDER: Begin -->
+<div id="responsive_check"></div>
 <div id="slider">
-  <a href="#" class="control_next">></a>
-  <a href="#" class="control_prev"><</a>
+  <a class="control_next">></a>
+  <a class="control_prev"><</a>
   <ul>
     <li>SLIDE 1</li>
     <li style="background: #aaa;">SLIDE 2</li>

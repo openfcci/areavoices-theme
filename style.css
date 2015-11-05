@@ -895,9 +895,24 @@ object {
   #secondary {
     margin-left: auto;
     margin-right: auto;
-    width: 100%; } }
+    width: 100%; } 
+
+  #responsive_check{
+    z-index: 1;
+  }
+}
+
+@media only screen and (max-width: 599px) {
+  #responsive_check{
+    z-index: 2;
+  }
+  }
 /*--- mobile portrait style ---*/
 @media (max-width: 419px) {
+
+   #responsive_check{
+    z-index: 3;
+  }
 
   body .container {
     max-width: 395px;
@@ -990,7 +1005,11 @@ object {
   }
   */
 
+  
+
 }
+
+
 
 /*--------------------------------------------------------------
 # RECENT COMMENTS
@@ -1062,10 +1081,6 @@ font-size: 0.9em;
 # FEATURED SLIDER
 --------------------------------------------------------------*/
 
-@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300,600);  
-
-
-
 #slider {
   position: relative;
   overflow: hidden;
@@ -1128,7 +1143,10 @@ font-size: 0.9em;
   border-radius: 2px 0 0 2px;
 }
 
-
+#responsive_check{
+  position: absolute;
+  display: none;
+  }
 /*--------------------------------------------------------------
 # CUSTOM (RV)
 --------------------------------------------------------------*/

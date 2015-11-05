@@ -1,29 +1,52 @@
-jQuery(document).ready(function ($) {
+jQuery(function ($) {
 
 
     setInterval(function () {
         moveRight();
     }, 5000);
-
-  
+var sliderLiWidth;
+  var w = window.innerWidth;
+	
+    if ($("#responsive_check").css("z-index") === "1" ){
+            sliderLiWidth = w * 0.33;
+        }
+        else if ($("#responsive_check").css("z-index") === "2" ){
+            sliderLiWidth = w * 0.5;
+        }
+        else if ($("#responsive_check").css("z-index") === "3" ){
+            sliderLiWidth = w;
+        }
+        else {
+            sliderLiWidth = w * 0.25;
+        }
 	var slideCount = $('#slider ul li').length;
-	var slideWidth = $('#slider ul li').width();
-    var slider = $('#slider').width();
-	var sliderUlWidth = slideCount * slideWidth;
-    var sliderLiWidth = slider * 0.25;
-	
+    
+    var sliderUlWidth = slideCount * sliderLiWidth;
+    
 	// $('#slider').css({ width: slideWidth, height: slideHeight });
-	
-	 $('#slider ul').css({ width: sliderUlWidth, marginLeft: - slideWidth });
-     $('#slider ul li').css({ width: sliderLiWidth});
+	$('#slider ul li').css({ width: sliderLiWidth});
+	 $('#slider ul').css({ width: sliderUlWidth, marginLeft: - sliderLiWidth });
+     
      $(window).resize(function() {
+        w = window.innerWidth;
+        if ($("#responsive_check").css("z-index") === "1" ){
+            sliderLiWidth = w * 0.33;
+        }
+        else if ($("#responsive_check").css("z-index") === "2" ){
+            sliderLiWidth = w * 0.5;
+        }
+        else if ($("#responsive_check").css("z-index") === "3" ){
+            sliderLiWidth = w;
+        }
+        else {
+            sliderLiWidth = w * 0.25;
+        }
         slideCount = $('#slider ul li').length;
-        slideWidth = $('#slider ul li').width();
-        slider = $('#slider').width();
-        sliderUlWidth = slideCount * slideWidth;
-        sliderLiWidth = slider * 0.25;
-        $('#slider ul').css({ width: sliderUlWidth, marginLeft: - slideWidth });
-     $('#slider ul li').css({ width: sliderLiWidth});
+        
+        sliderUlWidth = slideCount * sliderLiWidth;
+        $('#slider ul li').css({ width: sliderLiWidth});
+        $('#slider ul').css({ width: sliderUlWidth, marginLeft: - sliderLiWidth });
+     
 
 
 	});
@@ -31,7 +54,7 @@ jQuery(document).ready(function ($) {
 
     function moveLeft() {
         $('#slider ul').animate({
-            left: + slideWidth
+            left: + sliderLiWidth
         }, 400, function () {
             $('#slider ul li:last-child').prependTo('#slider ul');
             $('#slider ul').css('left', '');
@@ -40,7 +63,7 @@ jQuery(document).ready(function ($) {
 
     function moveRight() {
         $('#slider ul').animate({
-            left: - slideWidth
+            left: - sliderLiWidth
         }, 400, function () {
             $('#slider ul li:first-child').appendTo('#slider ul');
             $('#slider ul').css('left', '');
