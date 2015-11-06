@@ -11,17 +11,51 @@
 <!-- FEATURED SLIDER: Begin -->
 <div id="responsive_check"></div>
 <div id="slider">
-  <a class="control_next">></a>
-  <a class="control_prev"><</a>
+  <a class="control_next"><span class="avicon-arrow-long-right"></span></a>
+  <a class="control_prev"><span class="avicon-arrow-long-left"></span></a>
   <ul>
-    <li>SLIDE 1</li>
-    <li style="background: #aaa;">SLIDE 2</li>
-    <li>SLIDE 3</li>
-    <li style="background: #aaa;">SLIDE 4</li>
-    <li>SLIDE 5</li>
-    <li style="background: #aaa;">SLIDE 6</li>
-    <li>SLIDE 7</li>
-    <li style="background: #aaa;">SLIDE 8</li>
+    <li>
+      <div class="featured-info-wrapper">
+        <div class="featured-category">CATEGORY</div>
+        <div class="featured-title">POST TITLE</div>
+        <div class="featured-date">DD MMM YYYY</div>
+      </div>
+    </li>
+    <li style="background: #aaa;">
+      <div class="featured-info-wrapper">
+        <div class="featured-category">CATEGORY</div>
+        <div class="featured-title">POST TITLE</div>
+        <div class="featured-date">DD MMM YYYY</div>
+      </div>
+    </li>
+    <li>
+      <div class="featured-info-wrapper">
+        <div class="featured-category">CATEGORY</div>
+        <div class="featured-title">POST TITLE</div>
+        <div class="featured-date">DD MMM YYYY</div>
+      </div>
+    </li>
+    <li style="background: #aaa;">
+      <div class="featured-info-wrapper">
+        <div class="featured-category">CATEGORY</div>
+        <div class="featured-title">POST TITLE</div>
+        <div class="featured-date">DD MMM YYYY</div>
+      </div>
+    </li>
+    <li>
+      <div class="featured-info-wrapper">
+        <div class="featured-category">CATEGORY</div>
+        <div class="featured-title">POST TITLE</div>
+        <div class="featured-date">DD MMM YYYY</div>
+      </div>
+    </li>
+    <li style="background: #aaa;">
+      <div class="featured-info-wrapper">
+        <div class="featured-category">CATEGORY</div>
+        <div class="featured-title">POST TITLE</div>
+        <div class="featured-date">DD MMM YYYY</div>
+      </div>
+    </li>
   </ul>  
 </div>
 <!-- FEATURED SLIDER: End -->

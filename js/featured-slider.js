@@ -3,7 +3,7 @@ jQuery(function ($) {
 
     setInterval(function () {
         moveRight();
-    }, 5000);
+    }, 4000);
 var sliderLiWidth;
   var w = window.innerWidth;
 	
@@ -55,7 +55,7 @@ var sliderLiWidth;
     function moveLeft() {
         $('#slider ul').animate({
             left: + sliderLiWidth
-        }, 400, function () {
+        }, 500, function () {
             $('#slider ul li:last-child').prependTo('#slider ul');
             $('#slider ul').css('left', '');
         });
@@ -64,7 +64,7 @@ var sliderLiWidth;
     function moveRight() {
         $('#slider ul').animate({
             left: - sliderLiWidth
-        }, 400, function () {
+        }, 500, function () {
             $('#slider ul li:first-child').appendTo('#slider ul');
             $('#slider ul').css('left', '');
         });

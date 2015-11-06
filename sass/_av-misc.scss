@@ -240,7 +240,7 @@ font-size: 0.9em;
 #slider {
   position: relative;
   overflow: hidden;
-  height: 300px;
+  height: 350px;
   border-radius: 4px;
   width: 100%;
 }
@@ -249,9 +249,13 @@ font-size: 0.9em;
   position: relative;
   margin: 0;
   padding: 0;
-  height: 300px;
+  height: 350px;
   overflow: hidden;
   list-style: none;
+  // -webkit-transition:left 0.4s;
+  //   -moz-transition:left 0.4s;
+  //   -o-transition:left 0.4s;
+  //   transition:left 0.4s;
 
 }
 
@@ -262,10 +266,50 @@ font-size: 0.9em;
   margin: 0;
   padding: 0;
   width: 25%;
-  height: 300px;
+  height: 350px;
   background: #ccc;
   text-align: center;
-  line-height: 300px;
+}
+
+#slider .featured-info-wrapper{
+  margin: auto;
+  display: block;
+  left: 0;
+  right: 0;
+  width: 80%;
+  position: absolute;
+  bottom: 20px;
+  text-align: left;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  box-sizing: border-box;
+  padding: 8px;
+  font-family: "AvenirNextW10Demi";
+  line-height: 1em;
+
+}
+
+#slider .featured-category{
+  background-color: #333;
+  font-size: 0.7em;
+  box-sizing: border-box;
+  padding: 6px 8px 2px 8px;
+  display: inline-block;
+  margin-top: 0.2em;
+  margin-bottom: 0.2em;
+}
+
+#slider .featured-title{
+  font-size: 1.5em;
+margin-top: 0.5em;
+  margin-bottom: 0.4em;
+
+}
+
+#slider .featured-date{
+font-size: 0.7em;
+margin-top: 0.2em;
+  margin-bottom: 0.2em;
 }
 
 #slider a.control_prev, #slider a.control_next {
