@@ -252,12 +252,10 @@ font-size: 0.9em;
   height: 350px;
   overflow: hidden;
   list-style: none;
-  // -webkit-transition:left 0.4s;
-  //   -moz-transition:left 0.4s;
-  //   -o-transition:left 0.4s;
-  //   transition:left 0.4s;
-
+  left: 0;
 }
+
+
 
 #slider ul li {
   position: relative;

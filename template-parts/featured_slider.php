@@ -17,42 +17,42 @@
     <li>
       <div class="featured-info-wrapper">
         <div class="featured-category">CATEGORY</div>
-        <div class="featured-title">POST TITLE</div>
+        <div class="featured-title">POST TITLE 1</div>
         <div class="featured-date">DD MMM YYYY</div>
       </div>
     </li>
     <li style="background: #aaa;">
       <div class="featured-info-wrapper">
         <div class="featured-category">CATEGORY</div>
-        <div class="featured-title">POST TITLE</div>
+        <div class="featured-title">POST TITLE 2</div>
         <div class="featured-date">DD MMM YYYY</div>
       </div>
     </li>
     <li>
       <div class="featured-info-wrapper">
         <div class="featured-category">CATEGORY</div>
-        <div class="featured-title">POST TITLE</div>
+        <div class="featured-title">POST TITLE 3</div>
         <div class="featured-date">DD MMM YYYY</div>
       </div>
     </li>
     <li style="background: #aaa;">
       <div class="featured-info-wrapper">
         <div class="featured-category">CATEGORY</div>
-        <div class="featured-title">POST TITLE</div>
+        <div class="featured-title">POST TITLE 4</div>
         <div class="featured-date">DD MMM YYYY</div>
       </div>
     </li>
     <li>
       <div class="featured-info-wrapper">
         <div class="featured-category">CATEGORY</div>
-        <div class="featured-title">POST TITLE</div>
+        <div class="featured-title">POST TITLE 5</div>
         <div class="featured-date">DD MMM YYYY</div>
       </div>
     </li>
     <li style="background: #aaa;">
       <div class="featured-info-wrapper">
         <div class="featured-category">CATEGORY</div>
-        <div class="featured-title">POST TITLE</div>
+        <div class="featured-title">POST TITLE 6</div>
         <div class="featured-date">DD MMM YYYY</div>
       </div>
     </li>

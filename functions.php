@@ -142,6 +142,7 @@ function areavoices_scripts() {
 	/* Scripts */
 	wp_enqueue_script('jquery'); /*RV*/
 	wp_enqueue_script( 'areavoices-featured-slider', get_template_directory_uri() . '/js/featured-slider.js', array(), '20151104', true ); /*BS*/
+	wp_enqueue_script( 'areavoices-transit', get_template_directory_uri() . '/js/min/jquery.transit.min.js', array(), '20151110', true ); /*BS*/
 	wp_enqueue_script( 'areavoices-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
 	wp_enqueue_script( 'areavoices-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
 
