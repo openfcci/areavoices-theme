@@ -1081,7 +1081,10 @@ margin-left: 15px;
 }
 
 @media only screen and (max-width: 599px) {
-  .site-header{
+  #masthead.site-header {
+    padding-top: 0px;
+  }
+  .site-header {
     padding-bottom: 0px;
   }
   .site-header .container{

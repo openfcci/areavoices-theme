@@ -46,12 +46,12 @@
  */
 function areavoices_customize_register( $wp_customize ) {
 
-	/**
-	* Get Settings
-	*/
-	$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
-	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
-	$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
+  /**
+  * Get Settings
+  */
+  $wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
+  $wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
+  $wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
 
   $wp_customize->get_setting( 'av_aboutme_avatar' )->transport = 'postMessage';
   $wp_customize->get_setting( 'av_aboutme_imgborder' )->transport = 'postMessage';
@@ -70,7 +70,6 @@ function areavoices_customize_register( $wp_customize ) {
 	/**
 	* Remove Default Customizer Sections site_icon
 	*/
-  $wp_customize->remove_setting('fcc_design_layout_section'); //
 	$wp_customize->remove_section('themes'); //Remove the 'Choose Active Theme' Section
 	$wp_customize->remove_section('colors'); //Remove the 'Colors' Section ( Header Text Color | Background Color )
 	$wp_customize->remove_section('static_front_page'); //Remove the 'Static Front Page' Section

@@ -145,6 +145,14 @@ function areavoices_scripts() {
 	wp_enqueue_script( 'areavoices-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
 	wp_enqueue_script( 'areavoices-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
 
+	/* Featured Content Slider Script */
+	if ( is_front_page() ) {
+	  $fc_slider = get_theme_mod( 'av_featured_content_slider', '' );
+	  if ( get_theme_mod('av_featured_content_slider') ) {
+	    wp_enqueue_script( 'areavoices-featured-slider', get_template_directory_uri() . '/js/featured-slider.js', array(), '20151104', true ); /*BS*/
+	  }
+	}
+
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
@@ -265,7 +273,7 @@ add_action( 'admin_menu', 'av_unset_appearance_submenus');
 /**
  * Implement the NSFW shortcode
  */
-require( get_template_directory() . '/inc/shortcodes/nsfw.php' );
+//require( get_template_directory() . '/inc/shortcodes/nsfw.php' );
 
 
 /**************NSFW***************/
@@ -360,3 +368,111 @@ function wpse_136058_debug_admin_menu() {
 //add_action( 'admin_init', 'wpse_136058_debug_admin_menu' );
 
 /**************Custom Thing***************/
+
+/**
+ * Enqueue the stylesheet.
+ */
+function my_enqueue_customizer_stylesheet() {
+
+    wp_register_style( 'my-customizer-css', get_template_directory_uri() . '/css/avicons.css', NULL, NULL, 'all' );
+    wp_enqueue_style( 'my-customizer-css' );
+
+}
+add_action( 'customize_controls_print_styles', 'my_enqueue_customizer_stylesheet' );
+
+/**
+ * This function adds some styles to the WordPress Customizer
+ * Source: http://aristeides.com/blog/modifying-wordpress-customizer/
+ */
+function my_customizer_styles() {
+	?>
+    <style>
+		/*!
+* The panel names are based on the IDs you assign to them. Use your Firebug/Chrome inspector to quickly find them.
+*/
+
+#customize-controls .accordion-section-title:before,
+#customize-controls .panel-title:before {
+-moz-osx-font-smoothing: grayscale;
+display: inline-block;
+font-family: dashicons;
+font-size: 20px;
+font-style: normal;
+font-weight: 400;
+height: 20px;
+line-height: 1;
+text-align: center;
+text-decoration: inherit;
+vertical-align: top;
+width: 20px;
+opacity: 0.6;
+}
+#customize-controls .accordion-section-title:before:hover,
+#customize-controls .panel-title:before:hover {
+opacity: 1.0;
+}
+#customize-controls .panel-title:before {
+left: 2px;
+margin-right: 5px;
+position: relative;
+top: 4px;
+}
+#customize-controls #accordion-section-fcc_design_layout_section .panel-title:after,
+#customize-controls #accordion-section-fcc_design_layout_section > h3:after{
+font-family: 'avicons';
+content: "\e926";
+}
+#customize-controls #accordion-section-fcc_design_layout_section > h3 {
+color: red;
+}
+
+    </style>
+    <?php
+
+}
+add_action( 'customize_controls_print_styles', 'my_customizer_styles', 999 );
+
+
+/**
+ * Filter get_avatar
+ * Reference: http://aristeides.com/blog/modifying-wordpress-customizer/
+ */
+	//add_filter( 'get_avatar' , 'my_custom_avatar' , 1 , 5 );
+	function my_custom_avatar( $avatar, $id_or_email, $size, $default, $alt ) {
+	    $user = false;
+	    if ( is_numeric( $id_or_email ) ) {
+	        $id = (int) $id_or_email;
+	        $user = get_user_by( 'id' , $id );
+	    } elseif ( is_object( $id_or_email ) ) {
+	        if ( ! empty( $id_or_email->user_id ) ) {
+	            $id = (int) $id_or_email->user_id;
+	            $user = get_user_by( 'id' , $id );
+	        }
+	    } else {
+	        $user = get_user_by( 'email', $id_or_email );
+	    }
+	    if ( $user && is_object( $user ) ) {
+				$author_user_id = $user->data->ID;
+				//Get Site Owner//
+				$args = array(
+					'blog_id'      => $GLOBALS['blog_id'],
+					'role'         => 'administrator',
+					'meta_key'     => '',
+					'meta_value'   => '',
+					'meta_compare' => '',
+					'number'       => '1',
+				 );
+				 $site_owner = get_users( $args );
+				 if ( $site_owner ) {
+					 $site_owner_id = $site_owner[0]->ID;
+				 } else {
+					 $site_owner_id = '';
+				 }
+	        if ( $author_user_id == $site_owner_id ) {
+					$siteowner_avatar = get_theme_mod( 'av_aboutme_avatar' );
+	            $avatar = $siteowner_avatar;
+	            $avatar = "<img alt='{$alt}' src='{$avatar}' class='avatar avatar-{$size} photo' height='{$size}' width='{$size}' />";
+	        }
+	    }//end if user
+	    return $avatar;
+	}//end my_custom_avatar

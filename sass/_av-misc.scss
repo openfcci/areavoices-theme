@@ -15,7 +15,7 @@ aside {
   #page {
     /* background-color: #ebebeb; */
     /* background-image: url("images/avbackground.jpg"; */
-    } /*RV*/ /*RV*/ 
+    } /*RV*/ /*RV*/
 
 /* GRID? */
 .container { /* Add 'container' class to this div: <div id="content" class="site-content container">  and header: <div class="site-branding site-header"><div class="container"><div class="site-info">*/
@@ -169,6 +169,14 @@ input.search-field {
 
 .wp-caption-text {
   text-align: center; }
+
+/*--------------------------------------------------------------
+# WIDGETS
+--------------------------------------------------------------*/
+
+  .widget.suboptions, .widget_archive {
+    text-align: center;
+  }
 
 /*--------------------------------------------------------------
 # RECENT COMMENTS
@@ -393,8 +401,12 @@ font-size: 0.9em;
   .site-description a {
     font-size: 1em !important;
   }
-  #post-author, #post-category, #post-date span.separator {
+  #post-author { //#post-category, #post-date span.separator
     display: none;
+  }
+  #post-date span.separator {
+  margin-left: 0.5em;
+  margin-right: 0.5em;
   }
   .aboutme_username, .aboutme_description {
     font-size: 0.866667em !important;
