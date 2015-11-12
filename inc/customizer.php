@@ -70,6 +70,10 @@ function areavoices_customize_register( $wp_customize ) {
 	/**
 	* Remove Default Customizer Sections site_icon
 	*/
+  if ( !current_user_can( 'manage_options' ) ) { //Show only for Admin & Super Admin
+    $wp_customize->remove_section('title_tagline');
+  }
+
 	$wp_customize->remove_section('themes'); //Remove the 'Choose Active Theme' Section
 	$wp_customize->remove_section('colors'); //Remove the 'Colors' Section ( Header Text Color | Background Color )
 	$wp_customize->remove_section('static_front_page'); //Remove the 'Static Front Page' Section
@@ -204,7 +208,7 @@ function areavoices_customize_register( $wp_customize ) {
 	$wp_customize->add_setting('av_aboutme_avatar', array(
 		'default'           => $default_bio_img,
 		'capability'        => 'edit_theme_options',
-    'transport'         => 'postMessage',
+    //'transport'         => 'postMessage', /* RV | FIX */
 		//'type'            => 'option',
 	));
 	$wp_customize->add_control( new WP_Customize_Image_Control($wp_customize, 'av_aboutme_avatar', array(
@@ -221,7 +225,7 @@ function areavoices_customize_register( $wp_customize ) {
   // Bio Pic Border \\
         $wp_customize->add_setting( 'av_aboutme_imgborder', array(
             'default'        => '1', // Returns '1' if checked, nothing (because false) if unchecked
-            'transport'   => 'postMessage',
+            //'transport'   => 'postMessage', /* RV | FIX */
         ) );
         $wp_customize->add_control( 'av_aboutme_imgborder', array(
             'label'   => 'Display border on profile picture',

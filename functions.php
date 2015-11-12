@@ -419,11 +419,20 @@ top: 4px;
 }
 #customize-controls #accordion-section-fcc_design_layout_section .panel-title:after,
 #customize-controls #accordion-section-fcc_design_layout_section > h3:after{
-font-family: 'avicons';
-content: "\e926";
+/* font-family: 'avicons'; */
+/* content: "\e926"; */
+}
+#customize-controls #accordion-section-title_tagline > h3 {
+color: #999;
 }
 #customize-controls #accordion-section-fcc_design_layout_section > h3 {
-color: red;
+color: #999;
+}
+#customize-controls #accordion-section-sidebar-widgets-sidebar-top > h3 {
+color: #999;
+}
+#customize-controls #accordion-section-sidebar-widgets-sidebar-middle > h3 {
+color: #999;
 }
 
     </style>
