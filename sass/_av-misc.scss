@@ -242,7 +242,7 @@ font-size: 0.9em;
 }
 
 /*--------------------------------------------------------------
-# FEATURED SLIDER
+# FEATURED SLIDER - Updated CSS
 --------------------------------------------------------------*/
 
 #slider {
@@ -278,21 +278,19 @@ font-size: 0.9em;
 }
 
 #slider .featured-info-wrapper{
-  margin: auto;
+  /* margin: auto; */ /*RV*/
   display: block;
   left: 0;
   right: 0;
-  width: 80%;
+  width: 100%; /*RV*/
   position: absolute;
-  bottom: 20px;
+  /* bottom: 20px; */ /*RV*/
   text-align: left;
   background-color: rgba(0, 0, 0, 0.5);
   color: #fff;
   box-sizing: border-box;
-  padding: 8px;
+  padding: 200px 20px 20px 20px; /*RV*/
   font-family: "AvenirNextW10Demi";
-  line-height: 1em;
-
 }
 
 #slider .featured-category{
@@ -307,14 +305,14 @@ font-size: 0.9em;
 
 #slider .featured-title{
   font-size: 1.5em;
-margin-top: 0.5em;
+  margin-top: 0.5em;
   margin-bottom: 0.4em;
-
+  line-height: 1em; /*RV*/
 }
 
 #slider .featured-date{
-font-size: 0.7em;
-margin-top: 0.2em;
+  font-size: 0.7em;
+  margin-top: 0.2em;
   margin-bottom: 0.2em;
 }
 
