@@ -2,3 +2,4 @@
 .DS*
 .codekit
 config.codekit
+sass/.sass-cache/*

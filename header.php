@@ -57,6 +57,16 @@
 	</header><!-- #masthead -->
 
 		<?php //if ( is_archive() ) { get_template_part( 'template-parts/header-title', 'header' ); } /*RV*/ ?>
+
+		<?php /* Featured Content Slider */
+			if ( is_front_page() ) { //show only one front page
+				$fc_slider = get_theme_mod( 'av_featured_content_slider', '' );
+				if ( get_theme_mod('av_featured_content_slider') ) { //Show if not set to 'deactivated'
+				get_template_part( 'template-parts/featured_slider');
+				}
+		  }
+		?><!-- #featured-content-slider -->
+
 		<?php get_template_part( 'template-parts/google_ads', 'header' ); /*RV*/ ?>
 
 	<div id="content" class="site-content container">

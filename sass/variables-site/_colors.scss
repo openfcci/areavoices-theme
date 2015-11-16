@@ -1,22 +1,16 @@
-$color_site-primary: #289fba;           // Style Tile color 1
-$color_site-secondary: #de8027;        // Style Tile color 2
-$color_site-tertiary: #0d323a;        // Style Tile color 3
-$color_site-background: #ebebeb;       // Style Tile color 4
-$color_site-text: #464646;           // Style Tile color 5
+$color__background-body: #ebebeb;
+$color__background-screen: #f1f1f1;
+$color__background-hr: #ccc;
+$color__background-button: #e6e6e6;
+$color__background-pre: #eee;
+$color__background-ins: #fff9c0;
 
-$color__background-body: $color_site-background;
-$color__background-screen: $color_site-background;
-$color__background-hr: $color_site-tertiary;
-$color__background-button: $color_site-secondary;
-$color__background-pre: lighten($color_site-tertiary, 30%);
-$color__background-ins: lighten($color_site-tertiary, 50%);
-
-$color__text-screen: $color_site-text;
+$color__text-screen: #21759b;
 $color__text-input: #666;
 $color__text-input-focus: #111;
-$color__link: $color_site-tertiary;
-$color__link-visited: $color_site-tertiary;
-$color__link-hover: $color_site-secondary;
+$color__link: #2d6cea;
+$color__link-visited: #2d6cea;
+$color__link-hover: #2d6cea;
 $color__text-main: #404040;
 
 $color__border-button: #ccc #ccc #bbb;

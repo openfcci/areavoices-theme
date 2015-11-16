@@ -6,17 +6,11 @@
  ?>
 
  <!-- POPULAR POSTS WIDGET: Begin -->
+ <?php if( function_exists('zilla_likes') ) { ?>
  <aside id="av-popular-posts-widget" class="widget widget_search">
    <div>
      <?php
      global $theme_option;
-
-     $title = apply_filters( 'widget_title', $instance['title'] );
-     $category = $instance['category'];
-     $num_fetch = $instance['num_fetch'];
-
-     // Opening of widget
-     echo $args['before_widget'];
 
      // Open of title tag
      if( !empty($title) ){
@@ -26,11 +20,11 @@
      // Widget Content
      $current_post = array(get_the_ID());
      $query_args = array('post_type' => 'post', 'suppress_filters' => false);
-     $query_args['posts_per_page'] = $num_fetch;
+     $query_args['posts_per_page'] = 4;
      $query_args['orderby'] = 'meta_value_num';
      $query_args['order'] = 'desc';
      $query_args['paged'] = 1;
-     $query_args['category_name'] = $category;
+     //$query_args['category_name'] = $category;
      $query_args['meta_key'] = '_zilla_likes';
      $query_args['ignore_sticky_posts'] = 1;
      $query_args['post__not_in'] = array(get_the_ID());
@@ -64,11 +58,10 @@
      }
      wp_reset_postdata();
 
-     // Closing of widget
-     echo $args['after_widget'];
      ?>
    </div>
  </aside>
+ <?php } ?>
  <!-- POPULAR POSTS WIDGET: END -->
 
   <?php

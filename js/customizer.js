@@ -5,6 +5,7 @@
  */
 
 ( function( $ ) {
+
 	// Site title.
 	wp.customize( 'blogname', function( value ) {
 		value.bind( function( to ) {
@@ -22,7 +23,9 @@
 	// About Me: Avatar. //UPDATE: TEXT TO?
 	wp.customize( 'av_aboutme_avatar', function( value ) {
 		value.bind( function( to ) {
-			$( '.aboutme_avatar' ).text( to );
+			//$( 'img.av_aboutme_avatar' ).attr( 'src', to );
+			var $img = $('<img>').attr('src', response);
+      $( '.site-branding' ).html( $img );
 		} );
 	} );
 
@@ -58,4 +61,5 @@
 			}
 		} );
 	} );
+//////////////
 } )( jQuery );

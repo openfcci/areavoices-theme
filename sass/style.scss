@@ -1,14 +1,14 @@
 /*!
-Theme Name: areavoices
-Theme URI: http://underscores.me/
-Author: Julie Kuehl
-Author URI: http://juliekuehl.com
-Description: A kick-ass custom WordPress theme built for Area Voices.
-Version: 1.0.0
+Theme Name: AreaVoices
+Theme URI: http://areavoices.com/
+Author: Forum Communications Company
+Author URI: http://forumcomm.com/
+Description: The custom WordPress theme built for AreaVoices contributors.
+Version: 1.0.4
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: areavoices
-Tags: blog
+Tags: light, one-column, right-sidebar, fluid-layout, flexible-header, responsive-layout, custom-background, custom-colors, custom-header, custom-menu, featured-image-header, featured-images, theme-options, threaded-comments
 
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
@@ -42,8 +42,6 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 # Media
 	## Captions
 	## Galleries
-# Media Queries
-
 --------------------------------------------------------------*/
 @import "variables-site/variables-site";
 @import "mixins/mixins-master";
@@ -109,6 +107,6 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 @import "media/media";
 
 /*--------------------------------------------------------------
-# Media Queries
+# AV Custom
 --------------------------------------------------------------*/
-@import "site/components/media-queries";
+@import "av-misc";
