@@ -38,6 +38,8 @@ function areavoices_setup() {
 
 	// Featured Image size for home page
 	add_image_size( 'featured-image', 750, 330, true );
+	add_image_size( 'medium-thumb', 400, 240, true );
+	add_image_size( 'small-thumb', 95, 60, true );
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
@@ -332,6 +334,7 @@ function av_custom_css() {
 add_action( 'wp_enqueue_scripts', 'av_custom_css' );
 
 /**************Custom PHP***************/
+// Shortcode to use: [fcc_php] yourphp(): [/fcc_php]
 if( ! function_exists('fcc_insert_php') )
 {
 	function fcc_insert_php($content)
@@ -486,3 +489,23 @@ add_action( 'customize_controls_print_styles', 'my_customizer_styles', 999 );
 	    }//end if user
 	    return $avatar;
 	}//end my_custom_avatar
+
+/* Sentence Case the Post Title */
+function sentence_case_the_title( $title, $id = null ) {
+	$title = ucwords( $title );
+    return $title;
+}
+add_filter( 'the_title', 'sentence_case_the_title', 10, 2 );
+
+/**
+* JetPack Related Posts
+* Documentation: https://jetpack.me/support/related-posts/customize-related-posts/
+*/
+function jetpackme_remove_rp() {
+    if ( class_exists( 'Jetpack_RelatedPosts' ) ) {
+        $jprp = Jetpack_RelatedPosts::init();
+        $callback = array( $jprp, 'filter_add_target_to_dom' );
+        remove_filter( 'the_content', $callback, 40 );
+    }
+}
+add_filter( 'wp', 'jetpackme_remove_rp', 20 );

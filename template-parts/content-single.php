@@ -50,10 +50,19 @@
 				if ( function_exists( 'sharing_display' ) ) {
 				    sharing_display( '', true );
 				}
-
 				if ( class_exists( 'Jetpack_Likes' ) ) {
 				    $custom_likes = new Jetpack_Likes;
 				    echo $custom_likes->post_likes( '' );
+				} ?>
+
+				<!--Nativo Sponsored Content-->
+				<div id="nativo" class="nativo-container">
+				</div>
+
+				<?php
+				/*** Jetpack Related Posts ***/
+				if ( class_exists( 'Jetpack_RelatedPosts' ) ) {
+				    echo do_shortcode( '[jetpack-related-posts]' );
 				}
 			?>
 		</div><!-- .av-jp-social -->
