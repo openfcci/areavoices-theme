@@ -148,6 +148,12 @@ function areavoices_scripts() {
 	wp_enqueue_script( 'areavoices-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
 	wp_enqueue_script( 'areavoices-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
 
+	/* WP Featherlight Lightbox */
+	if ( !is_admin() ) {
+		wp_enqueue_style(  'wp-featherlight', get_template_directory_uri() . '/css/wp-featherlight.min.css' );
+		wp_enqueue_script( 'wp-featherlight', get_template_directory_uri() . '/js/min/wpFeatherlight.pkgd.min.js' );
+	}
+
 	/* Featured Content Slider Script */
 	if ( is_front_page() ) {
 	  $fc_slider = get_theme_mod( 'av_featured_content_slider', '' );
@@ -234,6 +240,11 @@ require get_template_directory() . '/inc/jetpack.php';
  * Admin Settings Page
  */
 require get_template_directory() . '/inc/admin/admin-settings-page.php';
+
+/**
+ * WP Featherlight Lightbox
+ */
+//require get_template_directory() . '/inc/wp-featherlight/wp-featherlight.php';
 
 
 /**
