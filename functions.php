@@ -150,8 +150,10 @@ function areavoices_scripts() {
 
 	/* WP Featherlight Lightbox */
 	if ( !is_admin() ) {
-		wp_enqueue_style(  'wp-featherlight', get_template_directory_uri() . '/css/wp-featherlight.min.css' );
-		wp_enqueue_script( 'wp-featherlight', get_template_directory_uri() . '/js/min/wpFeatherlight.pkgd.min.js' );
+		if ( get_option('av_lightbox') ) {
+			wp_enqueue_style(  'wp-featherlight', get_template_directory_uri() . '/css/wp-featherlight.min.css' );
+			wp_enqueue_script( 'wp-featherlight', get_template_directory_uri() . '/js/min/wpFeatherlight.pkgd.min.js' );
+	  }
 	}
 
 	/* Featured Content Slider Script */

@@ -38,6 +38,7 @@
        register_setting('av-theme-settings-group', 'av_popular_posts_widget');
        register_setting('av-theme-settings-group', 'av_recent_posts_widget');
        register_setting('av-theme-settings-group', 'av_recent_comments_widget');
+       register_setting('av-theme-settings-group', 'av_lightbox');
      }
 
  /*************************** Dashboard Page **************************
@@ -94,6 +95,15 @@ function av_admin_settings() {
 					</td>
 				<tr>
 			</table>
+      <h3>Lightbox</h3>
+      <table>
+        <tr>
+          <td>
+            <input type="checkbox" id="av_lightbox" name="av_lightbox" value="1" <?php checked( 1, get_option('av_lightbox'), true ); ?>  />
+            <label for="av_lightbox"> Enable lightbox effect on post content images.</label>
+          </td>
+        <tr>
+      </table>
       <?php submit_button(); ?>
     </form>
 	</div>
