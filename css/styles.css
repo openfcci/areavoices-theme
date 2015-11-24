@@ -329,7 +329,7 @@ body {
         display: inline-block;
         width: 40px;
         height: 40px;
-        background: #8c8c8c;
+        background: #d27f6d;
         opacity: 0.85;
         margin-left: -13.33333px;
         border: 1px solid rgba(255, 255, 255, 0.5);
@@ -365,7 +365,7 @@ body {
           animation-fill-mode: forwards;
           /* this prevents the animation from restarting! */
           animation-iteration-count: 1;
-          background: #54A1BF; }
+          background: #eac56a; }
         body header .logo .box.second {
           -moz-transform: rotate(0deg);
           -ms-transform: rotate(0deg);
