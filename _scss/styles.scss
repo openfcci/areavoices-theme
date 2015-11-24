@@ -27,7 +27,7 @@ $red: #d27f6d;
 $avblue: #00aeef;
 $avbluetint: #54A1BF;
 $avlightgrey: #8c8c8c;
-$avdarkgrey: #474747;
+$avlightgrey: #8c8c8c;
 
 body{
   font-family: Lato, arial;
@@ -72,14 +72,14 @@ body{
         background: rgba($lightgrey, 0.9);
         padding: 5px 10px;
         font-size: 80%;
-        opacity: 0;
+        opacity: 0; 
         @include box-shadow(0 0 10px rgba(black, 0.1) );
         @include transition(all 0.25s ease);
-        .swatch{
-          display: inline-block;
-          width: 10px; height: 10px;
-          background: red;
-          margin-right: 5px;
+        .swatch{ 
+          display: inline-block; 
+          width: 10px; height: 10px; 
+          background: red; 
+          margin-right: 5px; 
         }
       }
       &:hover .color{ opacity: 1; };
@@ -113,11 +113,11 @@ body{
       margin-bottom: $rhythm/2;
       margin-right: -$box-length/2;
 
-      .box{
-        display: inline-block;
-        width: $box-length;
-        height: $box-length;
-        background: $avlightgrey;
+      .box{ 
+        display: inline-block; 
+        width: $box-length; 
+        height: $box-length; 
+        background: $red; 
         opacity: 0.85;
         margin-left: -$box-length/3;
         border: 1px solid rgba(white, 0.5);
@@ -125,14 +125,14 @@ body{
         @include transform( rotate(0deg) );
         @include transform-origin( 50% 50% );
 
-        &.first   { @include transform( rotate(0deg) translateX(-50px) ); @include animation(0.5s, 3s, rotate-first,  1); background: #54A1BF; }
+        &.first   { @include transform( rotate(0deg) translateX(-50px) ); @include animation(0.5s, 3s, rotate-first,  1); background: $yellow; }
         &.second  { @include transform( rotate(0deg) );                   @include animation(0.5s, 3s, rotate-second, 1); }
         &.third   { @include transform( rotate(0deg) translateX(50px) );  @include animation(0.5s, 3s, rotate-third,  1); background: $darkblue;}
       }
     }
 
-    h1{
-      text-transform: uppercase;
+    h1{ 
+      text-transform: uppercase; 
       letter-spacing: 2px;
       font-size: 160%;
       margin-bottom: 0.25em;
@@ -203,8 +203,8 @@ body{
       .gh-star{ margin-top: $rhythm/4; }
     }
 
-    a, a:hover {
-      border-bottom: 2px solid rgba($darkblue, 0.6);
+    a, a:hover { 
+      border-bottom: 2px solid rgba($darkblue, 0.6); 
       text-decoration: none;
       color: $darkblue;
       @include transition(all 0.25s ease);
