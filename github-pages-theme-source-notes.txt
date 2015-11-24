@@ -1,0 +1,2 @@
+Github Theme Source:
+http://briangonzalez.github.io/jquery.adaptive-backgrounds.js/
