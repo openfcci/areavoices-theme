@@ -21,8 +21,8 @@ $darkgrey: #333;
 $lightgrey: #eee;
 $darkblue: #56575c;
 
-$yellow: #eac56a;
-$red: #d27f6d;
+$yellow: #54A1BF;
+$red: #8c8c8c;
 
 body{
   font-family: Lato, arial;
@@ -67,14 +67,14 @@ body{
         background: rgba($lightgrey, 0.9);
         padding: 5px 10px;
         font-size: 80%;
-        opacity: 0; 
+        opacity: 0;
         @include box-shadow(0 0 10px rgba(black, 0.1) );
         @include transition(all 0.25s ease);
-        .swatch{ 
-          display: inline-block; 
-          width: 10px; height: 10px; 
-          background: red; 
-          margin-right: 5px; 
+        .swatch{
+          display: inline-block;
+          width: 10px; height: 10px;
+          background: red;
+          margin-right: 5px;
         }
       }
       &:hover .color{ opacity: 1; };
@@ -108,11 +108,11 @@ body{
       margin-bottom: $rhythm/2;
       margin-right: -$box-length/2;
 
-      .box{ 
-        display: inline-block; 
-        width: $box-length; 
-        height: $box-length; 
-        background: $red; 
+      .box{
+        display: inline-block;
+        width: $box-length;
+        height: $box-length;
+        background: $red;
         opacity: 0.85;
         margin-left: -$box-length/3;
         border: 1px solid rgba(white, 0.5);
@@ -126,8 +126,8 @@ body{
       }
     }
 
-    h1{ 
-      text-transform: uppercase; 
+    h1{
+      text-transform: uppercase;
       letter-spacing: 2px;
       font-size: 160%;
       margin-bottom: 0.25em;
@@ -198,8 +198,8 @@ body{
       .gh-star{ margin-top: $rhythm/4; }
     }
 
-    a, a:hover { 
-      border-bottom: 2px solid rgba($darkblue, 0.6); 
+    a, a:hover {
+      border-bottom: 2px solid rgba($darkblue, 0.6);
       text-decoration: none;
       color: $darkblue;
       @include transition(all 0.25s ease);
