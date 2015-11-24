@@ -126,7 +126,7 @@ body{
         @include transform-origin( 50% 50% );
 
         &.first   { @include transform( rotate(0deg) translateX(-50px) ); @include animation(0.5s, 3s, rotate-first,  1); background: $avbluetint; }
-        &.second  { @include transform( rotate(0deg) );                   @include animation(0.5s, 3s, rotate-second, 1); background: $avlightgrey;}
+        &.second  { @include transform( rotate(0deg) );                   @include animation(0.5s, 3s, rotate-second, 1);}
         &.third   { @include transform( rotate(0deg) translateX(50px) );  @include animation(0.5s, 3s, rotate-third,  1); background: $darkblue;}
       }
     }
