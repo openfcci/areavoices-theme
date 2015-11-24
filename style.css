@@ -4,7 +4,7 @@ Theme URI: http://areavoices.com/
 Author: Forum Communications Company
 Author URI: http://forumcomm.com/
 Description: The custom WordPress theme built for AreaVoices contributors.
-Version: 1.11.21
+Version: 1.11.24
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: areavoices
@@ -1107,7 +1107,7 @@ input.search-field {
   .site-description a {
     font-size: 1em !important; }
 
-  #post-author {
+  #post-author, #post-likes {
     display: none; }
 
   #post-date span.separator {
@@ -1123,6 +1123,10 @@ input.search-field {
   a.av-contrib-button {
     padding: 12px 15px !important;
     font-size: 11px !important; }
+
+  /* Image w/ Caption Mobile Fix */
+  figure {
+    max-width: 260px !important; }
 
   /* Alternate Flush-White Mobile Layout */
   /*

@@ -441,7 +441,7 @@ font-size: 0.9em;
   .site-description a {
     font-size: 1em !important;
   }
-  #post-author { //#post-category, #post-date span.separator
+  #post-author, #post-likes { //#post-category, #post-date span.separator
     display: none;
   }
   #post-date span.separator {
@@ -458,6 +458,9 @@ font-size: 0.9em;
     padding: 12px 15px !important;
     font-size: 11px !important;
   }
+
+  /* Image w/ Caption Mobile Fix */
+  figure { max-width: 260px !important; }
 
   /* Alternate Flush-White Mobile Layout */
   /*
