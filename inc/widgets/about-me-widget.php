@@ -46,7 +46,7 @@
        }
        /*Linkedin*/
        if (!empty( $pinterest )) {
-         echo '<span class="social_item"><a href="' . get_theme_mod( 'av_aboutme_pintrest', '#' ) . '" target="_blank" class="social_icons social_pinterest"><span class="avicon-pinterest"></span></a></span>';
+         echo '<span class="social_item"><a href="' . get_theme_mod( 'av_aboutme_pinterest', '#' ) . '" target="_blank" class="social_icons social_pinterest"><span class="avicon-pinterest"></span></a></span>';
        }
        /*Linkedin*/
        if (!empty( $linkedin )) {
