@@ -191,6 +191,21 @@ function areavoices_customize_register( $wp_customize ) {
           'section' => 'fcc_design_layout_section',
           'type'    => 'checkbox',
       ) );
+      /* Featured Content Slider Layout*/
+      $wp_customize->add_setting( 'av_featured_content_slider_layout', array(
+          'default'        => 'layout-1', // Returns '1' if checked, nothing (because false) if unchecked
+          //'transport'   => 'postMessage',
+      ) );
+      $wp_customize->add_control( 'av_featured_content_slider_layout', array(
+          'type' => 'select',
+          'label' => 'Slider Layout:',
+          'section' => 'fcc_design_layout_section',
+          'choices' => array(
+              'layout-1' => 'Layout 1',
+              'layout-2' => 'Layout 2',
+              'layout-3' => 'Layout 3',
+          ),
+      ) );
   } //End Super-Admin Only
 
 
