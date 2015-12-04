@@ -30,10 +30,14 @@ if ( $loop->have_posts() ) { ?>
       $category = get_the_category();
       ?>
       <li>
-        <div class="featured-info-wrapper" style="background-image: url(<?php echo $thumbnail[0]; ?>); no-repeat center center; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover; height:100%">
-          <div class="featured-category"><?php echo esc_html( $category[0]->cat_name ) ?></div>
-          <div class="featured-title"><?php echo get_the_title(); ?></div>
-          <div class="featured-date"><?php echo get_post_time('F j, Y', true) ?></div>
+        <div class="featured-wrapper" style="background-image: url(<?php echo $thumbnail[0]; ?>); -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover; height:100%">
+         <div class="slider-gradient">
+           <div class="featured-info-wrapper">
+              <div class="featured-category"><?php echo esc_html( $category[0]->cat_name ) ?></div>
+              <div class="featured-title"><?php echo get_the_title(); ?></div>
+              <div class="featured-date"><?php echo get_post_time('F j, Y', true) ?></div>
+           </div>
+         </div>
         </div>
       </li>
       <?php
