@@ -73,13 +73,31 @@ var sliderLiWidth;
             
         });
     }
-
-    $('a.control_prev').click(function () {
-        moveLeft();
-    });
-
-    $('a.control_next').click(function () {
-        moveRight();
-    });
+    if ($("#responsive_check").css("z-index") === "3" ){
+        $("a.control_prev").hide();
+        $('#slider ul li').on('swiperight', function(){ 
+            moveLeft();
+        });
+    }
+    else{
+        $("a.control_prev").show();
+        $('a.control_prev').click(function () 
+        {
+            moveLeft();
+        });  
+    }    
+    
+    if ($("#responsive_check").css("z-index") === "3" ){
+        $("a.control_next").hide();
+        $('#slider ul li').on('swipeleft',  function(){ 
+            moveRight();
+        });           
+     }
+    else{
+        $("a.control_next").show();
+        $('a.control_next').click(function () {
+            moveRight();
+        });
+    } 
 
 });    
