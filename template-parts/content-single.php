@@ -10,7 +10,7 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class('av-single-post'); ?>>
 	<header class="entry-header">
 		<div class="post-thumb-container">
-			<a href="<?php $large_image_url = wp_get_attachment_image_src( get_post_thumbnail_id(), 'large' ); echo $large_image_url[0]; ?>">
+			<a href="<?php $large_image_url = wp_get_attachment_image_src( get_post_thumbnail_id(), 'large' ); echo $large_image_url[0]; ?>" class="gallery">
 			<?php the_post_thumbnail( 'featured-image' ); ?>
 		</a>
 		</div>
