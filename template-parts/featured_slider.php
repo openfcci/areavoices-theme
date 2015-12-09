@@ -27,9 +27,11 @@ if ( $loop->have_posts() ) { ?>
     while ( $loop->have_posts() ) {
       $loop->the_post();
       $thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), array( 5600,1000 ), false, '' );
+      $link = get_post_permalink();
       $category = get_the_category();
       ?>
       <li>
+      <a href="<?php echo $link ?>">
         <div class="featured-wrapper" style="background-image: url(<?php echo $thumbnail[0]; ?>); -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover; height:100%">
          <div class="slider-gradient">
            <div class="featured-info-wrapper">
@@ -39,6 +41,7 @@ if ( $loop->have_posts() ) { ?>
            </div>
          </div>
         </div>
+        </a>
       </li>
       <?php
     }
