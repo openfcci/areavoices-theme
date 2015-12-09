@@ -46,7 +46,7 @@
  */
 function areavoices_customize_register( $wp_customize ) {
 
-  /**
+  /**************
   * Get Settings
   */
   $wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
@@ -66,29 +66,40 @@ function areavoices_customize_register( $wp_customize ) {
   $wp_customize->get_setting( 'av_aboutme_instagram' )->transport = 'postMessage';
   $wp_customize->get_setting( 'av_aboutme_youtube' )->transport = 'postMessage';
 
+  /**
+	* Remove Default Customizer Sections site_icon
+	*/
+	$wp_customize->remove_section('themes'); //Remove the 'Choose Active Theme' Section
 
 	/**
 	* Remove Default Customizer Sections site_icon
 	*/
   if ( !current_user_can( 'manage_options' ) ) { //Show only for Admin & Super Admin
-    $wp_customize->remove_section('title_tagline');
+    $wp_customize->remove_section('title_tagline'); // 'Site Identity' Section
   }
-
-	$wp_customize->remove_section('themes'); //Remove the 'Choose Active Theme' Section
-	$wp_customize->remove_section('colors'); //Remove the 'Colors' Section ( Header Text Color | Background Color )
-	$wp_customize->remove_section('static_front_page'); //Remove the 'Static Front Page' Section
-	$wp_customize->remove_section('background_image'); //Remove the 'Background Image' Section
-  $wp_customize->remove_setting('site_icon'); // Remove the 'Site Icon' setting option
 
   /**
-	* Widget Sections
+	* Super-Admin Only Sections
 	*/
   if ( !is_super_admin() ) { // Remove sections if user is not a Super Admin
+    $wp_customize->remove_setting('site_icon'); // Remove the 'Site Icon' setting option
+    $wp_customize->remove_section('colors'); //Remove the 'Colors' Section ( Header Text Color | Background Color )
+    $wp_customize->remove_section('background_image'); //Remove the 'Background Image' Section
     $wp_customize->remove_section('sidebar-widgets-sidebar-top'); //Remove the 'Sidebar: Top' widget section if user is not Super Admin
     $wp_customize->remove_section('sidebar-widgets-sidebar-middle'); //Remove the 'Sidebar: Top' widget section if user is not Super Admin
+    $wp_customize->remove_section('static_front_page'); //Remove the 'Static Front Page' Section
   }
 
 
+
+/************************
+ * Customizer Settings
+ ************************
+ */
+
+  /**
+	* About Me Box Border
+	*/
   $wp_customize->add_setting( 'av_aboutme_imgborder2', array(
       'default'        => '1', // Returns '1' if checked, nothing (because false) if unchecked
       'transport'   => 'postMessage',
