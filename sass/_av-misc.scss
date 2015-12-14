@@ -242,7 +242,7 @@ font-size: 0.9em;
 }
 
 /*--------------------------------------------------------------
-# FEATURED SLIDER - Updated CSS
+# FEATURED SLIDER - Updated CSSS
 --------------------------------------------------------------*/
 
 #slider {
@@ -273,11 +273,21 @@ font-size: 0.9em;
   padding: 0;
   width: 25%;
   height: 350px;
-  background: #ccc;
-  text-align: center;
-}
+  background: #000;
+  text-align: center; }
 
-#slider .featured-info-wrapper{
+  #slider ul li div.slider-gradient{
+    -webkit-transition: background-color 0.2s;
+    transition: background-color 0.2s;
+  }
+
+  #slider ul li div.slider-gradient:hover {
+    background-color: rgba(0, 0, 0, 0.5);
+    -webkit-transition: background-color 0.2s;
+    transition: background-color 0.2s;
+  }
+
+#slider .featured-wrapper {
   /* margin: auto; */ /*RV*/
   display: block;
   left: 0;
@@ -318,29 +328,36 @@ font-size: 0.9em;
 
 #slider a.control_prev, #slider a.control_next {
   position: absolute;
-  top: 40%;
+  top: 0;
+  bottom: 0;
   z-index: 999;
   display: block;
-  padding: 1% 1%; /* RV */
+  padding: 1% 1%;
+  /* RV */
   width: auto;
-  height: auto;
+  height: 100%;
   background: #2a2a2a;
   color: #fff;
   text-decoration: none;
   font-weight: 600;
-  font-size: 18px;
-  opacity: 0.8;
-  cursor: pointer;
-}
+  font-size: 25px;
+  opacity: 0;
+  cursor: pointer; }
 
 #slider a.control_prev:hover, #slider a.control_next:hover {
   opacity: 1;
   -webkit-transition: all 0.2s ease;
+  background-color:rgba(42, 42, 42, 0.5);
+}
+
+#slider a.control_prev span, #slider a.control_next span{
+  position: relative;
+  top: 45%;
+  transform: translateY(-50%);
 }
 
 #slider a.control_prev {
-  border-radius: 0 2px 2px 0;
-}
+  border-radius: 0 2px 2px 0; }
 
 #slider a.control_next {
   right: 0;

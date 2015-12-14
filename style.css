@@ -926,7 +926,7 @@ input.search-field {
   box-sizing: border-box; }
 
 /*--------------------------------------------------------------
-# FEATURED SLIDER - Updated CSS
+# FEATURED SLIDER - Updated CSSS
 --------------------------------------------------------------*/
 #slider {
   position: relative;
@@ -955,16 +955,14 @@ input.search-field {
   background: #000;
   text-align: center; }
 
-  #slider ul li div.slider-gradient{
-    -webkit-transition: background-color 0.2s;
-    transition: background-color 0.2s;
-  }
+#slider ul li div.slider-gradient {
+  -webkit-transition: background-color 0.2s;
+  transition: background-color 0.2s; }
 
-  #slider ul li div.slider-gradient:hover {
-    background-color: rgba(0, 0, 0, 0.5); 
-    -webkit-transition: background-color 0.2s;
-    transition: background-color 0.2s;
-  }
+#slider ul li div.slider-gradient:hover {
+  background-color: rgba(0, 0, 0, 0.5);
+  -webkit-transition: background-color 0.2s;
+  transition: background-color 0.2s; }
 
 #slider .featured-wrapper {
   /* margin: auto; */
@@ -978,34 +976,12 @@ input.search-field {
   /* bottom: 20px; */
   /*RV*/
   text-align: left;
-  background-repeat:no-repeat;
-background-position: center center;
+  background-color: rgba(0, 0, 0, 0.5);
   color: #fff;
   box-sizing: border-box;
-  
+  padding: 200px 20px 20px 20px;
   /*RV*/
   font-family: "AvenirNextW10Demi"; }
-
-#slider .slider-gradient{
-  background: -moz-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.15) 61%, rgba(0,0,0,0.55) 84%, rgba(0,0,0,0.75) 96%, rgba(0,0,0,0.75) 100%); /* FF3.6+ */
-background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0)), color-stop(61%,rgba(0,0,0,0.15)), color-stop(84%,rgba(0,0,0,0.55)), color-stop(96%,rgba(0,0,0,0.75)), color-stop(100%,rgba(0,0,0,0.75))); /* Chrome,Safari4+ */
-background: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.15) 61%,rgba(0,0,0,0.55) 84%,rgba(0,0,0,0.75) 96%,rgba(0,0,0,0.75) 100%); /* Chrome10+,Safari5.1+ */
-background: -o-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.15) 61%,rgba(0,0,0,0.55) 84%,rgba(0,0,0,0.75) 96%,rgba(0,0,0,0.75) 100%); /* Opera 11.10+ */
-background: -ms-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.15) 61%,rgba(0,0,0,0.55) 84%,rgba(0,0,0,0.75) 96%,rgba(0,0,0,0.75) 100%); /* IE10+ */
-background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,0.15) 61%,rgba(0,0,0,0.55) 84%,rgba(0,0,0,0.75) 96%,rgba(0,0,0,0.75) 100%); /* W3C */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#bf000000',GradientType=0 ); /* IE6-9 */
-height: 100%;
-}
-
-#slider .featured-info-wrapper{
-  position: absolute;
-  bottom: 20px;
-  left: 20px;
-  right: 20px;
-  display: inline-block;
-  margin: auto;
-
-}
 
 #slider .featured-category {
   background-color: #333;
@@ -1048,13 +1024,13 @@ height: 100%;
 
 #slider a.control_prev:hover, #slider a.control_next:hover {
   opacity: 1;
-  -webkit-transition: all 0.2s ease; }
+  -webkit-transition: all 0.2s ease;
+  background-color: rgba(42, 42, 42, 0.5); }
 
-#slider a.control_prev span, #slider a.control_next span{
+#slider a.control_prev span, #slider a.control_next span {
   position: relative;
   top: 45%;
-  transform: translateY(-50%);
-}
+  transform: translateY(-50%); }
 
 #slider a.control_prev {
   border-radius: 0 2px 2px 0; }
