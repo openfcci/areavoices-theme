@@ -20,8 +20,8 @@ if ( $loop->have_posts() ) { ?>
   <!-- FEATURED SLIDER: Begin -->
   <div id="responsive_check"></div>
   <div id="slider">
-    <a class="control_next"><span class="avicon-arrow-long-right"></span></a>
-    <a class="control_prev"><span class="avicon-arrow-long-left"></span></a>
+    <a class="control_next"><span class="avicon-chevron_right"></span></a>
+    <a class="control_prev"><span class="avicon-chevron_left"></span></a>
     <ul>
     <?php
     while ( $loop->have_posts() ) {
