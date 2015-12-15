@@ -251,6 +251,20 @@ font-size: 0.9em;
   border-radius: 4px;
   width: 100%; }
 
+#slider.layout2{
+  @media (min-width: 420px)
+  {
+    height: 450px;
+  margin-top: 20px;
+  }
+   visibility: hidden;
+}
+
+#slider.layout2 ul{
+  overflow: visible;
+  height: 450px;
+}
+
 #slider ul {
   position: relative;
   margin: 0;
@@ -268,8 +282,43 @@ font-size: 0.9em;
   padding: 0;
   width: 25%;
   height: 350px;
-  background: #000;
   text-align: center; }
+
+  #slider.layout2 ul li {
+    width: 50%;
+    border-right: 30px solid transparent;
+    border-left: 30px solid transparent;
+    margin-top: 50px;
+
+    @media (min-width: 420px)
+    {
+      opacity: 0.6;
+    }
+
+    @media (max-width: 420px){
+      height: 200px;
+    }
+    
+  }
+
+  #slider.layout2 ul li:nth-of-type(2){
+    @media (max-width: 420px){
+      height: 300px;
+    margin-top: 0;
+    opacity: 1.0;
+    }
+  }
+
+  #slider.layout2 ul li:nth-of-type(3){
+    @media (min-width: 420px){
+      height: 450px;
+    margin-top: 0;
+    opacity: 1.0;
+    }
+    
+  }
+
+  
 
   #slider ul li div.slider-gradient{
     -webkit-transition: background-color 0.2s;
