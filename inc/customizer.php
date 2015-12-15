@@ -97,19 +97,6 @@ function areavoices_customize_register( $wp_customize ) {
  ************************
  */
 
-  /**
-	* About Me Box Border
-	*/
-  $wp_customize->add_setting( 'av_aboutme_imgborder2', array(
-      'default'        => '1', // Returns '1' if checked, nothing (because false) if unchecked
-      'transport'   => 'postMessage',
-  ) );
-  $wp_customize->add_control( 'av_aboutme_imgborder2', array(
-      'label'   => 'Display border on profile picture',
-      'section' => 'widgets',
-      'type'    => 'checkbox',
-  ) );
-
 
 	/**
 	* Start FCC Custom
@@ -233,8 +220,8 @@ function areavoices_customize_register( $wp_customize ) {
 	$default_bio_img = get_template_directory_uri() . '/images/about-me-generic.png';
 	$wp_customize->add_setting('av_aboutme_avatar', array(
 		'default'           => $default_bio_img,
-		'capability'        => 'edit_theme_options',
-    //'transport'         => 'postMessage', /* RV | FIX */
+    'transport'   => 'postMessage',
+    //'capability'        => 'edit_theme_options',
 		//'type'            => 'option',
 	));
 	$wp_customize->add_control( new WP_Customize_Image_Control($wp_customize, 'av_aboutme_avatar', array(
@@ -248,16 +235,34 @@ function areavoices_customize_register( $wp_customize ) {
   		'width'       => 160,
   		'height'      => 160,
 	)));
+  /**
+  * About Me Border Style
+  */
+  $wp_customize->add_setting( 'av_aboutme_imgborder', array(
+      'default'        => 'layout-2', // Returns '1' if checked, nothing (because false) if unchecked
+      //'transport'   => 'postMessage',
+  ) );
+  $wp_customize->add_control( 'av_aboutme_imgborder', array(
+      'type' => 'select',
+      'label' => 'Profile picture border style:',
+      'section' => 'bio_section',
+      'choices' => array(
+          'layout-1' => 'None',
+          'layout-2' => 'Square with border',
+          'layout-3' => 'Circle w/o border',
+          'layout-4' => 'Circle with border',
+        ),
+    ) );
   // Bio Pic Border \\
-        $wp_customize->add_setting( 'av_aboutme_imgborder', array(
+        /* $wp_customize->add_setting( 'av_aboutme_imgborder', array(
             'default'        => '1', // Returns '1' if checked, nothing (because false) if unchecked
-            //'transport'   => 'postMessage', /* RV | FIX */
-        ) );
-        $wp_customize->add_control( 'av_aboutme_imgborder', array(
+            //'transport'   => 'postMessage',
+        ) ); */
+      /*   $wp_customize->add_control( 'av_aboutme_imgborder', array(
             'label'   => 'Display border on profile picture',
             'section' => 'bio_section',
             'type'    => 'checkbox',
-        ) );
+        ) ); */
 	// Bio Name \\
 	$wp_customize->add_setting('av_aboutme_username', array(
 	    'default' => 'My Name is _____', // Default custom text

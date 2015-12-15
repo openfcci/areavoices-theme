@@ -20,12 +20,32 @@
 		} );
 	} );
 
-	// About Me: Avatar. //UPDATE: TEXT TO?
+	// About Me: Avatar.
 	wp.customize( 'av_aboutme_avatar', function( value ) {
 		value.bind( function( to ) {
-			//$( 'img.av_aboutme_avatar' ).attr( 'src', to );
-			var $img = $('<img>').attr('src', response);
-      $( '.site-branding' ).html( $img );
+			$( 'img.av_aboutme_avatar' ).attr( 'src', to );
+		} );
+	} );
+
+	// About Me: Avatar Border
+	wp.customize( 'av_aboutme_username', function( value ) {
+		value.bind( function( to ) {
+			if ( 'blank' === to ) {
+				$( '.aboutme_username' ).css( {
+					'width': '161px',
+					'height': '161px',
+					'border': 'none'
+
+				} );
+			} else {
+				$( '.aboutme_username' ).css( {
+					'width': '161px',
+					'height': '161px',
+					'-webkit-border-radius': '50%',
+					'-moz-border-radius': '50%',
+					'border-radius': '50%'
+				} );
+			}
 		} );
 	} );
 
