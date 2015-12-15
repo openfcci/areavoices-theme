@@ -1,9 +1,9 @@
 jQuery(function ($) {
 
 
-    // setInterval(function () {
-    //     moveRight();
-    // }, 4000);
+    setInterval(function () {
+        moveRight();
+    }, 4000);
 var sliderLiWidth;
   var w = window.innerWidth;
     if ($("#slider").hasClass("layout1"))
