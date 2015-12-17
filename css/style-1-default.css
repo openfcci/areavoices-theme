@@ -1,115 +1,3 @@
-/*
-Theme Name:     AreaVoices Child Theme
-Description:
-Author:         FCC
-Template:       areavoices-theme
-
-(optional values you can add: Theme URI, Author URI, Version, License, License URI, Tags, Text Domain)
-*/
-
-/* Enter Your Custom CSS Here */
-
-
-/* latin */
-@font-face {
-  font-family: 'Arvo';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Arvo'), url(https://fonts.gstatic.com/s/arvo/v9/rC7kKhY-eUDY-ucISTIf5PesZW2xOQ-xsNqO47m55DA.woff2) format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
-}
-
-/* latin-ext */
-@font-face {
-  font-family: 'Merriweather';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Merriweather'), url(https://fonts.gstatic.com/s/merriweather/v8/RFda8w1V0eDZheqfcyQ4EIjoYw3YTyktCCer_ilOlhE.woff2) format('woff2');
-  unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;
-}
-/* latin */
-@font-face {
-  font-family: 'Merriweather';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Merriweather'), url(https://fonts.gstatic.com/s/merriweather/v8/RFda8w1V0eDZheqfcyQ4EBampu5_7CjHW5spxoeN3Vs.woff2) format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
-}
-
-/* cyrillic-ext */
-@font-face {
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Roboto'), local('Roboto-Regular'), url(https://fonts.gstatic.com/s/roboto/v15/sTdaA6j0Psb920Vjv-mrzH-_kf6ByYO6CLYdB4HQE-Y.woff2) format('woff2');
-  unicode-range: U+0460-052F, U+20B4, U+2DE0-2DFF, U+A640-A69F;
-}
-/* cyrillic */
-@font-face {
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Roboto'), local('Roboto-Regular'), url(https://fonts.gstatic.com/s/roboto/v15/uYECMKoHcO9x1wdmbyHIm3-_kf6ByYO6CLYdB4HQE-Y.woff2) format('woff2');
-  unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
-}
-/* greek-ext */
-@font-face {
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Roboto'), local('Roboto-Regular'), url(https://fonts.gstatic.com/s/roboto/v15/tnj4SB6DNbdaQnsM8CFqBX-_kf6ByYO6CLYdB4HQE-Y.woff2) format('woff2');
-  unicode-range: U+1F00-1FFF;
-}
-/* greek */
-@font-face {
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Roboto'), local('Roboto-Regular'), url(https://fonts.gstatic.com/s/roboto/v15/_VYFx-s824kXq_Ul2BHqYH-_kf6ByYO6CLYdB4HQE-Y.woff2) format('woff2');
-  unicode-range: U+0370-03FF;
-}
-/* vietnamese */
-@font-face {
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Roboto'), local('Roboto-Regular'), url(https://fonts.gstatic.com/s/roboto/v15/NJ4vxlgWwWbEsv18dAhqnn-_kf6ByYO6CLYdB4HQE-Y.woff2) format('woff2');
-  unicode-range: U+0102-0103, U+1EA0-1EF1, U+20AB;
-}
-/* latin-ext */
-@font-face {
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Roboto'), local('Roboto-Regular'), url(https://fonts.gstatic.com/s/roboto/v15/Ks_cVxiCiwUWVsFWFA3Bjn-_kf6ByYO6CLYdB4HQE-Y.woff2) format('woff2');
-  unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;
-}
-/* latin */
-@font-face {
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Roboto'), local('Roboto-Regular'), url(https://fonts.gstatic.com/s/roboto/v15/oMMgfZMQthOryQo9n22dcuvvDin1pK8aKteLpeZ5c0A.woff2) format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
-}
-
-/* latin-ext */
-@font-face {
-  font-family: 'Oswald';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Oswald Regular'), local('Oswald-Regular'), url(https://fonts.gstatic.com/s/oswald/v10/Qw6_9HvXRQGg5mMbFR3Phn-_kf6ByYO6CLYdB4HQE-Y.woff2) format('woff2');
-  unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;
-}
-/* latin */
-@font-face {
-  font-family: 'Oswald';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Oswald Regular'), local('Oswald-Regular'), url(https://fonts.gstatic.com/s/oswald/v10/_P8jt3Y65hJ9c4AzRE0V1OvvDin1pK8aKteLpeZ5c0A.woff2) format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
-}
-
 /*-------------HEADER---------------*/
 
 .site-header {
@@ -117,12 +5,14 @@ Template:       areavoices-theme
   padding-top: 28px;
   padding-bottom: 28px;
 }
+
 .site-title {
   font-size: 4em;
   font-weight: lighter;
   line-height: 1;
   margin: 0px;
 }
+
 .site-description {
   font-family: "AvenirLTStd-Light";
   font-size: 2.75em;
@@ -130,6 +20,8 @@ Template:       areavoices-theme
   line-height: 1;
   margin: 0px;
 }
+
+/*-------------HEADER_NAV---------------*/
 
 .main-navigation{
 
@@ -164,110 +56,20 @@ margin-left: 30px;
 font-size: 20px;
 }
 
-.main-navigation ul li:last-child{
+.main-navigation ul li:last-child {
   margin-right: 0px;
 }
-.main-navigation ul li:last-child > a:after{
+
+.main-navigation ul li:last-child > a:after {
   content: "";
   margin-left: 0px;
 }
+
+/*-------------CONTENT---------------*/
+
 .site-content
 {
   /* padding-top: 1em; */ /*RV*/
-}
-a {
-  color: #2d6cea;
-  text-decoration: none; }
-
-.wp-caption{
-  background: #fff;
-    border: 1px solid #ebebeb;
-    max-width: 96%;
-    padding: 5px 5px 10px;
-    text-align: center;
-}
-
-.wp-caption .wp-caption-text{
-  margin: 0;
-  font-size: 12px;
-  color: #383838;
-}
-
-ul, ol {
-  margin-left: 0;
-  margin-right: 0;
-}
-
-li ul, li ol {
-  margin-left: 0;
-  margin-right: 0;
-}
-
-blockquote{
-  font-size: 25px;
-  color: #383838;
-  margin-top: 15px;
-  margin-bottom: 22.5px;
-  line-height: 1.25em;
-  margin-left: 20px;
-  margin-right: 20px;
-}
-
-blockquote:before{
-  font-family: 'avicons';
-  speak: none;
-  font-style: normal;
-  font-weight: normal;
-  font-variant: normal;
-  text-transform: none;
-  line-height: 1;
-  /* Better Font Rendering =========== */
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  content: "\e621";
-  display: inline;
-  float: left;
-  font-size: 28px;
-  margin-right: 10px;
-  color: #777;
-  margin-top: -8px;
-}
-table th{
-  font-size: 18px;
-  color: #fff;
-  background-color: #ccc;
-  text-align: left;
-  padding: 10px 15px;
-}
-
-table td{
-  padding: 10px 15px;
-  border-bottom: 1px solid #ccc;
-}
-
-pre{
-  background-color: #ebebeb;
-}
-
-body {
-  /* background-image: url("../areavoices-theme/images/avbackground.jpg") !important; */
-  font-family: Arvo;
-  line-height: 1.8;
-  -webkit-font-smoothing: antialiased;
-}
-
-h1 a:link {
-  color: #3d3d3d !important;
-}
-h1.entry-title {
-font-family: "Merriweather";
-font-size: 1.6875em; /*RV | Was 32px (2em) | =27px, Temporary? */
-font-weight: normal;
-line-height: 1.3; /*RV | Was 1 | Temporary? */
-margin-bottom: 16px !important;  /*RV*/ /*Temporary*/
-}
-h1.entry-title A {
-color: #333 !important;
 }
 
 .entry-meta
@@ -290,60 +92,20 @@ color: #333 !important;
 
 span.dashicons.dashicons-admin-users, span.dashicons.dashicons-category, span.dashicons.dashicons-calendar-alt {
   color: #C1C1C1 !important;
-  margin-top: 3px; /*RV*/ /*Temporary*/
-  margin-right: 3px; /*RV*/ /*Temporary*/
+  margin-top: 3px;
+  margin-right: 3px;
 }
+
 span.separator {
   color: #C1C1C1 !important;
   font-family: "Merriweather";
 }
 
-a.av-contrib-button {
-text-transform: uppercase !important;
-font-family: Arvo;
-font-size: 12px;
-line-height: 18px;
-color: #2d6cea;
-border: 2px solid #383838;
-outline: 1px solid #383838;
-letter-spacing: 1px;
-float: left;
-padding: 15px 30px;
-margin-top: 30px;
-margin-bottom: 0px;
-margin-right: 5px;
-outline-offset: -7px;
-background-color: transparent !important;
-}
-
-h1.widget-title {
-  font-family: "Merriweather";
-  color: #383838;
-  border-color: #383838;
-  font-size: 14px;
-  margin-bottom: 30px;
-  text-transform: uppercase;
-  font-weight: bold;
-  padding-bottom: 5px;
-  display: inline-block;
-  border-bottom-width: 2px;
-  border-bottom-style: solid;
-  letter-spacing: 2px;
-}
-
-img{
-  max-width: 100%;
-  height: auto;
-  width: auto;
-}
-
-
-.article-quote{
+.article-quote {
   vertical-align: 8px;
   font-size: 28px;
   margin-right: 10px;
   color: #383838;
-
 }
 
 .blockquote{
@@ -354,15 +116,12 @@ img{
   line-height: 1.25em;
 }
 
-
 /* --------- CONTENT ARTICLE---------- */
 .post-thumb-container {
     overflow: hidden;
     margin-bottom: 32px;
     position: relative;
     background: #000;
-
-
 }
 
 article,
@@ -401,6 +160,26 @@ aside {
   font-size: 13px;
   vertical-align: text-top !important;
 }
+
+/* Read More Button */
+a.av-contrib-button {
+text-transform: uppercase !important;
+font-family: Arvo;
+font-size: 12px;
+line-height: 18px;
+color: #2d6cea;
+border: 2px solid #383838;
+outline: 1px solid #383838;
+letter-spacing: 1px;
+float: left;
+padding: 15px 30px;
+margin-top: 30px;
+margin-bottom: 0px;
+margin-right: 5px;
+outline-offset: -7px;
+background-color: transparent !important;
+}
+
 
 /*-----------SINGLE ARTICLE-----------*/
 

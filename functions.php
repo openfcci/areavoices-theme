@@ -138,8 +138,8 @@ function areavoices_scripts() {
 
 	/* Styles */
 	wp_enqueue_style( 'areavoices-style', get_stylesheet_uri() );
-	wp_enqueue_style(  'areavoices-icons', get_template_directory_uri() . '/css/avicons.css' ); /*RV*/
-	wp_enqueue_style(  'areavoices-default', get_template_directory_uri() . '/css/style-1-default.css' ); /*RV*/
+	wp_enqueue_style(  'areavoices-icons', get_template_directory_uri() . '/css/avicons.css' );
+	//wp_enqueue_style(  'areavoices-default', get_template_directory_uri() . '/css/style-1-default.css' ); /*RV*/
 
 	/* Scripts */
 	wp_enqueue_script('jquery'); /*RV*/
@@ -385,8 +385,9 @@ function wpse_136058_debug_admin_menu() {
 		$var = $GLOBALS[ 'submenu' ];
 		$label = 'Appearance Submenu Items';
 		do_action( 'add_debug_info', $var, $label );
+		//PC::debug( $var, $label );
 }
-//add_action( 'admin_init', 'wpse_136058_debug_admin_menu' );
+add_action( 'admin_init', 'wpse_136058_debug_admin_menu' );
 
 /**************Custom Thing***************/
 

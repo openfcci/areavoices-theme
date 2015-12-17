@@ -1,0 +1,58 @@
+/*--------------------------------------------------------------
+## WP Captions
+--------------------------------------------------------------*/
+.wp-caption {
+  margin-bottom: 1.5em;
+  max-width: 100%; }
+  .wp-caption img[class*="wp-image-"] {
+    display: block;
+    margin-left: auto;
+    margin-right: auto; }
+  .wp-caption .wp-caption-text {
+    margin: 0.8075em 0; }
+
+.wp-caption-text {
+  text-align: center; }
+
+  /* Fix Image Caption Left Alignment */
+// http://danielleteigen.areavoices.com/2015/10/28/paranormal-series-part-2-the-kirkbride-a-symbol-of-timeless-terror-and-tragedy/
+figure.wp-caption.alignleft {
+  margin-left: 0px;
+}
+
+.wp-caption{
+  background: #fff;
+    border: 1px solid #ebebeb;
+    max-width: 96%;
+    padding: 5px 5px 10px;
+    text-align: center;
+}
+
+.wp-caption .wp-caption-text{
+  margin: 0;
+  font-size: 12px;
+  color: #383838;
+}
+
+/*--------------------------------------------------------------
+# WP WIDGETS
+--------------------------------------------------------------*/
+
+    .widget.suboptions, .widget_archive {
+      text-align: center;
+    }
+
+/*--------------------------------------------------------------
+## WP *
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+# Image Alignment: https://codex.wordpress.org/Styling_Images_in_Posts_and_Pages
+--------------------------------------------------------------*/
+/*
+img.alignright {float:right; margin:0 0 1em 1em}
+img.alignleft {float:left; margin:0 1em 1em 0}
+img.aligncenter {display: block; margin-left: auto; margin-right: auto}
+a img.alignright {float:right; margin:0 0 1em 1em}
+a img.alignleft {float:left; margin:0 1em 1em 0}
+a img.aligncenter {display: block; margin-left: auto; margin-right: auto} */
