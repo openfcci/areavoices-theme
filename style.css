@@ -906,8 +906,6 @@ input.search-field {
   border-bottom: none; }
 
 .recent-comment-widget.av-post-author .recent-comment-widget-thumbnail img {
-  -webkit-box-shadow: #e4e4e4 0px 0 1px 5px;
-  -moz-box-shadow: #e4e4e4 0 0 1px 5px;
   box-shadow: #e4e4e4 0 0 1px 5px; }
 
 .recent-comment-widget-thumbnail {
@@ -1018,15 +1016,12 @@ input.search-field {
   font-family: "AvenirNextW10Demi"; }
 
 #slider .slider-gradient {
-  background: -moz-linear-gradient(top, transparent 0%, rgba(0, 0, 0, 0.15) 61%, rgba(0, 0, 0, 0.55) 84%, rgba(0, 0, 0, 0.75) 96%, rgba(0, 0, 0, 0.75) 100%);
   /* FF3.6+ */
   background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, transparent), color-stop(61%, rgba(0, 0, 0, 0.15)), color-stop(84%, rgba(0, 0, 0, 0.55)), color-stop(96%, rgba(0, 0, 0, 0.75)), color-stop(100%, rgba(0, 0, 0, 0.75)));
   /* Chrome,Safari4+ */
   background: -webkit-linear-gradient(top, transparent 0%, rgba(0, 0, 0, 0.15) 61%, rgba(0, 0, 0, 0.55) 84%, rgba(0, 0, 0, 0.75) 96%, rgba(0, 0, 0, 0.75) 100%);
   /* Chrome10+,Safari5.1+ */
-  background: -o-linear-gradient(top, transparent 0%, rgba(0, 0, 0, 0.15) 61%, rgba(0, 0, 0, 0.55) 84%, rgba(0, 0, 0, 0.75) 96%, rgba(0, 0, 0, 0.75) 100%);
   /* Opera 11.10+ */
-  background: -ms-linear-gradient(top, transparent 0%, rgba(0, 0, 0, 0.15) 61%, rgba(0, 0, 0, 0.55) 84%, rgba(0, 0, 0, 0.75) 96%, rgba(0, 0, 0, 0.75) 100%);
   /* IE10+ */
   background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.15) 61%, rgba(0, 0, 0, 0.55) 84%, rgba(0, 0, 0, 0.75) 96%, rgba(0, 0, 0, 0.75) 100%);
   /* W3C */
@@ -1089,7 +1084,9 @@ input.search-field {
 #slider a.control_prev span, #slider a.control_next span {
   position: relative;
   top: 45%;
-  transform: translateY(-50%); }
+  -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+          transform: translateY(-50%); }
 
 #slider a.control_prev {
   border-radius: 0 2px 2px 0; }
@@ -1304,3 +1301,5 @@ img.aligncenter {display: block; margin-left: auto; margin-right: auto}
 a img.alignright {float:right; margin:0 0 1em 1em}
 a img.alignleft {float:left; margin:0 1em 1em 0}
 a img.aligncenter {display: block; margin-left: auto; margin-right: auto} */
+
+/*# sourceMappingURL=style.css.map */
