@@ -102,18 +102,47 @@ function areavoices_customize_register( $wp_customize ) {
 	* Start FCC Custom
 	*/
 
-  if ( is_super_admin() ) { // Remove sections if user is not a Super Admin
+
     /* Design & Layout */
   	$wp_customize->add_section(
           'fcc_design_layout_section',
           array(
               'title' => 'Design & Layout',
-              'description' => 'Choose a layout for the homepage.',
+              //'description' => 'Choose a layout for the homepage.',
+              'description' => 'Additional options coming soon.',
               'priority' => 23,
           )
       );
+
+    /* Featured Content Slider */
+    $wp_customize->add_setting( 'av_featured_content_slider', array(
+        'default'        => '', // Returns '1' if checked, nothing (because false) if unchecked
+        //'transport'   => 'postMessage',
+    ) );
+    $wp_customize->add_control( 'av_featured_content_slider', array(
+        'label'   => 'Enable the Featured Content Slider',
+        'section' => 'fcc_design_layout_section',
+        'type'    => 'checkbox',
+    ) );
+    /* Featured Content Slider Layout*/
+    //$wp_customize->add_setting( 'av_featured_content_slider_layout', array(
+        //'default'        => 'layout-1', // Returns '1' if checked, nothing (because false) if unchecked
+        //'transport'   => 'postMessage',
+    //) );
+    /* $wp_customize->add_control( 'av_featured_content_slider_layout', array(
+        'type' => 'select',
+        'label' => 'Slider Layout:',
+        'section' => 'fcc_design_layout_section',
+        'choices' => array(
+            'layout-1' => 'Layout 1',
+            //'layout-2' => 'Layout 2',
+            //'layout-3' => 'Layout 3',
+        ),
+    ) ); */
+
+  //if ( is_super_admin() ) { // Remove sections if user is not a Super Admin
       /* Design */
-  		$wp_customize->add_setting(
+  		/* $wp_customize->add_setting(
   		    'fcc_design',
   		    array(
   		        'default' => 'Design 1',
@@ -136,9 +165,9 @@ function areavoices_customize_register( $wp_customize ) {
   								//'design-8' => 'Design 8&#8211;Music',
   		        ),
   		    )
-  		);
+  		); */
       /* Homepage Layout */
-  		$wp_customize->add_setting(
+  		/* $wp_customize->add_setting(
   		    'fcc_homepage_layout',
   		    array(
   		        'default' => 'fcc-homepage-layout-standard',
@@ -157,9 +186,9 @@ function areavoices_customize_register( $wp_customize ) {
   		            //'fcc-homepage-layout-tiled-featured' => 'Tiled w. Featured Content',
   		        ),
   		    )
-  		);
+  		); */
       /* Post Layout */
-  		$wp_customize->add_setting(
+  		/* $wp_customize->add_setting(
   		    'fcc_post_layout',
   		    array(
   		        'default' => 'fcc-post-layout-standard',
@@ -178,33 +207,8 @@ function areavoices_customize_register( $wp_customize ) {
   		            //'fcc-post-layout-tiled-featured' => 'Tiled w. Featured Content',
   		        ),
   		    )
-  		);
-      /* Featured Content Slider */
-      $wp_customize->add_setting( 'av_featured_content_slider', array(
-          'default'        => '', // Returns '1' if checked, nothing (because false) if unchecked
-          //'transport'   => 'postMessage',
-      ) );
-      $wp_customize->add_control( 'av_featured_content_slider', array(
-          'label'   => 'Enable the Featured Content Slider',
-          'section' => 'fcc_design_layout_section',
-          'type'    => 'checkbox',
-      ) );
-      /* Featured Content Slider Layout*/
-      $wp_customize->add_setting( 'av_featured_content_slider_layout', array(
-          'default'        => 'layout-1', // Returns '1' if checked, nothing (because false) if unchecked
-          //'transport'   => 'postMessage',
-      ) );
-      $wp_customize->add_control( 'av_featured_content_slider_layout', array(
-          'type' => 'select',
-          'label' => 'Slider Layout:',
-          'section' => 'fcc_design_layout_section',
-          'choices' => array(
-              'layout-1' => 'Layout 1',
-              'layout-2' => 'Layout 2',
-              'layout-3' => 'Layout 3',
-          ),
-      ) );
-  } //End Super-Admin Only
+  		); */
+  //} //End Super-Admin Only
 
 
 	/* Author Bio */

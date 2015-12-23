@@ -413,7 +413,7 @@ function my_customizer_styles() {
 		*/
 
 		#customize-controls #accordion-section-title_tagline > h3,
-		#customize-controls #accordion-section-fcc_design_layout_section > h3,
+		/* #customize-controls #accordion-section-fcc_design_layout_section > h3, */
 		#customize-controls #accordion-section-colors > h3,
 		#customize-controls #accordion-section-background_image > h3,
 		#customize-controls #accordion-section-sidebar-widgets-sidebar-top > h3,
