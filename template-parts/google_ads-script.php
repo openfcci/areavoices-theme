@@ -24,7 +24,7 @@
 		if( is_home() ){ //Updated from 'is_front_page' (11/09/15)
 			$category[0] = new StdClass; //Added to fix empty default object value (11/09/15)
 			//$category[0]->cat_name = "homepage";
-			$category[0]->cat_name = "'blog_" . $curBlogId . "'" ; //Updated to add blog_id to main page (03/10/16)
+			$category[0]->cat_name = "'homepage'" . "," . "'blog_" . $curBlogId . "'"; //Updated to add blog_id to main page (03/10/16)
 			$posttags = "";
 		}
 		else
@@ -72,7 +72,7 @@ build();
 gptAdSlots0=googletag.defineSlot('/7021/fcc.areavoices', [300, 50], 'leaderboard-top-ad').defineSizeMapping(leaderboard_top_ad_mapping).setTargeting('loc', 'atf').setTargeting('kw', [<?php
 	if( is_home() ) {
 		//echo "'homepage'"; }
-		echo "'blog_" . $curBlogId . "'"; } //Updated to add blog_id to main page (03/10/16)
+		echo "'homepage'" . "," . "'blog_" . $curBlogId . "'"; } //Updated to add blog_id to main page (03/10/16)
 	else  {
 		echo "'blog_" . $curBlogId . "'" . "," . $category;
 		if( $posttags != "" ) { echo "," . $posttags; }
@@ -82,7 +82,7 @@ gptAdSlots0=googletag.defineSlot('/7021/fcc.areavoices', [300, 50], 'leaderboard
 gptAdSlots1=googletag.defineSlot('/7021/fcc.areavoices', [300, 250], 'first-sidebar-ad').defineSizeMapping(sidebar_ad_mapping).setTargeting('loc', 'atf').setTargeting('kw', [<?php
 	if( is_home() ) {
 		//echo "'homepage'"; }
-		echo "'blog_" . $curBlogId . "'"; } //Updated to add blog_id to main page (03/10/16)
+		echo "'homepage'" . "," . "'blog_" . $curBlogId . "'"; } //Updated to add blog_id to main page (03/10/16)
 	else  {
 		echo "'blog_" . $curBlogId . "'" . "," . $category;
 		if( $posttags != "" ) { echo "," . $posttags; }
