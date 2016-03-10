@@ -244,14 +244,12 @@ font-size: 0.9em;
 /*--------------------------------------------------------------
 # FEATURED SLIDER - Updated CSS
 --------------------------------------------------------------*/
-
 #slider {
   position: relative;
   overflow: hidden;
   height: 350px;
   border-radius: 4px;
-  width: 100%;
-}
+  width: 100%; }
 
 #slider ul {
   position: relative;
@@ -260,10 +258,7 @@ font-size: 0.9em;
   height: 350px;
   overflow: hidden;
   list-style: none;
-  left: 0;
-}
-
-
+  left: 0; }
 
 #slider ul li {
   position: relative;
@@ -273,84 +268,122 @@ font-size: 0.9em;
   padding: 0;
   width: 25%;
   height: 350px;
-  background: #ccc;
-  text-align: center;
-}
+  background: #000;
+  text-align: center; }
 
-#slider .featured-info-wrapper{
-  /* margin: auto; */ /*RV*/
+  #slider ul li div.slider-gradient{
+    -webkit-transition: background-color 0.2s;
+    transition: background-color 0.2s;
+  }
+
+  #slider ul li div.slider-gradient:hover {
+    background-color: rgba(0, 0, 0, 0.5);
+    -webkit-transition: background-color 0.2s;
+    transition: background-color 0.2s;
+  }
+
+#slider .featured-wrapper {
+  /* margin: auto; */
+  /*RV*/
   display: block;
   left: 0;
   right: 0;
-  width: 100%; /*RV*/
+  width: 100%;
+  /*RV*/
   position: absolute;
-  /* bottom: 20px; */ /*RV*/
+  /* bottom: 20px; */
+  /*RV*/
   text-align: left;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-repeat:no-repeat;
+background-position: center center;
   color: #fff;
   box-sizing: border-box;
-  padding: 200px 20px 20px 20px; /*RV*/
-  font-family: "AvenirNextW10Demi";
+
+  /*RV*/
+  font-family: "AvenirNextW10Demi"; }
+
+#slider .slider-gradient{
+  background: -moz-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.15) 61%, rgba(0,0,0,0.55) 84%, rgba(0,0,0,0.75) 96%, rgba(0,0,0,0.75) 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0)), color-stop(61%,rgba(0,0,0,0.15)), color-stop(84%,rgba(0,0,0,0.55)), color-stop(96%,rgba(0,0,0,0.75)), color-stop(100%,rgba(0,0,0,0.75))); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.15) 61%,rgba(0,0,0,0.55) 84%,rgba(0,0,0,0.75) 96%,rgba(0,0,0,0.75) 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.15) 61%,rgba(0,0,0,0.55) 84%,rgba(0,0,0,0.75) 96%,rgba(0,0,0,0.75) 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.15) 61%,rgba(0,0,0,0.55) 84%,rgba(0,0,0,0.75) 96%,rgba(0,0,0,0.75) 100%); /* IE10+ */
+background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,0.15) 61%,rgba(0,0,0,0.55) 84%,rgba(0,0,0,0.75) 96%,rgba(0,0,0,0.75) 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#bf000000',GradientType=0 ); /* IE6-9 */
+height: 100%;
 }
 
-#slider .featured-category{
+#slider .featured-info-wrapper{
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  right: 20px;
+  display: inline-block;
+  margin: auto;
+
+}
+
+#slider .featured-category {
   background-color: #333;
   font-size: 0.7em;
   box-sizing: border-box;
   padding: 6px 8px 2px 8px;
   display: inline-block;
   margin-top: 0.2em;
-  margin-bottom: 0.2em;
-}
+  margin-bottom: 0.2em; }
 
-#slider .featured-title{
+#slider .featured-title {
   font-size: 1.5em;
   margin-top: 0.5em;
   margin-bottom: 0.4em;
-  line-height: 1em; /*RV*/
-}
+  line-height: 1em;
+  /*RV*/ }
 
-#slider .featured-date{
+#slider .featured-date {
   font-size: 0.7em;
   margin-top: 0.2em;
-  margin-bottom: 0.2em;
-}
+  margin-bottom: 0.2em; }
 
 #slider a.control_prev, #slider a.control_next {
   position: absolute;
-  top: 40%;
+  top: 0;
+  bottom: 0;
   z-index: 999;
   display: block;
-  padding: 1% 1%; /* RV */
+  padding: 1% 1%;
+  /* RV */
   width: auto;
-  height: auto;
+  height: 100%;
   background: #2a2a2a;
   color: #fff;
   text-decoration: none;
   font-weight: 600;
-  font-size: 18px;
-  opacity: 0.8;
-  cursor: pointer;
-}
+  font-size: 25px;
+  opacity: 0;
+  cursor: pointer; }
 
 #slider a.control_prev:hover, #slider a.control_next:hover {
   opacity: 1;
   -webkit-transition: all 0.2s ease;
+  background-color:rgba(42, 42, 42, 0.5);
+}
+
+#slider a.control_prev span, #slider a.control_next span{
+  position: relative;
+  top: 45%;
+  transform: translateY(-50%);
 }
 
 #slider a.control_prev {
-  border-radius: 0 2px 2px 0;
-}
+  border-radius: 0 2px 2px 0; }
 
 #slider a.control_next {
   right: 0;
-  border-radius: 2px 0 0 2px;
-}
+  border-radius: 2px 0 0 2px; }
 
-#responsive_check{
+#responsive_check {
   position: absolute;
-  display: none;
-  }
+  display: none; }
 
 /*--------------------------------------------------------------
 # Media Queries
@@ -441,7 +474,7 @@ font-size: 0.9em;
   .site-description a {
     font-size: 1em !important;
   }
-  #post-author { //#post-category, #post-date span.separator
+  #post-author, #post-likes { //#post-category, #post-date span.separator
     display: none;
   }
   #post-date span.separator {
@@ -458,6 +491,9 @@ font-size: 0.9em;
     padding: 12px 15px !important;
     font-size: 11px !important;
   }
+
+  /* Image w/ Caption Mobile Fix */
+  figure { max-width: 260px !important; }
 
   /* Alternate Flush-White Mobile Layout */
   /*
@@ -578,9 +614,50 @@ font-size: 1.5em;
 }
 
 #aboutme_pic {
+  border: none;
+  width: 161px;
+  height: 161px;
+}
+
+#aboutme_pic_border {
   border-style: solid;
   border-width: 6px;
   border-color: #E4E4E4;
   width: 161px;
   height: 161px;
 }
+
+#aboutme_pic_circle {
+  width: 161px;
+  height: 161px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+}
+
+#aboutme_pic_circle_border {
+  border-style: solid;
+  border-width: 6px;
+  border-color: #E4E4E4;
+  width: 161px;
+  height: 161px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+}
+
+/* Fix Image Caption Left Alignment */
+figure.wp-caption.alignleft {
+  margin-left: 0px;
+}
+
+/*--------------------------------------------------------------
+# Image Alignment: https://codex.wordpress.org/Styling_Images_in_Posts_and_Pages
+--------------------------------------------------------------*/
+/*
+img.alignright {float:right; margin:0 0 1em 1em}
+img.alignleft {float:left; margin:0 1em 1em 0}
+img.aligncenter {display: block; margin-left: auto; margin-right: auto}
+a img.alignright {float:right; margin:0 0 1em 1em}
+a img.alignleft {float:left; margin:0 1em 1em 0}
+a img.aligncenter {display: block; margin-left: auto; margin-right: auto} */

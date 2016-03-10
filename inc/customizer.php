@@ -46,7 +46,7 @@
  */
 function areavoices_customize_register( $wp_customize ) {
 
-  /**
+  /**************
   * Get Settings
   */
   $wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
@@ -66,56 +66,83 @@ function areavoices_customize_register( $wp_customize ) {
   $wp_customize->get_setting( 'av_aboutme_instagram' )->transport = 'postMessage';
   $wp_customize->get_setting( 'av_aboutme_youtube' )->transport = 'postMessage';
 
+  /**
+	* Remove Default Customizer Sections site_icon
+	*/
+	$wp_customize->remove_section('themes'); //Remove the 'Choose Active Theme' Section
 
 	/**
 	* Remove Default Customizer Sections site_icon
 	*/
   if ( !current_user_can( 'manage_options' ) ) { //Show only for Admin & Super Admin
-    $wp_customize->remove_section('title_tagline');
+    $wp_customize->remove_section('title_tagline'); // 'Site Identity' Section
   }
-
-	$wp_customize->remove_section('themes'); //Remove the 'Choose Active Theme' Section
-	$wp_customize->remove_section('colors'); //Remove the 'Colors' Section ( Header Text Color | Background Color )
-	$wp_customize->remove_section('static_front_page'); //Remove the 'Static Front Page' Section
-	$wp_customize->remove_section('background_image'); //Remove the 'Background Image' Section
-  $wp_customize->remove_setting('site_icon'); // Remove the 'Site Icon' setting option
 
   /**
-	* Widget Sections
+	* Super-Admin Only Sections
 	*/
   if ( !is_super_admin() ) { // Remove sections if user is not a Super Admin
+    $wp_customize->remove_setting('site_icon'); // Remove the 'Site Icon' setting option
+    $wp_customize->remove_section('colors'); //Remove the 'Colors' Section ( Header Text Color | Background Color )
+    $wp_customize->remove_section('background_image'); //Remove the 'Background Image' Section
     $wp_customize->remove_section('sidebar-widgets-sidebar-top'); //Remove the 'Sidebar: Top' widget section if user is not Super Admin
     $wp_customize->remove_section('sidebar-widgets-sidebar-middle'); //Remove the 'Sidebar: Top' widget section if user is not Super Admin
+    $wp_customize->remove_section('static_front_page'); //Remove the 'Static Front Page' Section
   }
 
 
-  $wp_customize->add_setting( 'av_aboutme_imgborder2', array(
-      'default'        => '1', // Returns '1' if checked, nothing (because false) if unchecked
-      'transport'   => 'postMessage',
-  ) );
-  $wp_customize->add_control( 'av_aboutme_imgborder2', array(
-      'label'   => 'Display border on profile picture',
-      'section' => 'widgets',
-      'type'    => 'checkbox',
-  ) );
+
+/************************
+ * Customizer Settings
+ ************************
+ */
 
 
 	/**
 	* Start FCC Custom
 	*/
 
-  if ( is_super_admin() ) { // Remove sections if user is not a Super Admin
+
     /* Design & Layout */
   	$wp_customize->add_section(
           'fcc_design_layout_section',
           array(
               'title' => 'Design & Layout',
-              'description' => 'Choose a layout for the homepage.',
+              //'description' => 'Choose a layout for the homepage.',
+              'description' => 'Additional options coming soon.',
               'priority' => 23,
           )
       );
+
+    /* Featured Content Slider */
+    $wp_customize->add_setting( 'av_featured_content_slider', array(
+        'default'        => '', // Returns '1' if checked, nothing (because false) if unchecked
+        //'transport'   => 'postMessage',
+    ) );
+    $wp_customize->add_control( 'av_featured_content_slider', array(
+        'label'   => 'Enable the Featured Content Slider',
+        'section' => 'fcc_design_layout_section',
+        'type'    => 'checkbox',
+    ) );
+    /* Featured Content Slider Layout*/
+    //$wp_customize->add_setting( 'av_featured_content_slider_layout', array(
+        //'default'        => 'layout-1', // Returns '1' if checked, nothing (because false) if unchecked
+        //'transport'   => 'postMessage',
+    //) );
+    /* $wp_customize->add_control( 'av_featured_content_slider_layout', array(
+        'type' => 'select',
+        'label' => 'Slider Layout:',
+        'section' => 'fcc_design_layout_section',
+        'choices' => array(
+            'layout-1' => 'Layout 1',
+            //'layout-2' => 'Layout 2',
+            //'layout-3' => 'Layout 3',
+        ),
+    ) ); */
+
+  //if ( is_super_admin() ) { // Remove sections if user is not a Super Admin
       /* Design */
-  		$wp_customize->add_setting(
+  		/* $wp_customize->add_setting(
   		    'fcc_design',
   		    array(
   		        'default' => 'Design 1',
@@ -138,9 +165,9 @@ function areavoices_customize_register( $wp_customize ) {
   								//'design-8' => 'Design 8&#8211;Music',
   		        ),
   		    )
-  		);
+  		); */
       /* Homepage Layout */
-  		$wp_customize->add_setting(
+  		/* $wp_customize->add_setting(
   		    'fcc_homepage_layout',
   		    array(
   		        'default' => 'fcc-homepage-layout-standard',
@@ -159,9 +186,9 @@ function areavoices_customize_register( $wp_customize ) {
   		            //'fcc-homepage-layout-tiled-featured' => 'Tiled w. Featured Content',
   		        ),
   		    )
-  		);
+  		); */
       /* Post Layout */
-  		$wp_customize->add_setting(
+  		/* $wp_customize->add_setting(
   		    'fcc_post_layout',
   		    array(
   		        'default' => 'fcc-post-layout-standard',
@@ -180,18 +207,8 @@ function areavoices_customize_register( $wp_customize ) {
   		            //'fcc-post-layout-tiled-featured' => 'Tiled w. Featured Content',
   		        ),
   		    )
-  		);
-      /* Featured Content Slider */
-      $wp_customize->add_setting( 'av_featured_content_slider', array(
-          'default'        => '', // Returns '1' if checked, nothing (because false) if unchecked
-          //'transport'   => 'postMessage',
-      ) );
-      $wp_customize->add_control( 'av_featured_content_slider', array(
-          'label'   => 'Enable the Featured Content Slider',
-          'section' => 'fcc_design_layout_section',
-          'type'    => 'checkbox',
-      ) );
-  } //End Super-Admin Only
+  		); */
+  //} //End Super-Admin Only
 
 
 	/* Author Bio */
@@ -207,8 +224,8 @@ function areavoices_customize_register( $wp_customize ) {
 	$default_bio_img = get_template_directory_uri() . '/images/about-me-generic.png';
 	$wp_customize->add_setting('av_aboutme_avatar', array(
 		'default'           => $default_bio_img,
-		'capability'        => 'edit_theme_options',
-    //'transport'         => 'postMessage', /* RV | FIX */
+    'transport'   => 'postMessage',
+    //'capability'        => 'edit_theme_options',
 		//'type'            => 'option',
 	));
 	$wp_customize->add_control( new WP_Customize_Image_Control($wp_customize, 'av_aboutme_avatar', array(
@@ -222,16 +239,34 @@ function areavoices_customize_register( $wp_customize ) {
   		'width'       => 160,
   		'height'      => 160,
 	)));
+  /**
+  * About Me Border Style
+  */
+  $wp_customize->add_setting( 'av_aboutme_imgborder', array(
+      'default'        => 'layout-2', // Returns '1' if checked, nothing (because false) if unchecked
+      //'transport'   => 'postMessage',
+  ) );
+  $wp_customize->add_control( 'av_aboutme_imgborder', array(
+      'type' => 'select',
+      'label' => 'Profile picture border style:',
+      'section' => 'bio_section',
+      'choices' => array(
+          'layout-1' => 'None',
+          'layout-2' => 'Square with border',
+          'layout-3' => 'Circle w/o border',
+          'layout-4' => 'Circle with border',
+        ),
+    ) );
   // Bio Pic Border \\
-        $wp_customize->add_setting( 'av_aboutme_imgborder', array(
+        /* $wp_customize->add_setting( 'av_aboutme_imgborder', array(
             'default'        => '1', // Returns '1' if checked, nothing (because false) if unchecked
-            //'transport'   => 'postMessage', /* RV | FIX */
-        ) );
-        $wp_customize->add_control( 'av_aboutme_imgborder', array(
+            //'transport'   => 'postMessage',
+        ) ); */
+      /*   $wp_customize->add_control( 'av_aboutme_imgborder', array(
             'label'   => 'Display border on profile picture',
             'section' => 'bio_section',
             'type'    => 'checkbox',
-        ) );
+        ) ); */
 	// Bio Name \\
 	$wp_customize->add_setting('av_aboutme_username', array(
 	    'default' => 'My Name is _____', // Default custom text

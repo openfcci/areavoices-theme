@@ -38,6 +38,8 @@ function areavoices_setup() {
 
 	// Featured Image size for home page
 	add_image_size( 'featured-image', 750, 330, true );
+	add_image_size( 'medium-thumb', 400, 240, true );
+	add_image_size( 'small-thumb', 95, 60, true );
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
@@ -146,6 +148,24 @@ function areavoices_scripts() {
 	wp_enqueue_script( 'areavoices-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
 	wp_enqueue_script( 'areavoices-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
 
+	/*****************************************************************************
+	* WP Featherlight Lightbox
+	* Source: http://noelboss.github.io/featherlight/
+	* Gallery: https://github.com/noelboss/featherlight/#featherlight-gallery
+	* Swipe: https://github.com/noelboss/featherlight/#featherlight-gallery
+	*****************************************************************************/
+	if ( !is_admin() ) {
+		if ( get_option('av_lightbox') ) {
+			wp_enqueue_script( 'wp-featherlight-gallery', get_template_directory_uri() . '/js/av-featherlight-gallery.js' ); /*RV Make Beter */
+			wp_enqueue_style(  'wp-featherlight', get_template_directory_uri() . '/css/wp-featherlight.min.css' );
+			wp_enqueue_script( 'wp-featherlight', get_template_directory_uri() . '/js/min/wpFeatherlight.pkgd.min.js' );
+			//Featherlight Gallery//
+			//wp_enqueue_style(  'wp-featherlight-gallery', get_template_directory_uri() . '/css/featherlight.gallery.min.css' );
+			wp_enqueue_script( 'wp-featherlight-gallery', get_template_directory_uri() . '/js/min/featherlight.gallery.min.js' );
+
+	  }
+	}
+
 	/* Featured Content Slider Script */
 	if ( is_front_page() ) {
 	  $fc_slider = get_theme_mod( 'av_featured_content_slider', '' );
@@ -232,7 +252,6 @@ require get_template_directory() . '/inc/jetpack.php';
  * Admin Settings Page
  */
 require get_template_directory() . '/inc/admin/admin-settings-page.php';
-
 
 /**
  * Customize the "Read More" link.
@@ -332,6 +351,7 @@ function av_custom_css() {
 add_action( 'wp_enqueue_scripts', 'av_custom_css' );
 
 /**************Custom PHP***************/
+// Shortcode to use: [fcc_php] yourphp(): [/fcc_php]
 if( ! function_exists('fcc_insert_php') )
 {
 	function fcc_insert_php($content)
@@ -381,7 +401,7 @@ function my_enqueue_customizer_stylesheet() {
 }
 add_action( 'customize_controls_print_styles', 'my_enqueue_customizer_stylesheet' );
 
-/**
+/*******************************************************************************
  * This function adds some styles to the WordPress Customizer
  * Source: http://aristeides.com/blog/modifying-wordpress-customizer/
  */
@@ -389,56 +409,20 @@ function my_customizer_styles() {
 	?>
     <style>
 		/*!
-* The panel names are based on the IDs you assign to them. Use your Firebug/Chrome inspector to quickly find them.
-*/
+		* The panel names are based on the IDs you assign to them. Use your Firebug/Chrome inspector to quickly find them.
+		*/
 
-#customize-controls .accordion-section-title:before,
-#customize-controls .panel-title:before {
--moz-osx-font-smoothing: grayscale;
-display: inline-block;
-font-family: dashicons;
-font-size: 20px;
-font-style: normal;
-font-weight: 400;
-height: 20px;
-line-height: 1;
-text-align: center;
-text-decoration: inherit;
-vertical-align: top;
-width: 20px;
-opacity: 0.6;
-}
-#customize-controls .accordion-section-title:before:hover,
-#customize-controls .panel-title:before:hover {
-opacity: 1.0;
-}
-#customize-controls .panel-title:before {
-left: 2px;
-margin-right: 5px;
-position: relative;
-top: 4px;
-}
-#customize-controls #accordion-section-fcc_design_layout_section .panel-title:after,
-#customize-controls #accordion-section-fcc_design_layout_section > h3:after{
-/* font-family: 'avicons'; */
-/* content: "\e926"; */
-}
-#customize-controls #accordion-section-title_tagline > h3 {
-color: #999;
-}
-#customize-controls #accordion-section-fcc_design_layout_section > h3 {
-color: #999;
-}
-#customize-controls #accordion-section-sidebar-widgets-sidebar-top > h3 {
-color: #999;
-}
-#customize-controls #accordion-section-sidebar-widgets-sidebar-middle > h3 {
-color: #999;
-}
-
+		#customize-controls #accordion-section-title_tagline > h3,
+		/* #customize-controls #accordion-section-fcc_design_layout_section > h3, */
+		#customize-controls #accordion-section-colors > h3,
+		#customize-controls #accordion-section-background_image > h3,
+		#customize-controls #accordion-section-sidebar-widgets-sidebar-top > h3,
+		#customize-controls #accordion-section-sidebar-widgets-sidebar-middle > h3,
+		#customize-controls #accordion-section-static_front_page > h3 {
+		color: #999;
+		}
     </style>
     <?php
-
 }
 add_action( 'customize_controls_print_styles', 'my_customizer_styles', 999 );
 
@@ -486,3 +470,55 @@ add_action( 'customize_controls_print_styles', 'my_customizer_styles', 999 );
 	    }//end if user
 	    return $avatar;
 	}//end my_custom_avatar
+
+/* Sentence Case the Post Title */
+function sentence_case_the_title( $title, $id = null ) {
+	$title = ucwords( $title );
+    return $title;
+}
+add_filter( 'the_title', 'sentence_case_the_title', 10, 2 );
+
+/**
+* JetPack Related Posts
+* Documentation: https://jetpack.me/support/related-posts/customize-related-posts/
+*/
+function jetpackme_remove_rp() {
+    if ( class_exists( 'Jetpack_RelatedPosts' ) ) {
+        $jprp = Jetpack_RelatedPosts::init();
+        $callback = array( $jprp, 'filter_add_target_to_dom' );
+        remove_filter( 'the_content', $callback, 40 );
+    }
+}
+add_filter( 'wp', 'jetpackme_remove_rp', 20 );
+
+/**
+* Add 'Gallery' CSS Link Class to Post Content Images When Inserted Through 'Add Media > Insert Into Post'
+* Hook: image_send_to_editor
+* Documentation: http://freshwebdev.com/adding-custom-class-upload-insert-image-wordpress.html
+*/
+
+function fcc_give_linked_images_class($html, $id, $caption, $title, $align, $url, $size, $alt = '' ) {
+	// Separate classes with spaces, e.g. 'img image-link'
+	$classes = 'gallery';
+
+	// check if there are already classes assigned to the anchor
+	if ( preg_match('/<a.? class=".?">/', $html) ) { $html = preg_replace('/(<a.? class=".?)(".\?>)/', '$1 ' . $classes . '$2', $html); } else { $html = preg_replace('/(<a.*?)>/', '$1 class="' . $classes . '" >', $html); }
+
+	return $html;
+}
+add_filter('image_send_to_editor', 'fcc_give_linked_images_class', 10, 8);
+
+
+/**
+ * Attachment ID on Images
+ *
+ * @author Bill Erickson
+ * @link http://www.billerickson.net/code/add-attachment-id-class-images/
+ * wp_get_attachment_image() is used for Featured Images and other images output in templates.
+ */
+function av_add_gallery_class_to_images( $attr, $attachment ) {
+	if( !strpos( $attr['class'], 'gallery' ) )
+		$attr['class'] .= ' gallery';
+	return $attr;
+}
+//add_filter( 'wp_get_attachment_image_attributes', 'av_add_gallery_class_to_images', 10, 2 );

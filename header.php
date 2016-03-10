@@ -16,6 +16,14 @@
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 
 <?php wp_head(); ?>
+
+<?php
+/* Add Nativo Script to Blog Post Pages */
+if ( is_single() ) { ?>
+<!--Nativo-->
+<script type="text/javascript" src="//s.ntv.io/serve/load.js" async></script>
+<?php } ?>
+
 </head>
 
 <body <?php body_class(); ?>>

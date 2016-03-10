@@ -13,10 +13,21 @@
      </h1>
    </div>
    <div class="textwidget">
-     <p class="" align="center">
-       <img <?php $border = get_theme_mod( 'av_aboutme_imgborder', '1' ); if ( $border ) { echo 'id="aboutme_pic"'; } ?> class="av_aboutme_avatar" src="<?php $default_avatar = get_template_directory_uri() . '/images/about-me-generic.png';
+     <p class="av_aboutme_avatar" align="center">
+       <img <?php
+       $border = get_theme_mod( 'av_aboutme_imgborder', 'layout-3' );
+       if ( $border == 'layout-1' ) {
+         echo 'id="aboutme_pic"';
+       } else if ( $border == 'layout-2' ) {
+         echo 'id="aboutme_pic_border"';
+       } else if ( $border == 'layout-3' ) {
+         echo 'id="aboutme_pic_circle"';
+       } else if ( $border == 'layout-4' ) {
+        echo 'id="aboutme_pic_circle_border"';
+      }
+       ?> class="av_aboutme_avatar" src="<?php $default_avatar = get_template_directory_uri() . '/images/about-me-generic.png';
        echo get_theme_mod( 'av_aboutme_avatar', $default_avatar ); ?>"/>
-     </p>
+    </p>
      <h4 class="aboutme_username" align="center"><?php echo get_theme_mod( 'av_aboutme_username', '' ); ?></h4>
      <p class="aboutme_description" align="center">
        <?php echo get_theme_mod( 'av_aboutme_description', '' ); ?>
@@ -46,7 +57,7 @@
        }
        /*Linkedin*/
        if (!empty( $pinterest )) {
-         echo '<span class="social_item"><a href="' . get_theme_mod( 'av_aboutme_pintrest', '#' ) . '" target="_blank" class="social_icons social_pinterest"><span class="avicon-pinterest"></span></a></span>';
+         echo '<span class="social_item"><a href="' . get_theme_mod( 'av_aboutme_pinterest', '#' ) . '" target="_blank" class="social_icons social_pinterest"><span class="avicon-pinterest"></span></a></span>';
        }
        /*Linkedin*/
        if (!empty( $linkedin )) {
