@@ -434,7 +434,8 @@ a {
       position: absolute;
       top: 1.5em;
       left: -999em;
-      z-index: 99999; }
+      z-index: 99999; 
+      background-color: #fff;}
       .main-navigation ul ul ul {
         left: -999em;
         top: 0; }
@@ -444,7 +445,7 @@ a {
         width: 200px; }
     .main-navigation ul li:hover > ul,
     .main-navigation ul li.focus > ul {
-      left: auto; }
+      left: 0em; }
   .main-navigation li {
     float: left;
     position: relative; }
