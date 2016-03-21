@@ -2,10 +2,11 @@
 /**
  * The template used for displaying Google Ad content in header.php
  * @package areavoices
+ * @version 2016.03.21
  */
 ?>
 
-<!-- GOOGLE ADs: Begin -->
+<!-- GOOGLE DFP AD TAGS -->
 <script type='text/javascript'>
 	(function() {
 		var useSSL = 'https:' == document.location.protocol;
@@ -56,18 +57,28 @@ else
 ?>
 
 <script type='text/javascript'>
+var gptAdSlots = [];
+
 googletag.cmd.push(function() {
-	var leaderboard_top_ad_mapping = googletag.sizeMapping().
-	addSize([960, 0], [[960, 200],[728, 90]]).
-	addSize([728, 0], [728, 90]).
+	var leaderboard_ad_mapping = googletag.sizeMapping().
 	addSize([0, 0], [[320, 100], [320, 50], [300, 50]]).
-	build();
+  addSize([980, 0], [[980, 330], [728, 90], [960, 200], [930, 180], [970, 90], [970, 250], [970, 66], [980, 120]]).
+  addSize([970, 0], [[728, 90], [960, 200], [930, 180], [970, 90], [970, 250], [970, 66], [980, 120]]).
+  addSize([960, 0], [[728, 90], [960, 200], [930, 180]]).
+  addSize([728, 0], [728, 90]).
+  build();
 
 	var sidebar_ad_mapping = googletag.sizeMapping().
-	addSize([0, 0], [300, 250]).
-	build();
+	addSize([0, 0], [[300, 250], [320, 100], [320, 50], [300, 50]]).
+  addSize([728, 0], [300, 250]).
+  build();
 
-	gptAdSlots0=googletag.defineSlot('/7021/fcc.areavoices', [300, 50], 'leaderboard-top-ad').defineSizeMapping(leaderboard_top_ad_mapping).setTargeting('loc', 'atf').setTargeting('kw', [
+	gptAdSlots[0] = googletag.defineSlot('/7021/fcc.forum/fcc.areavoices', [300, 50], 'leaderboard-ad')
+	.defineSizeMapping(leaderboard_ad_mapping)
+	.addService(googletag.companionAds())
+	.addService(googletag.pubads())
+	.setTargeting('loc', 'atf')
+	.setTargeting('kw', [
 		<?php
 		if( is_home() ) {
 			echo "'homepage'" . "," . "'blog_" . $curBlogId . "'";
@@ -77,9 +88,14 @@ googletag.cmd.push(function() {
 			if( $posttags != "" ) { echo "," . $posttags; }
 		}
 		?>
-	]).addService(googletag.pubads());
+	]);
 
-	gptAdSlots1=googletag.defineSlot('/7021/fcc.areavoices', [300, 250], 'first-sidebar-ad').defineSizeMapping(sidebar_ad_mapping).setTargeting('loc', 'atf').setTargeting('kw', [
+	gptAdSlots[1] = googletag.defineSlot('/7021/fcc.forum/fcc.areavoices', [300, 250], 'sidebar-ad')
+	.defineSizeMapping(sidebar_ad_mapping)
+	.addService(googletag.companionAds())
+  .addService(googletag.pubads())
+	.setTargeting('loc', 'atf')
+	.setTargeting('kw', [
 		<?php
 		if( is_home() ) {
 			echo "'homepage'" . "," . "'blog_" . $curBlogId . "'";
@@ -89,7 +105,10 @@ googletag.cmd.push(function() {
 			if( $posttags != "" ) { echo "," . $posttags; }
 		}
 		?>
-	]).addService(googletag.pubads());
+	]);
+
+	googletag.enableServices();
+
 });
 
 googletag.pubads().enableSyncRendering();
@@ -98,4 +117,4 @@ googletag.pubads().enableVideoAds();
 googletag.enableServices();
 
 </script>
-<!-- GOOGLE ADs: End -->
+<!-- END GOOGLE DFP AD TAGS-->
