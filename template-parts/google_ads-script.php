@@ -1,11 +1,8 @@
 <?php
 /**
  * The template used for displaying Google Ad content in header.php
- * rv
  * @package areavoices
  */
-
-/*RV*/
 ?>
 
 <!-- GOOGLE ADs: Begin -->
@@ -21,22 +18,20 @@
 
 		$curBlogId = get_current_blog_id();
 
-		if( is_home() ){ //Updated from 'is_front_page' (11/09/15)
-			$category[0] = new StdClass; //Added to fix empty default object value (11/09/15)
-			//$category[0]->cat_name = "homepage";
-			$category[0]->cat_name = "'homepage'" . "," . "'blog_" . $curBlogId . "'"; //Updated to add blog_id to main page (03/10/16)
+		if( is_home() ){
+			$category[0] = new StdClass;
+			$category[0]->cat_name = "'homepage'" . "," . "'blog_" . $curBlogId . "'";
 			$posttags = "";
 		}
 		else
 		{
-			//$category = get_the_category(); //Original//
 			$categoryArray = get_the_category();
 			$category = "";
 			$catInt = 0;
 				if ($categoryArray) {
 					foreach($categoryArray as $cat) {
 						if($catInt > 0) {
-							$category .= ","; //Updated to fix parenthesis (11/09/15)
+							$category .= ",";
 						}
 						$category .= "'" . str_replace('&', 'and', htmlspecialchars_decode($cat->name)) . "'" ;
 					$catInt++;
@@ -48,7 +43,7 @@
 			if ($posttagsArray) {
 				foreach($posttagsArray as $tag) {
 						if($tagsInt > 0) {
-							$posttags .= ","; //Updated to fix parenthesis (11/09/15)
+							$posttags .= ",";
 						}
 						$posttags .= "'" . $tag->name . "'" ;
 					$tagsInt++;
@@ -72,7 +67,7 @@ build();
 gptAdSlots0=googletag.defineSlot('/7021/fcc.areavoices', [300, 50], 'leaderboard-top-ad').defineSizeMapping(leaderboard_top_ad_mapping).setTargeting('loc', 'atf').setTargeting('kw', [<?php
 	if( is_home() ) {
 		//echo "'homepage'"; }
-		echo "'homepage'" . "," . "'blog_" . $curBlogId . "'"; } //Updated to add blog_id to main page (03/10/16)
+		echo "'homepage'" . "," . "'blog_" . $curBlogId . "'"; }
 	else  {
 		echo "'blog_" . $curBlogId . "'" . "," . $category;
 		if( $posttags != "" ) { echo "," . $posttags; }
@@ -82,7 +77,7 @@ gptAdSlots0=googletag.defineSlot('/7021/fcc.areavoices', [300, 50], 'leaderboard
 gptAdSlots1=googletag.defineSlot('/7021/fcc.areavoices', [300, 250], 'first-sidebar-ad').defineSizeMapping(sidebar_ad_mapping).setTargeting('loc', 'atf').setTargeting('kw', [<?php
 	if( is_home() ) {
 		//echo "'homepage'"; }
-		echo "'homepage'" . "," . "'blog_" . $curBlogId . "'"; } //Updated to add blog_id to main page (03/10/16)
+		echo "'homepage'" . "," . "'blog_" . $curBlogId . "'"; }
 	else  {
 		echo "'blog_" . $curBlogId . "'" . "," . $category;
 		if( $posttags != "" ) { echo "," . $posttags; }

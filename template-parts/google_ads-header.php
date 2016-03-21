@@ -13,8 +13,10 @@
 	 <div id="fcc-areavoices-header-ad" align="center">
 		<div id="leaderboard-top-ad" class="leaderboard-top-ad" >
 			<script type="text/javascript">
-				googletag.display('leaderboard-top-ad');
-			</script>
+		    googletag.cmd.push(function() {
+		      googletag.display('leaderboard-top-ad');
+		    });
+		  </script>
 		</div>
 	</div>
 </div>
