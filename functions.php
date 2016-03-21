@@ -522,3 +522,20 @@ function av_add_gallery_class_to_images( $attr, $attachment ) {
 	return $attr;
 }
 //add_filter( 'wp_get_attachment_image_attributes', 'av_add_gallery_class_to_images', 10, 2 );
+
+/**
+ * Google Tag Manager
+ *
+ * Adding Content to the wp_after_body Hook
+ * @author Bill Erickson
+ * @link http://www.internoetics.com/2014/01/02/add-a-hook-in-wordpress-after-the-opening-body-tag/
+ */
+
+ function av_after_body() {
+	 do_action('av_after_body');
+ }
+
+ function insert_google_tag_manager() {
+	 get_template_part( 'template-parts/google_ads', 'tagmanager' );
+ }
+ add_action( 'av_after_body', 'insert_google_tag_manager' );

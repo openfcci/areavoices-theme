@@ -19,7 +19,7 @@ $loop = new WP_Query( $args );
 if ( $loop->have_posts() ) { ?>
   <!-- FEATURED SLIDER: Begin -->
   <div id="responsive_check"></div>
-  <div id="slider">
+  <div id="slider" class=" <?php if ( 'layout-2' == get_theme_mod( 'av_featured_content_slider_layout' ) ) : ?> layout2 <?php   else : ?> layout1 <?php endif; ?>">
     <a class="control_next"><span class="avicon-chevron_right"></span></a>
     <a class="control_prev"><span class="avicon-chevron_left"></span></a>
     <ul>

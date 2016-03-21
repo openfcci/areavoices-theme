@@ -1,14 +1,12 @@
 <?php
 /**
  * The template used for displaying Google Ad content in header.php
- * rv
  * @package areavoices
+ * @version 2016.03.21
  */
-
-/*RV*/
 ?>
 
-<!-- GOOGLE ADs: Begin -->
+<!-- GOOGLE DFP AD TAGS -->
 <script type='text/javascript'>
 	(function() {
 		var useSSL = 'https:' == document.location.protocol;
@@ -17,82 +15,106 @@
 		document.write('<scr' + 'ipt src="' + src + '"></scr' + 'ipt>');
 		})();
 </script>
+
 <?php
+/**
+ * Build the Tags
+ */
+$curBlogId = get_current_blog_id();
 
-		$curBlogId = get_current_blog_id();
+if( is_home() ){
+	$category[0] = new StdClass;
+	$category[0]->cat_name = "'homepage'" . "," . "'blog_" . $curBlogId . "'";
+	$posttags = "";
+}
+else
+{
+	$categoryArray = get_the_category();
+	$category = "";
+	$catInt = 0;
+		if ($categoryArray) {
+			foreach($categoryArray as $cat) {
+				if($catInt > 0) {
+					$category .= ",";
+				}
+				$category .= "'" . str_replace('&', 'and', htmlspecialchars_decode($cat->name)) . "'" ;
+			$catInt++;
+		}
+	}
+	$posttagsArray = get_the_tags();
+	$posttags = "";
+	$tagsInt = 0;
+	if ($posttagsArray) {
+		foreach($posttagsArray as $tag) {
+				if($tagsInt > 0) {
+					$posttags .= ",";
+				}
+				$posttags .= "'" . $tag->name . "'" ;
+			$tagsInt++;
+		}
+	}
+}
+?>
 
-		if( is_home() ){ //Updated from 'is_front_page' (11/09/15)
-			$category[0] = new StdClass; //Added to fix empty default object value (11/09/15)
-			//$category[0]->cat_name = "homepage";
-			$category[0]->cat_name = "'homepage'" . "," . "'blog_" . $curBlogId . "'"; //Updated to add blog_id to main page (03/10/16)
-			$posttags = "";
-		}
-		else
-		{
-			//$category = get_the_category(); //Original//
-			$categoryArray = get_the_category();
-			$category = "";
-			$catInt = 0;
-				if ($categoryArray) {
-					foreach($categoryArray as $cat) {
-						if($catInt > 0) {
-							$category .= ","; //Updated to fix parenthesis (11/09/15)
-						}
-						$category .= "'" . str_replace('&', 'and', htmlspecialchars_decode($cat->name)) . "'" ;
-					$catInt++;
-				}
-			}
-			$posttagsArray = get_the_tags();
-			$posttags = "";
-			$tagsInt = 0;
-			if ($posttagsArray) {
-				foreach($posttagsArray as $tag) {
-						if($tagsInt > 0) {
-							$posttags .= ","; //Updated to fix parenthesis (11/09/15)
-						}
-						$posttags .= "'" . $tag->name . "'" ;
-					$tagsInt++;
-				}
-			}
-		}
-	?>
-<?php echo "<script type='text/javascript'>" ?>
-// Define ad spots
+<script type='text/javascript'>
+var gptAdSlots = [];
+
 googletag.cmd.push(function() {
-var leaderboard_top_ad_mapping = googletag.sizeMapping().
-addSize([960, 0], [[960, 200],[728, 90]]).
-addSize([728, 0], [728, 90]).
-addSize([0, 0], [[320, 100], [320, 50], [300, 50]]).
-build();
+	var leaderboard_ad_mapping = googletag.sizeMapping().
+	addSize([0, 0], [[320, 100], [320, 50], [300, 50]]).
+  addSize([980, 0], [[980, 330], [728, 90], [960, 200], [930, 180], [970, 90], [970, 250], [970, 66], [980, 120]]).
+  addSize([970, 0], [[728, 90], [960, 200], [930, 180], [970, 90], [970, 250], [970, 66], [980, 120]]).
+  addSize([960, 0], [[728, 90], [960, 200], [930, 180]]).
+  addSize([728, 0], [728, 90]).
+  build();
 
-var sidebar_ad_mapping = googletag.sizeMapping().
-addSize([0, 0], [300, 250]).
-build();
+	var sidebar_ad_mapping = googletag.sizeMapping().
+	addSize([0, 0], [[300, 250], [320, 100], [320, 50], [300, 50]]).
+  addSize([728, 0], [300, 250]).
+  build();
 
-gptAdSlots0=googletag.defineSlot('/7021/fcc.areavoices', [300, 50], 'leaderboard-top-ad').defineSizeMapping(leaderboard_top_ad_mapping).setTargeting('loc', 'atf').setTargeting('kw', [<?php
-	if( is_home() ) {
-		//echo "'homepage'"; }
-		echo "'homepage'" . "," . "'blog_" . $curBlogId . "'"; } //Updated to add blog_id to main page (03/10/16)
-	else  {
-		echo "'blog_" . $curBlogId . "'" . "," . $category;
-		if( $posttags != "" ) { echo "," . $posttags; }
-	}
-?>]).addService(googletag.pubads());
+	gptAdSlots[0] = googletag.defineSlot('/7021/fcc.forum/fcc.areavoices', [300, 50], 'leaderboard-ad')
+	.defineSizeMapping(leaderboard_ad_mapping)
+	.addService(googletag.companionAds())
+	.addService(googletag.pubads())
+	.setTargeting('loc', 'atf')
+	.setTargeting('kw', [
+		<?php
+		if( is_home() ) {
+			echo "'homepage'" . "," . "'blog_" . $curBlogId . "'";
+		}
+		else {
+			echo "'blog_" . $curBlogId . "'" . "," . $category;
+			if( $posttags != "" ) { echo "," . $posttags; }
+		}
+		?>
+	]);
 
-gptAdSlots1=googletag.defineSlot('/7021/fcc.areavoices', [300, 250], 'first-sidebar-ad').defineSizeMapping(sidebar_ad_mapping).setTargeting('loc', 'atf').setTargeting('kw', [<?php
-	if( is_home() ) {
-		//echo "'homepage'"; }
-		echo "'homepage'" . "," . "'blog_" . $curBlogId . "'"; } //Updated to add blog_id to main page (03/10/16)
-	else  {
-		echo "'blog_" . $curBlogId . "'" . "," . $category;
-		if( $posttags != "" ) { echo "," . $posttags; }
-	}
-?>]).addService(googletag.pubads());
+	gptAdSlots[1] = googletag.defineSlot('/7021/fcc.forum/fcc.areavoices', [300, 250], 'sidebar-ad')
+	.defineSizeMapping(sidebar_ad_mapping)
+	.addService(googletag.companionAds())
+  .addService(googletag.pubads())
+	.setTargeting('loc', 'atf')
+	.setTargeting('kw', [
+		<?php
+		if( is_home() ) {
+			echo "'homepage'" . "," . "'blog_" . $curBlogId . "'";
+		}
+		else {
+			echo "'blog_" . $curBlogId . "'" . "," . $category;
+			if( $posttags != "" ) { echo "," . $posttags; }
+		}
+		?>
+	]);
+
+	googletag.enableServices();
+
+});
 
 googletag.pubads().enableSyncRendering();
 googletag.pubads().enableSingleRequest();
 googletag.pubads().enableVideoAds();
 googletag.enableServices();
-});
-<?php echo '</script>' ?>
-<!-- GOOGLE ADs: End -->
+
+</script>
+<!-- END GOOGLE DFP AD TAGS-->
