@@ -17,6 +17,7 @@
 			top: 1.5em;
 			left: -999em;
 			z-index: 99999;
+			background-color: #fff;
 
 			ul {
 				left: -999em;
@@ -45,7 +46,7 @@
 
 		li:hover > ul,
 		li.focus > ul {
-			left: auto;
+			left: 0em;
 		}
 	}
 	li {
