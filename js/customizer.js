@@ -23,22 +23,71 @@
 	// About Me: Avatar.
 	wp.customize( 'av_aboutme_avatar', function( value ) {
 		value.bind( function( to ) {
-			$( 'img.av_aboutme_avatar' ).attr( 'src', to );
+			if ( '' === to ) {
+				$( 'img.av_aboutme_avatar' ).css( {
+					'width': '0px',
+					'height': '0px',
+					'border-color': '#FFFFFF',
+				} );
+			} else {
+				$( 'img.av_aboutme_avatar' ).attr( 'src', to );
+				$( 'img.av_aboutme_avatar' ).css( {
+					'width': '161px',
+					'height': '161px',
+					'border-color': '#E4E4E4',
+				} );
+			}
 		} );
 	} );
 
 	// About Me: Avatar Border
-	wp.customize( 'av_aboutme_username', function( value ) {
+	wp.customize( 'av_aboutme_imgborder', function( value ) {
 		value.bind( function( to ) {
 			if ( 'blank' === to ) {
-				$( '.aboutme_username' ).css( {
+				$( 'img.av_aboutme_avatar' ).css( {
+					'border-style': 'solid',
+					'border-width': '6px',
+					'border-color': '#E4E4E4',
 					'width': '161px',
 					'height': '161px',
-					'border': 'none'
-
+					'-webkit-border-radius': '0%',
+					'-moz-border-radius': '0%',
+					'border-radius': '0%',
 				} );
-			} else {
-				$( '.aboutme_username' ).css( {
+			} else if ( 'layout-1' === to ) {
+				$( 'img.av_aboutme_avatar' ).css( {
+					'width': '161px',
+			    'height': '161px',
+			    'border': 'none',
+					'-webkit-border-radius': '0%',
+					'-moz-border-radius': '0%',
+					'border-radius': '0%',
+				} );
+			} else if ( 'layout-2' === to ) {
+				$( 'img.av_aboutme_avatar' ).css( {
+					'border-style': 'solid',
+					'border-width': '6px',
+					'border-color': '#E4E4E4',
+					'width': '161px',
+					'height': '161px',
+					'-webkit-border-radius': '0%',
+					'-moz-border-radius': '0%',
+					'border-radius': '0%',
+				} );
+			} else if ( 'layout-3' === to ) {
+				$( 'img.av_aboutme_avatar' ).css( {
+					'width': '161px',
+					'height': '161px',
+					'-webkit-border-radius': '50%',
+					'-moz-border-radius': '50%',
+					'border-radius': '50%',
+					'border': 'none'
+				} );
+			} else if ( 'layout-4' === to ) {
+				$( 'img.av_aboutme_avatar' ).css( {
+					'border-style': 'solid',
+					'border-width': '6px',
+					'border-color': '#E4E4E4',
 					'width': '161px',
 					'height': '161px',
 					'-webkit-border-radius': '50%',
