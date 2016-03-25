@@ -154,6 +154,9 @@ Template:       areavoices-theme
   letter-spacing: 2px;
 
 }
+.main-navigation ul li a{
+  white-space: nowrap;
+}
 
 .main-navigation ul li a:after{
 content: "/";
@@ -162,6 +165,26 @@ font-weight: 900;
 color: #ebebeb;
 margin-left: 30px;
 font-size: 20px;
+}
+
+.main-navigation ul ul {
+  padding-top: 15px;
+}
+
+.main-navigation ul li ul li {width: 100%;
+margin-left: 15px;}
+
+.main-navigation ul li ul li a {
+  display: block;
+  text-align: left;
+  background-color: #fff;
+}
+
+.main-navigation ul li ul li a:after{
+  content: "";
+  margin-left: 0px;
+  font-size: 0px;
+  display: none;
 }
 
 .main-navigation ul li:last-child{
@@ -1165,5 +1188,8 @@ margin-left: 15px;
 
   .post-thumb-container {
   	max-height: 157px !important;
+  }
+  .main-navigation ul li li a{
+    text-align: center;
   }
 }
