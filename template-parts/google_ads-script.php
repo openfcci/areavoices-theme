@@ -49,7 +49,7 @@ else
 				if($tagsInt > 0) {
 					$posttags .= ",";
 				}
-				$posttags .= "'" . $tag->name . "'" ;
+				$posttags .= "'" . str_replace( "'", "", str_replace( '&', 'and', htmlspecialchars_decode($tag->name) ) ) . "'" ;
 			$tagsInt++;
 		}
 	}
