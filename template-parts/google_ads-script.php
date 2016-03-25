@@ -37,7 +37,7 @@ else
 				if($catInt > 0) {
 					$category .= ",";
 				}
-				$category .= "'" . str_replace('&', 'and', htmlspecialchars_decode($cat->name)) . "'" ;
+				$category .= "'" . str_replace( "'", "", str_replace( '&', 'and', htmlspecialchars_decode($cat->name) ) ) . "'" ;
 			$catInt++;
 		}
 	}
