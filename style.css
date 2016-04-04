@@ -4,7 +4,7 @@ Theme URI: http://areavoices.com/
 Author: Forum Communications Company
 Author URI: http://forumcomm.com/
 Description: The custom WordPress theme built for AreaVoices contributors.
-Version: 1.16.03.25
+Version: 1.16.04.04
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: areavoices
@@ -441,7 +441,8 @@ a {
         top: 0; }
       .main-navigation ul ul li:hover > ul, .main-navigation ul ul li.focus > ul {
         left: 100%; }
-      
+      .main-navigation ul ul a {
+        width: 200px; }
     .main-navigation ul li:hover > ul,
     .main-navigation ul li.focus > ul {
       left: 0em; }
@@ -1326,3 +1327,9 @@ img.aligncenter {display: block; margin-left: auto; margin-right: auto}
 a img.alignright {float:right; margin:0 0 1em 1em}
 a img.alignleft {float:left; margin:0 1em 1em 0}
 a img.aligncenter {display: block; margin-left: auto; margin-right: auto} */
+/*--------------------------------------------------------------
+# Okanjo
+--------------------------------------------------------------*/
+.okanjo-area {
+  background-color: #fff;
+  padding: 1em 2em; }

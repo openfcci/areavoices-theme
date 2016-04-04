@@ -298,7 +298,7 @@ font-size: 0.9em;
     @media (max-width: 420px){
       height: 200px;
     }
-    
+
   }
 
   #slider.layout2 ul li:nth-of-type(2){
@@ -315,10 +315,10 @@ font-size: 0.9em;
     margin-top: 0;
     opacity: 1.0;
     }
-    
+
   }
 
-  
+
 
   #slider ul li div.slider-gradient{
     -webkit-transition: background-color 0.2s;
@@ -710,3 +710,11 @@ img.aligncenter {display: block; margin-left: auto; margin-right: auto}
 a img.alignright {float:right; margin:0 0 1em 1em}
 a img.alignleft {float:left; margin:0 1em 1em 0}
 a img.aligncenter {display: block; margin-left: auto; margin-right: auto} */
+
+/*--------------------------------------------------------------
+# Okanjo
+--------------------------------------------------------------*/
+.okanjo-area {
+  background-color: #fff;
+  padding: 1em 2em;
+}
