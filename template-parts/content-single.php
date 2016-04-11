@@ -58,7 +58,7 @@
 				} ?>
 
 				<!--Nativo Sponsored Content-->
-				<div id="nativo" class="nativo-container">
+				<div id="ad-content-distribution" class="nativo-container">
 				</div>
 
 				<?php
