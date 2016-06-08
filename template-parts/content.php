@@ -27,7 +27,7 @@
 				<span class="separator">/</span>
 			</span>
 			<span id="post-category" class="post-info">
-				<span class="avicon-folder_open"></span>
+				<span class="avicon-price-tag"></span>
 				<?php the_category( ', ' ); ?>
 			</span>
 		</div><!-- .entry-meta -->
