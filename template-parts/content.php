@@ -18,7 +18,7 @@
 		<div class="entry-meta">
 			<span id="post-date" class="post-info">
 				<span class="avicon-av-calendar"></span>
-				<a href="<?php echo get_day_link( get_the_time('Y'), get_the_time('m'), get_the_time('d')); ?>"><?php the_time( 'j F Y' ); ?></a>
+				<?php av_entry_date(); ?>
 				<span class="separator">/</span>
 			</span>
 			<span id="post-author" class="post-info">
@@ -28,7 +28,8 @@
 			</span>
 			<span id="post-category" class="post-info">
 				<span class="avicon-price-tag"></span>
-				<?php the_category( ', ' ); ?>
+				<?php //the_category( ', ' ); ?>
+				<?php echo '<a class="category" href="'.get_category_link( get_the_category()[0]->term_id ).'" rel="category tag">'.get_the_category()[0]->cat_name.'</a>'; ?>
 			</span>
 		</div><!-- .entry-meta -->
 		<?php endif; ?>
