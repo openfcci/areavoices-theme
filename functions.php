@@ -236,9 +236,9 @@ add_action( 'wp_enqueue_scripts', 'areavoices_scripts' );
  */
 function av_add_google_fonts() {
 	# Arvo
-	wp_enqueue_style( 'av-google-fonts-arvo', 'http://fonts.googleapis.com/css?family=Arvo:400,400italic,700,700italic', false );
+	wp_enqueue_style( 'av-google-fonts-arvo', 'https://fonts.googleapis.com/css?family=Arvo:400,400italic,700,700italic', false );
 	# Open Sans
-	wp_enqueue_style( 'av-google-fonts-opensans', 'http://fonts.googleapis.com/css?family=Open+Sans:400,300,600', false );
+	wp_enqueue_style( 'av-google-fonts-opensans', 'https://fonts.googleapis.com/css?family=Open+Sans:400,300,600', false );
 }
 add_action( 'wp_enqueue_scripts', 'av_add_google_fonts' );
 
