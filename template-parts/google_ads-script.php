@@ -73,7 +73,7 @@ googletag.cmd.push(function() {
   addSize([728, 0], [300, 250]).
   build();
 
-	gptAdSlots[0] = googletag.defineSlot('/7021/fcc.forum/fcc.areavoices', [300, 50], 'leaderboard-ad')
+	gptAdSlots[0] = googletag.defineSlot('/7021/fcc.areavoices', [300, 50], 'leaderboard-ad')
 	.defineSizeMapping(leaderboard_ad_mapping)
 	.addService(googletag.companionAds())
 	.addService(googletag.pubads())
@@ -90,7 +90,7 @@ googletag.cmd.push(function() {
 		?>
 	]);
 
-	gptAdSlots[1] = googletag.defineSlot('/7021/fcc.forum/fcc.areavoices', [300, 250], 'sidebar-ad')
+	gptAdSlots[1] = googletag.defineSlot('/7021/fcc.areavoices', [300, 250], 'sidebar-ad')
 	.defineSizeMapping(sidebar_ad_mapping)
 	.addService(googletag.companionAds())
   .addService(googletag.pubads())
