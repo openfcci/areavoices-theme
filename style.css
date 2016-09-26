@@ -614,6 +614,12 @@ a {
 .bypostauthor {
   display: block; }
 
+#comments .comment-list, #comments .children, .comment ol {
+	list-style: none;
+}
+
+
+
 /*--------------------------------------------------------------
 ## Sitewide
 --------------------------------------------------------------*/
