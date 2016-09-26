@@ -63,6 +63,10 @@ i {
   float: right;
 }
 
+#comments .comment-list, #comments .children, .comment ol {
+	list-style: none;
+}
+
 .comment-navigation .nav-previous,
 .posts-navigation .nav-previous,
 .post-navigation .nav-previous {
