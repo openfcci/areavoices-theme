@@ -14,7 +14,7 @@
 		</div>
 		<?php the_title( sprintf( '<h1 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h1>' ); ?>
 
-		<?php if ( 'post' == get_post_type() ) : ?>
+		<?php if ( 'post' == get_post_type() || 'podcasts' == get_post_type() ) : ?>
 		<div class="entry-meta">
 			<span id="post-date" class="post-info">
 				<span class="avicon-av-calendar"></span>
