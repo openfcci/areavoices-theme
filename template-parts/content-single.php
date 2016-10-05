@@ -7,12 +7,16 @@
 
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class('av-single-post'); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class( 'av-single-post' ); ?>>
 	<header class="entry-header">
 		<div class="post-thumb-container">
-			<a href="<?php $large_image_url = wp_get_attachment_image_src( get_post_thumbnail_id(), 'large' ); echo $large_image_url[0]; ?>" class="gallery">
-			<?php the_post_thumbnail( 'featured-image' ); ?>
-		</a>
+			<?php
+			if ( 'post' == get_post_type() ) {
+				echo '<a href="' .  wp_get_attachment_image_src( get_post_thumbnail_id(), 'large' )[0] . '" class="gallery">';
+			}
+			the_post_thumbnail( 'featured-image' );
+			if ( 'post' == get_post_type() ) { echo '</a>'; }
+			?>
 		</div>
 		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 
@@ -21,7 +25,7 @@
 			<?php //areavoices_posted_on(); ?>
 		</div> --> <!-- .entry-meta -->
 
-		<?php if ( 'post' == get_post_type() ) : ?>
+		<?php if ( 'post' == get_post_type() || 'podcasts' == get_post_type() ) : ?>
 		<div class="entry-meta">
 			<span class="post-info">
 				<span id="post-date" class="avicon-av-calendar"></span>
@@ -40,7 +44,7 @@
 				<span id="post-likes" class="separator">/</span>
 			</span>
 			<span id="post-likes" class="post-info">
-				<?php if( function_exists('zilla_likes') ){ zilla_likes(); } ?>
+				<?php if ( function_exists( 'zilla_likes' ) ) { zilla_likes(); } ?>
 			</span>
 		</div><!-- .entry-meta -->
 		<?php endif; ?>
@@ -50,23 +54,23 @@
 		<?php the_content(); ?>
 		<div class="av-post av-jp-social">
 			<?php
-				if ( function_exists( 'sharing_display' ) ) {
-				    sharing_display( '', true );
-				}
-				if ( class_exists( 'Jetpack_Likes' ) ) {
-				    $custom_likes = new Jetpack_Likes;
-				    echo $custom_likes->post_likes( '' );
-				} ?>
+			if ( function_exists( 'sharing_display' ) ) {
+			    sharing_display( '', true );
+			}
+			if ( class_exists( 'Jetpack_Likes' ) ) {
+			    $custom_likes = new Jetpack_Likes;
+			    echo $custom_likes->post_likes( '' );
+			} ?>
 
-				<!--Nativo Sponsored Content-->
-				<div id="ad-content-distribution" class="nativo-container">
-				</div>
+			<!--Nativo Sponsored Content-->
+			<div id="ad-content-distribution" class="nativo-container">
+			</div>
 
-				<?php
-				/*** Jetpack Related Posts ***/
-				if ( class_exists( 'Jetpack_RelatedPosts' ) ) {
-				    echo do_shortcode( '[jetpack-related-posts]' );
-				}
+			<?php
+			/*** Jetpack Related Posts ***/
+			if ( class_exists( 'Jetpack_RelatedPosts' ) ) {
+			    echo do_shortcode( '[jetpack-related-posts]' );
+			}
 			?>
 		</div><!-- .av-jp-social -->
 		<?php

@@ -196,7 +196,7 @@ function areavoices_scripts() {
 	 * Gallery: https://github.com/noelboss/featherlight/#featherlight-gallery
 	 * Swipe: https://github.com/noelboss/featherlight/#featherlight-gallery
 	 */
-	if ( ! is_admin() ) {
+	if ( ( ! is_admin() ) && ( ! is_singular( 'podcasts' ) ) ) {
 		if ( get_option( 'av_lightbox' ) ) {
 			# Featherlight
 			wp_enqueue_script( 'wp-featherlight', get_template_directory_uri() . '/js/min/wpFeatherlight.pkgd.min.js' );
