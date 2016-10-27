@@ -35,6 +35,8 @@
      function wp_parse_pn_admin_init() {
 			 register_setting('av-theme-settings-group', 'av_custom_css');
 			 register_setting('av-theme-settings-group', 'av_custom_js');
+			 register_setting('av-theme-settings-group', 'av_disable_ads');
+			 register_setting('av-theme-settings-group', 'av_disable_gtm');
        register_setting('av-theme-settings-group', 'av_popular_posts_widget');
        register_setting('av-theme-settings-group', 'av_recent_posts_widget');
        register_setting('av-theme-settings-group', 'av_recent_comments_widget');
@@ -74,7 +76,7 @@ function av_admin_settings() {
 					</td>
 				<tr>
 			</table>
-      <hr>
+			<hr>
       <h3>Popular Posts Widget</h3>
 			<table>
 				<tr>
@@ -112,6 +114,25 @@ function av_admin_settings() {
           </td>
         <tr>
       </table>
+			<hr>
+			<h3>Disable Ads</h3>
+			<table>
+				<tr>
+					<td>
+						<input type="checkbox" id="av_disable_ads" name="av_disable_ads" value="1" <?php checked( 1, get_option('av_disable_ads'), true ); ?>  />
+            <label for="av_disable_ads"> Disable ad spots on this site.</label>
+					</td>
+				<tr>
+			</table>
+			<h3>Disable Google Tag Manager</h3>
+			<table>
+				<tr>
+					<td>
+						<input type="checkbox" id="av_disable_gtm" name="av_disable_gtm" value="1" <?php checked( 1, get_option('av_disable_gtm'), true ); ?>  />
+            <label for="av_disable_gtm"> Do not render the Google Tag Manager scripts.</label>
+					</td>
+				<tr>
+			</table>
       <hr>
       <h2>Okanjo Advertising</h2>
         <table>
@@ -172,6 +193,7 @@ function av_admin_settings() {
 					</td>
 				<tr>
 			</table>
+			<hr>
       <?php submit_button(); ?>
     </form>
 	</div>

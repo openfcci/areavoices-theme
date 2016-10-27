@@ -19,7 +19,7 @@
 
 <?php
 /* Add Nativo Script to Blog Post Pages */
-if ( is_single() ) { ?>
+if ( is_single() && ( ! get_option( 'av_disable_ads' ) ) ) { ?>
 <!--Nativo-->
 <script type="text/javascript" src="//s.ntv.io/serve/load.js" async></script>
 <?php } ?>
@@ -33,7 +33,7 @@ if ( is_single() ) { ?>
 
 	<header id="masthead" class="site-header" role="banner">
 
-		<div class="site-branding <?php if ( !get_header_image() ) : echo 'site-header'; endif; ?>">
+		<div class="site-branding <?php if ( ! get_header_image() ) : echo 'site-header'; endif; ?>">
 			<div class="container">
 				<div class="site-info">
 
@@ -48,7 +48,7 @@ if ( is_single() ) { ?>
 								<!-- <p class="site-description" style="color: #ffffff;"><?php // bloginfo( 'description' ); ?></p></a> -->
 							<!-- </div> -->
 						<!-- </div>--> <!-- Custom Header -->
-					<?php elseif ( !get_header_image() ) : ?>
+					<?php elseif ( ! get_header_image() ) : ?>
 						<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" style="color: #3d3d3d;"><?php bloginfo( 'name' ); ?></a></h1>
 						<p class="site-description"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" style="color: #3d3d3d;"><?php bloginfo( 'description' ); ?></a></p>
 					<?php endif; // End header image check. ?>
@@ -62,7 +62,12 @@ if ( is_single() ) { ?>
 			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><span class="avicon-menu"></span></button>
 			<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu', 'fallback_cb' => false ) ); ?>
 		</nav><!-- #site-navigation -->
-		<?php get_template_part( 'template-parts/google_ads', 'script' ); /*RV*/ ?>
+		<?php
+		# Google Tag Manager
+		if ( ! get_option( 'av_disable_ads' ) ) {
+			get_template_part( 'template-parts/google_ads', 'script' );
+		}
+		?>
 	</header><!-- #masthead -->
 
 		<?php //if ( is_archive() ) { get_template_part( 'template-parts/header-title', 'header' ); } /*RV*/ ?>

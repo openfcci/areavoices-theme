@@ -12,11 +12,13 @@
 <div id="header-banner" class="banner">
 	 <div id="fcc-areavoices-header-ad" align="center">
 		<div id="leaderboard-ad" class="leaderboard-ad" >
+			<?php if ( ! get_option( 'av_disable_ads' ) ) { ?>
 			<script type="text/javascript">
 		    googletag.cmd.push(function() {
 		      googletag.display('leaderboard-ad');
 		    });
 		  </script>
+			<?php } ?>
 		</div>
 	</div>
 </div>

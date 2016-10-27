@@ -438,7 +438,9 @@ function av_after_body() {
 }
 
 function insert_google_tag_manager() {
-	get_template_part( 'template-parts/google_ads', 'tagmanager' );
+	if ( ! get_option( 'av_disable_gtm' ) ) {
+		get_template_part( 'template-parts/google_ads', 'tagmanager' );
+	}
 }
 add_action( 'av_after_body', 'insert_google_tag_manager' );
 

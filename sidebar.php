@@ -25,7 +25,11 @@ if ( ! is_active_sidebar( 'sidebar-1' ) ) {
 
 
 	<!-- SIDEBAR AD WIDGET -->
-	<?php get_template_part( 'inc/widgets/adspot-rsb-widget', 'adspot-rsb-widget' ); ?>
+	<?php
+	if ( ! get_option( 'av_disable_ads' ) ) {
+		get_template_part( 'inc/widgets/adspot-rsb-widget', 'adspot-rsb-widget' );
+	}
+	?>
 
 
 	<!-- SEARCH WIDGET -->
