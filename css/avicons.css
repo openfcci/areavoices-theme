@@ -1,675 +1,698 @@
 @font-face {
-	font-family: 'avicons';
-	src:url('fonts/avicons.eot?ibc27w');
-	src:url('fonts/avicons.eot?ibc27w#iefix') format('embedded-opentype'),
-		url('fonts/avicons.ttf?ibc27w') format('truetype'),
-		url('fonts/avicons.woff?ibc27w') format('woff'),
-		url('fonts/avicons.svg?ibc27w#avicons') format('svg');
-	font-weight: normal;
-	font-style: normal;
+  font-family: 'avicons';
+  src:  url('fonts/avicons.eot?7eu4qm');
+  src:  url('fonts/avicons.eot?7eu4qm#iefix') format('embedded-opentype'),
+    url('fonts/avicons.ttf?7eu4qm') format('truetype'),
+    url('fonts/avicons.woff?7eu4qm') format('woff'),
+    url('fonts/avicons.svg?7eu4qm#avicons') format('svg');
+  font-weight: normal;
+  font-style: normal;
 }
 
 [class^="avicon-"], [class*=" avicon-"] {
-    /* use !important to prevent issues with browser extensions that change fonts */
-	font-family: 'avicons' !important;
-	speak: none;
-	font-style: normal;
-	font-weight: normal;
-	font-variant: normal;
-	text-transform: none;
-	line-height: 1;
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'avicons' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
 
-	/* Better Font Rendering =========== */
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-.avicon-av-dashicon:before {
-	content: "\e95b";
+.avicon-location3:before {
+  content: "\f060";
+}
+.avicon-location2:before {
+  content: "\e95c";
+}
+.avicon-link2:before {
+  content: "\e9cb";
 }
 .avicon-flickr:before {
-	content: "\e900";
+  content: "\e900";
 }
 .avicon-search:before {
-	content: "\e800";
+  content: "\e800";
 }
 .avicon-alert:before {
-	content: "\f02d";
+  content: "\f02d";
 }
 .avicon-broadcast:before {
-	content: "\f048";
+  content: "\f048";
 }
 .avicon-file-media:before {
-	content: "\f012";
+  content: "\f012";
 }
 .avicon-flame:before {
-	content: "\f0d2";
+  content: "\f0d2";
 }
 .avicon-gist-secret:before {
-	content: "\f08c";
+  content: "\f08c";
 }
 .avicon-info:before {
-	content: "\f059";
+  content: "\f059";
 }
 .avicon-issue-opened:before {
-	content: "\f026";
+  content: "\f026";
 }
 .avicon-key:before {
-	content: "\f049";
+  content: "\f049";
 }
 .avicon-light-bulb:before {
-	content: "\f000";
+  content: "\f000";
 }
 .avicon-milestone:before {
-	content: "\f075";
+  content: "\f075";
 }
 .avicon-radio-tower:before {
-	content: "\f030";
+  content: "\f030";
 }
 .avicon-av-calendar:before {
-	content: "\e600";
+  content: "\e600";
 }
 .avicon-av-facebook:before {
-	content: "\e615";
+  content: "\e615";
 }
 .avicon-av-google-plus:before {
-	content: "\e616";
+  content: "\e616";
 }
 .avicon-av-linkedin:before {
-	content: "\e617";
+  content: "\e617";
 }
 .avicon-av-twitter:before {
-	content: "\e618";
+  content: "\e618";
 }
 .avicon-newspaper:before {
-	content: "\e619";
+  content: "\e619";
 }
 .avicon-play:before {
-	content: "\e61a";
+  content: "\e61a";
 }
 .avicon-bullhorn:before {
-	content: "\e61b";
+  content: "\e61b";
 }
 .avicon-profile2:before {
-	content: "\e94c";
+  content: "\e94c";
 }
 .avicon-price-tag:before {
-	content: "\e61c";
+  content: "\e61c";
 }
 .avicon-price-tags:before {
-	content: "\e61d";
+  content: "\e61d";
 }
 .avicon-quotes-left:before {
-	content: "\e620";
+  content: "\e620";
 }
 .avicon-quotes-right:before {
-	content: "\e621";
+  content: "\e621";
 }
 .avicon-wrench:before {
-	content: "\e94d";
+  content: "\e94d";
 }
 .avicon-cog:before {
-	content: "\e622";
+  content: "\e622";
 }
 .avicon-cogs:before {
-	content: "\e623";
+  content: "\e623";
 }
 .avicon-fire:before {
-	content: "\e94e";
+  content: "\e94e";
 }
 .avicon-shield:before {
-	content: "\e94f";
+  content: "\e94f";
 }
 .avicon-menu2:before {
-	content: "\e627";
+  content: "\e627";
 }
 .avicon-menu22:before {
-	content: "\e950";
+  content: "\e950";
 }
 .avicon-menu3:before {
-	content: "\e80b";
+  content: "\e80b";
 }
 .avicon-menu4:before {
-	content: "\e951";
+  content: "\e951";
 }
 .avicon-share2:before {
-	content: "\e628";
+  content: "\e628";
 }
 .avicon-mail4:before {
-	content: "\e901";
+  content: "\e901";
 }
 .avicon-youtube:before {
-	content: "\e801";
+  content: "\e801";
 }
 .avicon-tumblr2:before {
-	content: "\e802";
+  content: "\e802";
 }
 .avicon-soundcloud:before {
-	content: "\e902";
+  content: "\e902";
 }
 .avicon-soundcloud2:before {
-	content: "\e803";
+  content: "\e803";
 }
 .avicon-pinterest:before {
-	content: "\e804";
+  content: "\e804";
+}
+.avicon-map-marker:before {
+  content: "\f041";
+}
+.avicon-phone:before {
+  content: "\f095";
+}
+.avicon-phone-square:before {
+  content: "\f098";
+}
+.avicon-chain:before {
+  content: "\f0c1";
+}
+.avicon-link3:before {
+  content: "\f0c1";
+}
+.avicon-av-dashicon:before {
+  content: "\e95b";
 }
 .avicon-chevron-with-circle-left:before {
-	content: "\e806";
+  content: "\e806";
 }
 .avicon-arrow-long-left:before {
-	content: "\e807";
+  content: "\e807";
 }
 .avicon-chevron-with-circle-right:before {
-	content: "\e808";
+  content: "\e808";
 }
 .avicon-arrow-long-right:before {
-	content: "\e809";
+  content: "\e809";
 }
 .avicon-arrow-long-left2:before {
-	content: "\e80a";
+  content: "\e80a";
 }
 .avicon-instagram-with-circle:before {
-	content: "\e805";
+  content: "\e805";
 }
 .avicon-library_music:before {
-	content: "\e015";
+  content: "\e015";
 }
 .avicon-playlist_add:before {
-	content: "\e01e";
+  content: "\e01e";
 }
 .avicon-queue_music:before {
-	content: "\e020";
+  content: "\e020";
 }
 .avicon-web:before {
-	content: "\e034";
+  content: "\e034";
 }
 .avicon-email:before {
-	content: "\e04c";
+  content: "\e04c";
 }
 .avicon-speaker_phone:before {
-	content: "\e05b";
+  content: "\e05b";
 }
 .avicon-vpn_key:before {
-	content: "\e063";
+  content: "\e063";
 }
 .avicon-drafts:before {
-	content: "\e075";
+  content: "\e075";
 }
 .avicon-flag:before {
-	content: "\e077";
+  content: "\e077";
 }
 .avicon-link:before {
-	content: "\e07b";
+  content: "\e07b";
 }
 .avicon-report:before {
-	content: "\e084";
+  content: "\e084";
 }
 .avicon-now_wallpaper:before {
-	content: "\e0ac";
+  content: "\e0ac";
 }
 .avicon-storage:before {
-	content: "\e0bc";
+  content: "\e0bc";
 }
 .avicon-format_paint:before {
-	content: "\e0dd";
+  content: "\e0dd";
 }
 .avicon-folder:before {
-	content: "\e101";
+  content: "\e101";
 }
 .avicon-folder_open:before {
-	content: "\e102";
+  content: "\e102";
 }
 .avicon-brush:before {
-	content: "\e143";
+  content: "\e143";
 }
 .avicon-camera_roll:before {
-	content: "\e148";
+  content: "\e148";
 }
 .avicon-color_lens:before {
-	content: "\e14c";
+  content: "\e14c";
 }
 .avicon-crop:before {
-	content: "\e153";
+  content: "\e153";
 }
 .avicon-details:before {
-	content: "\e15d";
+  content: "\e15d";
 }
 .avicon-edit:before {
-	content: "\e15e";
+  content: "\e15e";
 }
 .avicon-grid_on:before {
-	content: "\e180";
+  content: "\e180";
 }
 .avicon-portrait:before {
-	content: "\e1a7";
+  content: "\e1a7";
 }
 .avicon-view_compact:before {
-	content: "\e1bc";
+  content: "\e1bc";
 }
 .avicon-arrow_back:before {
-	content: "\e200";
+  content: "\e200";
 }
 .avicon-arrow_drop_down:before {
-	content: "\e201";
+  content: "\e201";
 }
 .avicon-arrow_drop_down_circle:before {
-	content: "\e202";
+  content: "\e202";
 }
 .avicon-arrow_drop_up:before {
-	content: "\e203";
+  content: "\e203";
 }
 .avicon-arrow_forward:before {
-	content: "\e204";
+  content: "\e204";
 }
 .avicon-cancel4:before {
-	content: "\e205";
+  content: "\e205";
 }
 .avicon-check:before {
-	content: "\e206";
+  content: "\e206";
 }
 .avicon-chevron_left:before {
-	content: "\e207";
+  content: "\e207";
 }
 .avicon-chevron_right:before {
-	content: "\e208";
+  content: "\e208";
 }
 .avicon-close:before {
-	content: "\e209";
+  content: "\e209";
 }
 .avicon-expand_less:before {
-	content: "\e20a";
+  content: "\e20a";
 }
 .avicon-expand_more:before {
-	content: "\e20b";
+  content: "\e20b";
 }
 .avicon-menu:before {
-	content: "\e20e";
+  content: "\e20e";
 }
 .avicon-vpn_lock:before {
-	content: "\e233";
+  content: "\e233";
 }
 .avicon-person:before {
-	content: "\e253";
+  content: "\e253";
 }
 .avicon-public:before {
-	content: "\e258";
+  content: "\e258";
 }
 .avicon-star:before {
-	content: "\e260";
+  content: "\e260";
 }
 .avicon-star_outline:before {
-	content: "\e262";
+  content: "\e262";
 }
 .avicon-account_circle:before {
-	content: "\e268";
+  content: "\e268";
 }
 .avicon-check_circle:before {
-	content: "\e281";
+  content: "\e281";
 }
 .avicon-chrome_reader_mode:before {
-	content: "\e282";
+  content: "\e282";
 }
 .avicon-favorite:before {
-	content: "\e291";
+  content: "\e291";
 }
 .avicon-favorite_outline:before {
-	content: "\e292";
+  content: "\e292";
 }
 .avicon-lock:before {
-	content: "\e2ab";
+  content: "\e2ab";
 }
 .avicon-lock_open:before {
-	content: "\e2ac";
+  content: "\e2ac";
 }
 .avicon-lock_outline:before {
-	content: "\e2ad";
+  content: "\e2ad";
 }
 .avicon-payment:before {
-	content: "\e2b5";
+  content: "\e2b5";
 }
 .avicon-picture_in_picture:before {
-	content: "\e2be";
+  content: "\e2be";
 }
 .avicon-report_problem:before {
-	content: "\e2c6";
+  content: "\e2c6";
 }
 .avicon-settings:before {
-	content: "\e2cb";
+  content: "\e2cb";
 }
 .avicon-settings_voice:before {
-	content: "\e2db";
+  content: "\e2db";
 }
 .avicon-thumb_down:before {
-	content: "\e2ed";
+  content: "\e2ed";
 }
 .avicon-thumb_up:before {
-	content: "\e2ee";
+  content: "\e2ee";
 }
 .avicon-trending_up:before {
-	content: "\e2f7";
+  content: "\e2f7";
 }
 .avicon-verified_user:before {
-	content: "\e2fa";
+  content: "\e2fa";
 }
 .avicon-view_agenda:before {
-	content: "\e2fb";
+  content: "\e2fb";
 }
 .avicon-view_array:before {
-	content: "\e2fc";
+  content: "\e2fc";
 }
 .avicon-view_carousel:before {
-	content: "\e2fd";
+  content: "\e2fd";
 }
 .avicon-view_column:before {
-	content: "\e2fe";
+  content: "\e2fe";
 }
 .avicon-view_day:before {
-	content: "\e2ff";
+  content: "\e2ff";
 }
 .avicon-view_module:before {
-	content: "\e302";
+  content: "\e302";
 }
 .avicon-view_quilt:before {
-	content: "\e303";
+  content: "\e303";
 }
 .avicon-visibility:before {
-	content: "\e306";
+  content: "\e306";
 }
 .avicon-visibility_off:before {
-	content: "\e307";
+  content: "\e307";
 }
 .avicon-number:before {
-	content: "\e903";
+  content: "\e903";
 }
 .avicon-number2:before {
-	content: "\e904";
+  content: "\e904";
 }
 .avicon-number3:before {
-	content: "\e905";
+  content: "\e905";
 }
 .avicon-number4:before {
-	content: "\e906";
+  content: "\e906";
 }
 .avicon-number5:before {
-	content: "\e907";
+  content: "\e907";
 }
 .avicon-number6:before {
-	content: "\e908";
+  content: "\e908";
 }
 .avicon-number7:before {
-	content: "\e909";
+  content: "\e909";
 }
 .avicon-number8:before {
-	content: "\e90a";
+  content: "\e90a";
 }
 .avicon-number9:before {
-	content: "\e90b";
+  content: "\e90b";
 }
 .avicon-number10:before {
-	content: "\e90c";
+  content: "\e90c";
 }
 .avicon-number11:before {
-	content: "\e90d";
+  content: "\e90d";
 }
 .avicon-number12:before {
-	content: "\e90e";
+  content: "\e90e";
 }
 .avicon-number13:before {
-	content: "\e90f";
+  content: "\e90f";
 }
 .avicon-number14:before {
-	content: "\e910";
+  content: "\e910";
 }
 .avicon-number15:before {
-	content: "\e911";
+  content: "\e911";
 }
 .avicon-number16:before {
-	content: "\e912";
+  content: "\e912";
 }
 .avicon-number17:before {
-	content: "\e913";
+  content: "\e913";
 }
 .avicon-number18:before {
-	content: "\e914";
+  content: "\e914";
 }
 .avicon-number19:before {
-	content: "\e915";
+  content: "\e915";
 }
 .avicon-number20:before {
-	content: "\e916";
+  content: "\e916";
 }
 .avicon-quote:before {
-	content: "\e917";
+  content: "\e917";
 }
 .avicon-quote2:before {
-	content: "\e918";
+  content: "\e918";
 }
 .avicon-tag:before {
-	content: "\e919";
+  content: "\e919";
 }
 .avicon-ipod:before {
-	content: "\e91a";
+  content: "\e91a";
 }
 .avicon-microphone:before {
-	content: "\e91b";
+  content: "\e91b";
 }
 .avicon-microphone2:before {
-	content: "\e91c";
+  content: "\e91c";
 }
 .avicon-microphone3:before {
-	content: "\e91d";
+  content: "\e91d";
 }
 .avicon-checkmark:before {
-	content: "\e91e";
+  content: "\e91e";
 }
 .avicon-checkmark2:before {
-	content: "\e91f";
+  content: "\e91f";
 }
 .avicon-cancel:before {
-	content: "\e920";
+  content: "\e920";
 }
 .avicon-cancel2:before {
-	content: "\e921";
+  content: "\e921";
 }
 .avicon-plus:before {
-	content: "\e922";
+  content: "\e922";
 }
 .avicon-plus2:before {
-	content: "\e923";
+  content: "\e923";
 }
 .avicon-minus:before {
-	content: "\e924";
+  content: "\e924";
 }
 .avicon-minus2:before {
-	content: "\e925";
+  content: "\e925";
 }
 .avicon-notice:before {
-	content: "\e926";
+  content: "\e926";
 }
 .avicon-notice2:before {
-	content: "\e927";
+  content: "\e927";
 }
 .avicon-cogs2:before {
-	content: "\e928";
+  content: "\e928";
 }
 .avicon-cog2:before {
-	content: "\e929";
+  content: "\e929";
 }
 .avicon-cassette:before {
-	content: "\e92a";
+  content: "\e92a";
 }
 .avicon-headphones:before {
-	content: "\e92b";
+  content: "\e92b";
 }
 .avicon-checkmark3:before {
-	content: "\e92c";
+  content: "\e92c";
 }
 .avicon-cancel3:before {
-	content: "\e92d";
+  content: "\e92d";
 }
 .avicon-position:before {
-	content: "\e92e";
+  content: "\e92e";
 }
 .avicon-location:before {
-	content: "\e92f";
+  content: "\e92f";
 }
 .avicon-radio:before {
-	content: "\e930";
+  content: "\e930";
 }
 .avicon-satellite:before {
-	content: "\e931";
+  content: "\e931";
 }
 .avicon-key2:before {
-	content: "\e952";
+  content: "\e952";
 }
 .avicon-locked:before {
-	content: "\e953";
+  content: "\e953";
 }
 .avicon-unlocked:before {
-	content: "\e954";
+  content: "\e954";
 }
 .avicon-magnifier:before {
-	content: "\e932";
+  content: "\e932";
 }
 .avicon-moneybag:before {
-	content: "\e933";
+  content: "\e933";
 }
 .avicon-layout:before {
-	content: "\e602";
+  content: "\e602";
 }
 .avicon-layout2:before {
-	content: "\e603";
+  content: "\e603";
 }
 .avicon-layout3:before {
-	content: "\e604";
+  content: "\e604";
 }
 .avicon-layout4:before {
-	content: "\e605";
+  content: "\e605";
 }
 .avicon-layout5:before {
-	content: "\e606";
+  content: "\e606";
 }
 .avicon-layout6:before {
-	content: "\e607";
+  content: "\e607";
 }
 .avicon-layout7:before {
-	content: "\e608";
+  content: "\e608";
 }
 .avicon-layout8:before {
-	content: "\e609";
+  content: "\e609";
 }
 .avicon-layout9:before {
-	content: "\e60a";
+  content: "\e60a";
 }
 .avicon-layout10:before {
-	content: "\e60b";
+  content: "\e60b";
 }
 .avicon-layout11:before {
-	content: "\e60c";
+  content: "\e60c";
 }
 .avicon-layout12:before {
-	content: "\e60d";
+  content: "\e60d";
 }
 .avicon-layout13:before {
-	content: "\e60e";
+  content: "\e60e";
 }
 .avicon-layout14:before {
-	content: "\e60f";
+  content: "\e60f";
 }
 .avicon-tools:before {
-	content: "\e934";
+  content: "\e934";
 }
 .avicon-comments:before {
-	content: "\e611";
+  content: "\e611";
 }
 .avicon-volume:before {
-	content: "\e935";
+  content: "\e935";
 }
 .avicon-volume2:before {
-	content: "\e936";
+  content: "\e936";
 }
 .avicon-volume3:before {
-	content: "\e937";
+  content: "\e937";
 }
 .avicon-stats:before {
-	content: "\e938";
+  content: "\e938";
 }
 .avicon-profile:before {
-	content: "\e939";
+  content: "\e939";
 }
 .avicon-dollar:before {
-	content: "\e955";
+  content: "\e955";
 }
 .avicon-dollar2:before {
-	content: "\e956";
+  content: "\e956";
 }
 .avicon-coins:before {
-	content: "\e957";
+  content: "\e957";
 }
 .avicon-pig:before {
-	content: "\e958";
+  content: "\e958";
 }
 .avicon-safe:before {
-	content: "\e959";
+  content: "\e959";
 }
 .avicon-envelope:before {
-	content: "\e93a";
+  content: "\e93a";
 }
 .avicon-music:before {
-	content: "\e93b";
+  content: "\e93b";
 }
 .avicon-info2:before {
-	content: "\e93c";
+  content: "\e93c";
 }
 .avicon-rocket:before {
-	content: "\e93d";
+  content: "\e93d";
 }
 .avicon-microphone4:before {
-	content: "\e93e";
+  content: "\e93e";
 }
 .avicon-radio2:before {
-	content: "\e93f";
+  content: "\e93f";
 }
 .avicon-alert2:before {
-	content: "\e940";
+  content: "\e940";
 }
 .avicon-atom:before {
-	content: "\e941";
+  content: "\e941";
 }
 .avicon-globe:before {
-	content: "\e942";
+  content: "\e942";
 }
 .avicon-globe2:before {
-	content: "\e943";
+  content: "\e943";
 }
 .avicon-shipping:before {
-	content: "\e944";
+  content: "\e944";
 }
 .avicon-compass:before {
-	content: "\e945";
+  content: "\e945";
 }
 .avicon-navigation:before {
-	content: "\e946";
+  content: "\e946";
 }
 .avicon-tags:before {
-	content: "\e947";
+  content: "\e947";
 }
 .avicon-heart2:before {
-	content: "\e613";
+  content: "\e613";
 }
 .avicon-heart:before {
-	content: "\e948";
+  content: "\e948";
 }
 .avicon-clipboard:before {
-	content: "\e949";
+  content: "\e949";
 }
 .avicon-clipboard2:before {
-	content: "\e94a";
+  content: "\e94a";
 }
 .avicon-ruler:before {
-	content: "\e95a";
+  content: "\e95a";
 }
 .avicon-paperplane:before {
-	content: "\e94b";
+  content: "\e94b";
 }
-

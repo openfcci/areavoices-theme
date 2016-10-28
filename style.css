@@ -4,7 +4,7 @@ Theme URI: http://areavoices.com/
 Author: Forum Communications Company
 Author URI: http://forumcomm.com/
 Description: The custom WordPress theme built for AreaVoices contributors.
-Version: 1.16.10.27
+Version: 1.16.10.28
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: areavoices
@@ -842,7 +842,8 @@ input.search-field {
 ## Footer
 --------------------------------------------------------------*/
 #colophon {
-  border-top: 1px solid black; }
+  border-top: 1px solid black;
+}
 
 .site-footer {
   background-color: #464646;
@@ -1158,6 +1159,10 @@ input.search-field {
 
   h6 {
     font-size: 0.66666666em; }
+
+	h1.site-title a {
+		font-size: .6em !important;
+	}
 
   article {
     /* padding: 0.9375em !important; */
@@ -2505,3 +2510,118 @@ ol.comment-list {
 #read-more-button:focus {
   border-color: #00aadc;
   box-shadow: 0 0 0 2px #78dcfa; }
+
+/*--------------------------------------------------------------
+## Marketplace Offers
+--------------------------------------------------------------*/
+.single-marketplace_campaign footer {
+	display: none;
+}
+
+.avicons,.avicons-before:before {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    font-size: 1em;
+    line-height: 1em;
+    text-decoration: inherit;
+		color: #888;
+    font-weight: 400;
+    font-style: normal;
+    vertical-align: center;
+    text-align: center;
+    -webkit-transition: color .1s ease-in 0;
+    transition: color .1s ease-in 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale
+}
+
+.marketplace-campaign__website .avicon-link2 {
+	font-size: .75em;
+	color: #888;
+}
+
+div.marketplace-campaign__title {
+	margin-bottom: 20px;
+	border-bottom: 1px solid #ccc;
+	clear: both;
+}
+
+div.marketplace-campaign__title:after {
+	padding-bottom: 20px;
+}
+
+
+h1.marketplace-campaign__title {
+	margin-bottom: 0px;
+  font-family: "Merriweather";
+	font-weight: 500;
+}
+
+@media (max-width: 544px) {
+	h1.marketplace-campaign__title {
+		font-size: 1.25em;
+		font-weight: bold;
+		text-align: center;
+	}
+	.marketplace-campaign__address {
+		text-align: left;
+	}
+}
+
+.marketplace-campaign__address .marketplace-campaign__client-name {
+	font-weight: bold;
+}
+
+.marketplace-campaign__address {
+	max-width: calc(100% - 220px);
+  float: left;
+}
+
+.marketplace-campaign__logo {
+    float: right;
+		margin-bottom: 20px;
+}
+
+@media (max-width: 544px) {
+	.marketplace-campaign__logo,
+	.marketplace-campaign__address {
+	    float: none;
+			max-width: 100%;
+	}
+	.marketplace-campaign__logo {
+		text-align: center;
+	}
+}
+
+.marketplace-campaign__logo img {
+	box-shadow: 0 0 10px rgba(0, 0, 0, .5);
+	max-width: 200px;
+	max-height: 200px;
+}
+
+.marketplace-campaign__bottom {
+    margin: 10px 0;
+    padding: 10px 0;
+    border-top: 1px solid #ccc;
+    clear: both;
+}
+
+.marketplace-campaign__has-content {
+    border-bottom: 1px solid #ccc;
+}
+
+@media (max-width: 544px) {
+	.marketplace-campaign__bottom {
+		font-size: .8em;
+	}
+}
+
+.marketplace-campaign__tagline {
+    font-weight: bold;
+    margin-bottom: 0px
+}
+
+.marketplace-campaign__content {
+	margin-top: 2.5em;
+}
