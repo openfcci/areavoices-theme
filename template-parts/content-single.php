@@ -9,7 +9,7 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class( 'av-single-post' ); ?>>
 	<header class="entry-header">
-		<div class="post-thumb-container">
+		<div class="post-thumb-container<?php if ( has_post_thumbnail() ) { echo ' has-featured-image'; } ?>">
 			<?php
 			if ( 'post' == get_post_type() ) {
 				echo '<a href="' .  wp_get_attachment_image_src( get_post_thumbnail_id(), 'large' )[0] . '" class="gallery">';
@@ -55,7 +55,7 @@
 		<div class="av-post av-jp-social">
 			<?php
 			if ( function_exists( 'sharing_display' ) ) {
-			    sharing_display( '', true );
+			    //sharing_display( '', true );
 			}
 			if ( class_exists( 'Jetpack_Likes' ) ) {
 			    $custom_likes = new Jetpack_Likes;

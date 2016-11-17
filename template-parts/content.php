@@ -9,7 +9,7 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
-		<div class="post-thumb-container">
+		<div class="post-thumb-container<?php if ( has_post_thumbnail() ) { echo ' has-featured-image'; } ?>">
 			<a href="<?php echo get_permalink();?>"><?php the_post_thumbnail( 'featured-image' ); ?></a>
 		</div>
 		<?php the_title( sprintf( '<h1 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h1>' ); ?>
